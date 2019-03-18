@@ -1,0 +1,43 @@
+@mixin base-notification($name : v-Notification) {
+
+.#{$name} {
+	background: #999;
+	color: #fff;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 1em;
+	max-width:85%;
+	
+}
+.#{$name} h1,
+.#{$name} p,
+.#{$name}-error h1,
+.#{$name}-error p,
+.#{$name}-warning h1,
+.#{$name}-warning p {
+	display: inline;
+	margin: 0 0.5em 0 0;
+}
+.#{$name}-warning {
+	background: orange;
+}
+.#{$name}-error {
+	background: red;
+}
+.#{$name}-tray h1 {
+	display: block;
+}
+.#{$name}-tray p {
+	display: block;
+}
+.#{$name}-system {
+	background-color: red;
+	opacity: .7;
+	filter: alpha(opacity=70);
+}
+.#{$name}-system h1 {
+	display: block;
+	margin: 0;
+}
+
+}

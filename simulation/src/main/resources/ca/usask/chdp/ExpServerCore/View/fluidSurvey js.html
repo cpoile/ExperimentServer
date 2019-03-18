@@ -1,0 +1,39 @@
+// placed on the first page of the survey to store the Vaadin app address
+// DEPRECATED -- not using it anymore.
+<!--<script type="text/javascript">-->
+
+    <!--function createCookie(name, value, days) {-->
+        <!--if (days) {-->
+            <!--var date = new Date();-->
+            <!--date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));-->
+            <!--var expires = "; expires=" + date.toGMTString();-->
+        <!--}-->
+        <!--else var expires = "";-->
+        <!--document.cookie = name + "=" + value + expires + "; path=/";-->
+    <!--}-->
+    <!--var referrerUrl = document.referrer;-->
+    <!--createCookie('vaadinLoc', referrerUrl, 1);-->
+<!--</script>-->
+
+// This is placed on the last page:
+<script type="text/javascript">
+
+    var findOrigin = function (x) {
+        var kvs = x.split('&');
+        for (var i = 0; i < kvs.length; i += 1) {
+            var pair = kvs[i].split('=');
+            if (pair[0] === 'origin') {
+                return pair[1];
+            }
+        }
+    };
+
+    var params = decodeURIComponent(window.location.search.substr(1)) + '&compl=yes';
+    var vaadinUrl = findOrigin(params) + '#' + params;
+    var delay = 500;
+    $(window).load(function () {
+        setTimeout(function () {
+            window.location = vaadinUrl;
+        }, delay);
+    });
+</script>

@@ -1,0 +1,1463 @@
+table {
+  border-collapse : separate;
+  border-spacing  : 0;
+}
+
+caption, th, td {
+  text-align  : right;
+  font-weight : normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content : "";
+}
+
+blockquote, q {
+  quotes : "" "";
+}
+
+html {
+  min-height : 100%;
+}
+
+body {
+  background:url(/_pix/bg.png) repeat,-webkit-gradient(linear,left top,left bottom,color-stop(0,#45504A),color-stop(1,#e2e4e1));
+  background:url(/_pix/bg.png) repeat,-webkit-linear-gradient(top,#45504A 0%,#e2e4e1 100%);
+  background:url(/_pix/bg.png) repeat,-moz-linear-gradient(top,#45504A 0%,#e2e4e1 100%);
+  background:url(/_pix/bg.png) repeat,-ms-linear-gradient(top,#45504A 0%,#e2e4e1 100%);
+  background:url(/_pix/bg.png) repeat,-o-linear-gradient(top,#45504A 0%,#e2e4e1 100%);
+  background:url(/_pix/bg.png) repeat,linear-gradient(top,#45504A 0%,#e2e4e1 100%);
+  background-attachment:fixed;
+}
+
+/*
+  background: rgb(0,87,0); *//* Old browsers *//*
+  background: -moz-linear-gradient(top,  rgba(0,87,0,1) 0%, rgba(0,138,0,1) 15%, rgba(180,221,180,1) 55%); *//* FF3.6+ *//*
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,87,0,1)), color-stop(15%,rgba(0,138,0,1)), color-stop(55%,rgba(180,221,180,1))); *//* Chrome,Safari4+ *//*
+  background: -webkit-linear-gradient(top,  rgba(0,87,0,1) 0%,rgba(0,138,0,1) 15%,rgba(180,221,180,1) 55%); *//* Chrome10+,Safari5.1+ *//*
+  background: -o-linear-gradient(top,  rgba(0,87,0,1) 0%,rgba(0,138,0,1) 15%,rgba(180,221,180,1) 55%); *//* Opera 11.10+ *//*
+  background: -ms-linear-gradient(top,  rgba(0,87,0,1) 0%,rgba(0,138,0,1) 15%,rgba(180,221,180,1) 55%); *//* IE10+ *//*
+  background: linear-gradient(to bottom,  rgba(0,87,0,1) 0%,rgba(0,138,0,1) 15%,rgba(180,221,180,1) 55%); *//* W3C *//*
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005700', endColorstr='#b4ddb4',GradientType=0 ); *//* IE6-9 *//*
+
+}*/
+
+body.loginView {
+  background : none;
+}
+
+.inGame {
+  font-family    : 'BebasNeueRegular', sans-serif;
+  font-size      : 17px;
+  line-height    : 1.5em;
+  letter-spacing : 1px;
+  color          : #302F2F;
+  position       : relative;
+  text-shadow    : 1px 1px 0px rgba(255, 255, 255, .3);
+}
+
+#workingLayout {
+  background              : url(images/working/background.jpg) no-repeat center center;
+  min-width               : 100%;
+  -webkit-background-size : cover;
+  -moz-background-size    : cover;
+  -o-background-size      : cover;
+  background-size         : cover;
+  filter                  : progid:DXImageTransform.Microsoft.AlphaImageLoader(src = 'images/working/background.jpg', sizingMethod = 'scale');
+  -ms-filter              : "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/working/background.jpg', sizingMethod='scale')";
+  min-height              : 925px;
+}
+
+/*HEADER*/
+.header {
+  position         : relative;
+  top              : 0;
+  left             : 0;
+  width            : 100%;
+  min-width        : 1040px;
+  height           : 33px;
+  padding          : 6px 0;
+  text-align       : center;
+  background-color : #343838;
+  border-bottom    : 1px solid #1E1F1D;
+}
+
+#logo {
+  position    : absolute;
+  left        : 50%;
+  margin-left : -18px;
+}
+
+.globalNav {
+  position     : relative;
+  width        : 509px;
+  height       : 60px;
+  margin       : 0 auto;
+  padding-left : 18px;
+}
+
+.globalNav li {
+  line-height    : 1.5em;
+  display        : block;
+  padding-bottom : 22px;
+  float          : left;
+}
+
+.globalNav li a {
+  font-family     : 'AmbleRegular', sans-serif;
+  font-size       : 15px;
+  color           : #fff;
+  text-decoration : none;
+  text-transform  : uppercase;
+  line-height     : 33px;
+  font-weight     : bold;
+  text-shadow     : none;
+}
+
+.globalNav li:last-child {
+  position : absolute;
+  right    : -11px;
+}
+
+.globalNav li a:hover {
+  text-decoration : underline;
+}
+
+.globalNav .current {
+  background : url('images/working/down-arrow.png') no-repeat center 38px;
+}
+
+.contentwrapper {
+  position   : relative;
+  width      : 1029px;
+  min-height : 406px;
+  padding    : 20px;
+  margin     : 20px auto 0px;
+}
+
+/*PART NAVIGATION*/
+
+#partselector {
+  position     : absolute;
+  top          : 0;
+  left         : 0;
+  width        : 1030px;
+  padding-left : 8px;
+  background   : transparent url('images/working/divider-top.png') no-repeat 0px 18px;
+}
+
+ul.tabs {
+  list-style : none;
+  display    : block;
+  background : url('images/working/tab-bg.png') no-repeat center left;
+  width      : 280px;
+  height     : 41px;
+  padding    : 0;
+  margin     : 0 auto;
+}
+
+.tabs li.mytooltip {
+  position : relative;
+  margin   : 0;
+}
+
+.tabs li.mytooltip a {
+  display         : block;
+  width           : 34px !important;
+  height          : 34px !important;
+  text-decoration : none;
+  font-family     : 'AmbleItalic', sans-serif;
+  letter-spacing  : 0px;
+  float           : left;
+  outline         : none;
+  position        : relative;
+  padding         : 5px;
+  margin          : 3px 69px 0px 3px;
+}
+
+.tabs li.mytooltip:last-child a {
+  margin  : 3px 0px 0px 2px;
+  padding : 5px;
+}
+
+.tabs li.mytooltip span {
+  position    : absolute;
+  left        : 6px;
+  bottom      : -20px;
+  z-index     : 99;
+  width       : 111px;
+  height      : 32px;
+  margin-left : -45px;
+  text-align  : center;
+  line-height : 38px;
+  font-size   : 12px;
+  color       : #fff;
+  text-shadow : none;
+}
+
+.tabs li.mytooltip:hover img {
+  opacity : 0.7;
+}
+
+span.blacktip {
+  background      : url('images/working/tooltip.png') no-repeat top left;
+  background-size : cover;
+}
+
+.tabs .active {
+  display    : block;
+  position   : absolute;
+  background : url('images/working/active.png') no-repeat top left;
+}
+
+.tabs .active img {
+  opacity : 0.9;
+}
+
+.tabs .active span {
+  display : none;
+}
+
+.mytooltip .goalReached span {
+  display : none;
+}
+
+.mytooltip .watchingPartner {
+  background     : none repeat scroll 0 0 transparent;
+  pointer-events : none;
+  cursor         : default;
+
+}
+
+.conceptCar.blacktip.notActive, .current .conceptCar.blacktip {
+  display : none;
+}
+
+.conceptCar.blacktip {
+  position    : absolute;
+  left        : 6px;
+  bottom      : 0px;
+  z-index     : 99;
+  width       : 111px;
+  height      : 32px;
+  margin-left : -23px;
+  text-align  : center;
+  line-height : 38px;
+  font-size   : 12px;
+  color       : #fff;
+  text-shadow : none;
+}
+
+/**
+*
+* Watching A
+*
+*/
+#watchingALayout {
+
+}
+
+#watchingALayout .regulartext {
+  font-size : 16px;
+}
+
+#watchingALayout .largetext {
+  font-size   : 46px;
+  line-height : 37px;
+}
+
+#watchingALayout .xlargetext {
+  font-size   : 114px;
+  line-height : 93px;
+}
+
+#watchingALayout .container {
+  width  : 1150px;
+  margin : 40px auto 0;
+}
+
+#watchingALayout #curStandings .container {
+
+}
+
+#watchingALayout .divider-vert {
+  width      : 25px;
+  float      : left;
+  margin-top : 25px;
+}
+
+#watchingALayout #curStandings .vertleft.divider-vert {
+  width : 9px;
+
+}
+
+#watchingALayout .left {
+  width      : 209px;
+  float      : left;
+  margin-top : 146px;
+}
+
+#watchingALayout .left #daysLeft {
+  width        : 94px;
+  margin-left  : auto;
+  margin-right : auto;
+}
+
+#watchingALayout .center {
+  width      : 650px;
+  float      : left;
+  margin-top : 1px;
+}
+
+#watchingALayout .center .partInfo {
+  clear          : both;
+  vertical-align : text-bottom;
+    padding : 10px;
+}
+
+#watchingALayout .center .partInfo .topRight {
+  position     : relative;
+  float        : left;
+  width        : 236px;
+  margin-right : auto;
+}
+
+#watchingALayout .center .partInfo .topLeft {
+  position    : relative;
+  float       : left;
+  width       : 222px;
+  margin-left : 44px;
+}
+
+#watchingALayout .center .partInfo .footer {
+  clear       : both;
+  font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size   : 14px;
+  font-weight : bold;
+  text-shadow : none;
+  line-height : 22px;
+  position    : relative;
+  top         : 7px;
+}
+
+#watchingALayout .container .divider-horiz {
+  margin : 0 auto 5px auto;
+  width  : 580px;
+}
+
+#watchingALayout #rightsidebar {
+  width      : 200px;
+  float      : left;
+  margin-top : 13px;
+}
+
+#watchingALayout #curStandings #rightsidebar {
+
+}
+
+/* Cur Standings part of Watching A Layout */
+#curStandings .center {
+  width      : 875px;
+  float      : left;
+  margin-top : 1px;
+}
+
+/*CAR PART DETAILS*/
+
+#carpartdetails, #graph {
+  position     : relative;
+  width        : 595px;
+  height       : 306px;
+  padding-left : 222px;
+  padding-top  : 5px;
+  float        : left;
+}
+
+#carpartdetails h1, #carpartdetails h2, #watchingRaceLayout h1, #watchingRaceLayout h2 {
+  font-weight : normal;
+  line-height : 25.5px;
+  margin      : 0;
+
+}
+
+#carpartdetails {
+  top        : 52px;
+  background : url("images/working/car-part-bg.png") no-repeat 195px 0px;
+  width      : 595px;
+  float      : left;
+  position   : relative;
+}
+
+#graph {
+  top        : 47px;
+  background : url("images/working/divider-vertical.png") no-repeat scroll 204px 20px, url("images/working/divider-vertical.png") no-repeat scroll 804px 20px transparent;
+  height     : 595;
+  width      : 595px;
+}
+
+#watchingAcarpartdetails {
+  position : relative;
+  float    : left;
+  height   : 100%;
+  width    : 812px;
+}
+
+#watchingAcarpartdetails .carPart {
+  position     : relative;
+  width        : 575px;
+  height       : 212px;
+  padding-left : 209px;
+  float        : left;
+}
+
+#watchingAcarpartdetails #part2.carPart {
+  position : absolute;
+  top      : 255px;
+}
+
+#watchingAcarpartdetails #part3.carPart {
+  position : absolute;
+  top      : 474px;
+}
+
+.watchingPartsLeft {
+  float        : left;
+  max-width    : 187px;
+  padding-left : 1px;
+  width        : 187px;
+}
+
+.watchingPartsRight {
+  position     : absolute;
+  padding-left : 222px;
+}
+
+.watchingPartsFooter {
+  position       : absolute;
+  padding-top    : 15px;
+  padding-       : 16px;
+  padding-bottom : 16px;
+}
+
+/*DAYS LEFT*/
+.daysleft {
+  position    : absolute;
+  text-align  : center;
+  text-shadow : none;
+  width       : 155px;
+  top         : 55px;
+  left        : 0;
+}
+
+#persProject .daysleft {
+  top  : 35px;
+  left : 21px;
+}
+
+.daysleft .xlargetext {
+  line-height : 80px;
+  text-shadow : none;
+}
+
+/*
+div.gage {
+    position     : relative;
+    float        : left;
+    width        : 278px;
+    margin-right : 22px;
+    margin-top   : 15px;
+    height       : 102px;
+}
+
+p.gagelable {
+    line-height : 1em;
+    margin-top  : 30px;
+}
+
+.gage .regulartext {
+    line-height : 16px;
+}
+*/
+
+.gauge {
+  position : relative;
+  float    : left;
+  width    : 294px;
+  height   : 130px;
+  top      : 7px;
+  left     : -7px;
+}
+
+.gaugeLeft {
+  position : relative;
+  float    : left;
+  width    : 150px;
+}
+
+canvas.gaugeCanvas {
+  position : relative;
+  width    : 171px;
+  height   : 94px;
+  left     : -15px;
+  top      : 21px;
+}
+
+.gaugeRight {
+  position    : relative;
+  width       : 130px;
+  float       : left;
+  top         : 45px;
+  line-height : 20px;
+}
+
+p.onethird {
+  position    : relative;
+  float       : left;
+  line-height : 1em;
+  text-align  : center;
+  width       : 181px;
+  margin      : 40px 10px 0 0;;
+}
+
+.statusbar {
+  position    : relative;
+  width       : 560px;
+  min-height  : 28px;
+  float       : left;
+  margin      : 36px 0 0;
+  line-height : 29px;
+  text-align  : center;
+  //background  : transparent url('images/working/status-bar.png') no-repeat left top;
+}
+
+#ppwork {
+  position   : absolute;
+  left       : 0;
+  top        : 146px;
+  width      : 195px;
+  height     : 278px;
+
+  background : transparent url('images/working/divider-horz.png') no-repeat left top;
+}
+
+.proj2Slider {
+  width      : 155px;
+  height     : 70px;
+/*background-color : black;*/
+  margin-top : 10px;
+}
+
+.work, .work.v-disabled {
+  position    : absolute;
+  left        : 0;
+  font-family : 'BebasNeueRegular', sans-serif;
+  font-size   : 18px;
+  color       : #304548;
+  top         : 166px;
+  width       : 155px;
+  height      : 188px;
+  background  : transparent url('images/working/button.png') no-repeat right top;
+  border      : none;
+}
+
+#ppwork .work {
+  top  : 120px;
+  left : 14px;
+}
+
+.work:hover {
+  background : transparent url('images/working/button.png') no-repeat right -188px;
+  cursor     : pointer;
+}
+
+.work:active {
+  background : transparent url('images/working/button.png') no-repeat right -376px;
+  cursor     : pointer;
+}
+
+.work.v-disabled {
+  background : transparent url('images/working/button.png') no-repeat right -564px !important;
+  color      : #989898;
+  cursor     : default;
+}
+
+/*TEXT CLASSES*/
+.random {
+  font-family : 'EntypoRegular';
+  font-size   : 70px;
+  color       : #00deff;
+}
+
+.work.disabled {
+  color  : #b5b5b5 !important;
+  cursor : default !important;
+}
+
+.work.disabled:hover {
+  text-decoration : none !important;
+}
+
+.clear {
+  clear : both;
+}
+
+.left {
+  float : left;
+}
+
+.regulartext {
+  font-size : 16px;
+}
+
+.minitext {
+  font-size : 9px;
+}
+
+.smalltext {
+  font-size : 12px;
+}
+
+.mediumtext {
+  font-size : 28px;
+}
+
+.largetext {
+  font-size : 46px;
+}
+
+.mlargetext {
+  font-size : 55px;
+}
+
+.xlargetext {
+  font-size : 114px;
+}
+
+.white {
+  color       : #fff;
+  text-shadow : none;
+}
+
+.black {
+  color : #302f2f;
+}
+
+.yellow {
+  color       : #f6eb8f;
+  text-shadow : none;
+}
+
+.grey {
+  color : #808080;
+}
+
+.green {
+  color       : #93fb93;
+  text-shadow : none;
+}
+
+.red {
+  color       : #ff0000;
+  text-shadow : none;
+}
+
+.completedTextColor {
+  color       : #93fb93;
+  text-shadow : none;
+}
+
+.incompleteTextColor {
+  color       : #f6eb8f;
+  text-shadow : none;
+}
+
+/**
+*  Right sidebar
+*
+*/
+.rsLabelText {
+  line-height : 8px;
+  text-shadow : none;
+  float       : left;
+  font-size   : 16px;
+}
+
+#rsNextRaceTrack {
+  line-height : 20px;
+}
+
+#workingLayout #rightsidebar {
+  top      : 16px;
+  float    : left;
+  position : relative;
+}
+
+#chatinput {
+  padding       : 0;
+  margin        : 0;
+  border        : 1px solid #CDCCCC;
+  outline       : 0 none;
+  font          : inherit;
+  width         : 179px;
+  height        : 28px;
+  background    : #ffffff;
+  border-radius : 3px 3px 3px 3px;
+}
+
+#chatinputWrapper {
+  float : left;
+}
+
+/*#chattext */
+.chatMsgText {
+  width       : 212px;
+  font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size   : 12px;
+  z-index     : 2;
+}
+
+.messageList {
+  width         : 194px;
+  max-width     : 203px;
+  height        : 283px;
+  max-height    : 275px;
+  margin        : 0;
+  background    : #ffffff;
+  border        : solid 1px #cdcccc;
+  border-radius : 3px;
+  line-height   : 14px;
+  padding       : 3px;
+  overflow-y    : scroll !important;
+  m-height      : 275px;
+  min-height    : 283px;
+  min-width     : 203px;
+}
+
+.chatbutton::-moz-focus-inner {
+  border : none;
+}
+
+/*#chattext*/
+.messageList::-moz-focus-inner {
+  border : none;
+}
+
+.chatbutton {
+  background      : url("images/working/sendmsg.png") no-repeat scroll transparent;
+  color           : #4e4e4e;
+  height          : 30px;
+  width           : 30px;
+  text-decoration : none;
+  font-size       : 12px;
+  font-family     : inherit;
+  border          : 0;
+  cursor          : pointer;
+  float           : left;
+}
+
+.chatbutton:hover {
+  opacity : 0.8;
+}
+
+.chatbutton:active {
+  opacity : 0.9;
+}
+
+#chatinput:hover {
+  box-shadow : inset 0 3px 3px #eaeaea;
+}
+
+input:focus, textarea:focus {
+  box-shadow : inset 0 6px 12px #eaeaea;
+}
+
+.chatmsg {
+  font-size   : 10pt;
+  line-height : 7px;
+}
+
+/*Car Photo*/
+
+.carphoto {
+  position   : relative;
+  width      : 100%;
+  min-width  : 1040px;
+  min-height : 386px;
+  text-align : center;
+}
+
+#persProject .carphoto {
+  top : 20px;
+}
+
+.carbase {
+}
+
+/*
+ * Slider
+ *
+*/
+.v-slider {
+  margin : 26px 0;
+}
+
+.v-slider-base {
+  background    : none repeat scroll 0 0 #EEEEEE;
+  border-left   : 1px solid #DDDDDD;
+  border-radius : 4px 4px 4px 4px;
+  border-right  : 1px solid #EEEEEE;
+  border-top    : 1px solid #DDDDDD;
+  height        : 8px;
+  position      : relative;
+  width         : auto !important;
+}
+
+.v-slider-handle {
+  background    : url("images/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50% #E6E6E6;
+  border        : 1px solid black;
+  border-radius : 4px 4px 4px 4px;
+  cursor        : default;
+  height        : 18px;
+  position      : absolute;
+  top           : -7px;
+  width         : 18px;
+  z-index       : 2;
+}
+
+.v-slider-feedback {
+  padding               : 2px 5px;
+  background            : #444;
+  color                 : #fff;
+  font-size             : 16px;
+  line-height           : 18px;
+  font-weight           : bold;
+  font-family           : "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius         : 4px;
+  -webkit-border-radius : 4px;
+  -moz-border-radius    : 4px;
+  margin                : -2px 0 0 2px;
+  text-shadow           : 0 1px 0 #000;
+}
+
+/*
+ *
+ * The proj2Graph:
+ *
+ */
+#proj2Graph {
+}
+
+#proj2GraphContainer {
+  top      : 20px;
+  position : relative;
+}
+
+#persProjTitle {
+  top      : -40px;
+  position : absolute;
+}
+
+/*
+*
+* The race:
+*
+*/
+
+#rvContentWrapper {
+  position      : relative;
+  width         : 1132px;
+  padding       : 20px 20px 20px 20px;
+  margin        : 22px auto 0;
+  height        : 725px;
+  padding-right : 61px;
+}
+
+.racePos {
+  position : absolute;
+  width    : 300px;
+}
+
+/*#team0 {*/
+/*background-color : #90ee90;*/
+/*}*/
+
+/*Race View*/
+.rvLeftHalf {
+  float : left;
+  width : 586px;
+
+}
+
+.rvRightHalf {
+  float       : left;
+  width       : 515px;
+  position    : relative;
+  margin-left : 7px;
+  margin-top  : 29px;
+}
+
+#trackImgDiv {
+  margin : 20px 0px;
+  clear  : both;
+  width  : 550px;
+}
+
+#trackImg {
+  max-width : 100%;
+}
+
+#rvTrackInfo {
+  margin-left : 3px;
+}
+
+#circuitLength {
+  width : 216px;
+}
+
+#curLap {
+  width : 155px;
+}
+
+#watchingRaceLayout .raceview p {
+  float  : left;
+  margin : 0 20px 20px 0;
+
+}
+
+#watchingRaceLayout .raceview p span, .curLap span {
+  display : block;
+
+}
+
+#watchingRaceLayout .raceview h2 {
+  display : inline-block;
+}
+
+.curLap .xlargetext {
+  margin-top  : 20px;
+  line-height : 76px;
+}
+
+#conditionsImg {
+  float        : left;
+  margin-right : 5px;
+}
+
+#conditionsText {
+  font-size : 24px;
+}
+
+#conditionsDiv {
+  top         : 0px;
+  margin-left : 6px;
+  margin-top  : -8px;
+  position    : relative;
+  float       : left;
+  width       : 395px;
+}
+
+#conditionsTextDiv {
+  position : absolute;
+  left     : 55px;
+}
+
+.team {
+  position   : absolute;
+  width      : 132px;
+  height     : 132px;
+  margin     : 0px 10px 10px 0px;
+  padding    : 10px;
+  background : #fff;
+  border     : 2px solid #343838;
+  text-align : center;
+}
+
+#team0 {
+  -moz-box-shadow    : 0 0 15px #458B00;
+  -webkit-box-shadow : 0 0 15px #458B00;
+  box-shadow         : 0 0 15px #FF0000;
+}
+
+.position {
+  position    : absolute;
+  top         : 0px;
+  left        : 0px;
+  width       : 24px;
+  height      : 24px;
+  background  : #343838;
+  color       : #fff;
+  text-shadow : none;
+}
+
+.teamname {
+  display       : block;
+  font-size     : 16px;
+  width         : 132px;
+  height        : 26px;
+  line-height   : 26px;
+  margin-bottom : 5px;
+  background    : transparent url(images/raceview/teamname.png) no-repeat top left;
+}
+
+.driver, .engine {
+  display      : block;
+  width        : 117px;
+  height       : 14px;
+  padding-left : 25px;
+  margin-top   : 5px;
+  text-align   : left;
+  font-size    : 13px;
+  line-height  : 14px;
+}
+
+.driver {
+  background : transparent url(images/raceview/driver.png) no-repeat top left;
+}
+
+.engine {
+  background : transparent url(images/raceview/engine.png) no-repeat top left;
+}
+
+.brownbg {
+  background-color : #251f21;
+  color            : #ddd;
+}
+
+.blackbg {
+  background-color : #000;
+  color            : #ddd;
+}
+
+.greenbg {
+  background-color : #01532f;
+  color            : #ddd;
+}
+
+.brownbg .driver, .blackbg .driver, .greenbg .driver {
+  background : transparent url(images/raceview/driver-white.png) no-repeat top left;
+}
+
+.brownbg .engine, .blackbg .engine, .greenbg .engine {
+  background : transparent url(images/raceview/engine-white.png) no-repeat top left;
+}
+
+.last {
+  margin-right : 0px !important;
+}
+
+#startingPositionsText {
+  position : absolute;
+  left     : 38px;
+  top      : -35px;
+}
+
+#rvSpeedSlider {
+  position : absolute;
+  bottom   : 14px;
+  right    : 360px;
+  width    : 160px;
+  height   : 44px;
+}
+
+#rvSpeedSliderLabel {
+  position : absolute;
+  bottom   : 14px;
+  right    : 526px;
+
+}
+
+#rvFinishedButton {
+  position : absolute;
+  bottom   : 20px;
+  right    : 210px;
+}
+
+#rvStartButton {
+  position : absolute;
+  bottom   : 20px;
+  right    : 120px;
+}
+
+#raceViewWidget {
+
+}
+
+/**
+ * Race results view.
+ *
+ *
+**/
+
+.raceResults #raceResultsWrapper {
+  position     : relative;
+  clear        : both;
+  margin-left  : auto;
+  margin-right : auto;
+  top          : 50px;
+  width        : 70%;
+}
+
+#watchingALayout #raceResultsWrapper {
+  position : relative;
+  top      : 5px;
+}
+
+#resultsText {
+  margin-left : 20px;
+}
+
+#rrSendButton {
+  position : relative;
+  right    : 94px;
+  top      : 470px;
+}
+
+#overallStandingsText {
+  margin-left : 20px;
+}
+
+#asOf {
+  margin-left : 10px;
+}
+
+.resultsColumn {
+  float      : left;
+  text-align : left;
+}
+
+.resultsTable table {
+  border-collapse : collapse;
+  text-align      : left;
+  width           : 100%;
+}
+
+.resultsTable {
+  font                  : normal 12px/150% Helvetica, Arial, sans-serif;
+  background            : #fff;
+  overflow              : hidden;
+  -webkit-border-radius : 3px;
+  -moz-border-radius    : 3px;
+  border-radius         : 3px;
+  margin                : 5px 20px;
+
+}
+
+.resultsTable table td, .resultsTable table th {
+  padding : 3px 10px;
+}
+
+.resultsTable table td.tdthFlag, .resultsTable table th.tdthFlag {
+  padding        : 0 0 1px 0;
+  padding-bottom : 2px;
+  vertical-align : bottom;
+}
+
+.resultsTable table td.tdthName, .resultsTable table th.tdthName {
+  text-align : left;
+}
+
+.resultsTable table thead th {
+  background       : -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #A65B1A), color-stop(1, #7F4614));
+  background       : -moz-linear-gradient(center top, #A65B1A 5%, #7F4614 100%);
+  filter           : progid:DXImageTransform.Microsoft.gradient(startColorstr = '#A65B1A', endColorstr = '#7F4614');
+  background-color : #A65B1A;
+  color            : #FFFFFF;
+  font-size        : 10px;
+  font-weight      : bold;
+}
+
+.resultsTable table thead th:first-child {
+  border : none;
+}
+
+.resultsTable table tbody td {
+  color         : #7F4614;
+  font-size     : 14px;
+  border-bottom : 1px solid #F0E5CC;
+  font-weight   : normal;
+  text-align    : right;
+}
+
+.resultsTable table tbody td:first-child {
+  border-left : none;
+}
+
+.resultsTable table tbody tr:last-child td {
+  border-bottom : none;
+}
+
+/**
+ *
+ * Damage
+ *
+ *
+*/
+.float {
+  float : left;
+}
+
+.floatR {
+  float : right;
+}
+
+.dTopRow {
+  margin : 0px 41px;
+}
+
+.dBottomRow {
+
+}
+
+.block {
+  float : left;
+
+}
+
+.dMiddleRow {
+  margin : 0px 42px 5px;
+
+}
+
+.dIcon {
+  float  : left;
+  margin : 6px 3px 0 0;
+}
+
+.dMeasure {
+
+}
+
+#damageWrapper {
+  position     : relative;
+  margin-left  : auto;
+  margin-right : auto;
+  width        : 1100px;
+}
+
+#damageImg {
+
+}
+
+#dPartsInfoRow {
+  margin-left  : auto;
+  margin-right : auto;
+  width        : 1100px;
+  margin-top   : 45px;
+}
+
+.dPartInfo {
+  float       : left;
+  width       : 317px;
+  margin-left : 6px;
+}
+
+.dVertDivider {
+  float         : left;
+  height        : 108px;
+  width         : 9px;
+  margin-top    : auto;
+  margin-bottom : auto;
+}
+
+.arrow {
+  float  : left;
+  width  : 40px;
+  height : 40px;
+  margin : -2px 4px;
+}
+
+#drContinueButton {
+  float  : right;
+  margin : 40px 174px 0 0;
+
+}
+
+.c-inline {
+  display : inline;
+}
+
+.work .work-caption {
+  position : absolute;
+  top      : 82px;
+  left     : 62px;
+}
+
+.A_FinishedGoalsWnd {
+  width : 500px;
+}
+
+.A_FinishedWorkDaysWnd {
+  width : 500px;
+}
+
+.understoodButton {
+  position : relative;
+  left     : 241px;
+}
+
+.sendButton {
+  position : relative;
+  top      : 3px;
+  left     : 241px;
+}
+
+.msgFromMe {
+  background-color : whitesmoke;
+  width            : 100%;
+}
+
+.msgFromThem {
+  background-color : honeydew;
+  width            : 100%;
+}
+
+.msgSender {
+  font-weight : bold;
+}
+
+.msgFromMe .msgSender {
+}
+
+.msgFromThem .msgSender {
+  color : green;
+}
+
+.msgLine {
+  padding-top : 4px;
+}
+
+.controlQ {
+  //margin: 5px;
+}
+
+.controlQError {
+  background : url('img/redx.png') center center no-repeat;
+  width      : 30px;
+}
+
+.controlBoxContainer {
+  margin-bottom : 5px;
+}
+
+.playerWaitingMsgB {
+  padding-top : 40px;
+  clear       : both;
+}
+
+.playerWaitingMsgA {
+  border     : 2px solid darkgreen;
+  margin-top : 10px;
+  padding    : 5px;
+
+}
+
+.c-returningUserView .v-label {
+  color: white;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.footerParts {
+  width       : 650px;
+  height      : 140px;
+  margin-top  : 16px;
+
+  font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size   : 14px;
+  font-weight : bold;
+  text-shadow : none;
+  line-height : 22px;
+  position: relative;
+
+  .partName {
+   position: absolute;
+    width: 160px;
+  }
+  .partName.rotate {
+    -webkit-transform        : rotate(-90deg);
+    -moz-transform           : rotate(-90deg);
+    -ms-transform            : rotate(-90deg);
+    -o-transform             : rotate(-90deg);
+    transform                : rotate(-90deg);
+
+  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+    -webkit-transform-origin : 50% 50%;
+    -moz-transform-origin    : 50% 50%;
+    -ms-transform-origin     : 50% 50%;
+    -o-transform-origin      : 50% 50%;
+    transform-origin         : 50% 50%;
+
+  /* Should be unset in IE9+ I think. */
+    filter                   : progid:DXImageTransform.Microsoft.BasicImage(rotation = 3);
+  }
+
+  .partPic {
+    position : absolute;
+    top      : 0;
+    bottom   : 0;
+    margin   : auto;
+    min-height: 50px;
+    float : left;
+  }
+
+  #A_p1n {
+    top: 0px;
+    left: 20px;
+  }
+  #A_p1p {
+    left: 150px;
+  }
+  #B_p1n {
+    top: 30px;
+    left: 250px;
+  }
+  #B_p1p {
+    left: 360px;
+  }
+
+  #A_p2n {
+    top: 0px;
+    left: 20px;
+  }
+  #A_p2p {
+    left: 140px;
+  }
+  #B_p2n {
+    top: 30px;
+    left: 250px;
+  }
+  #B_p2p1 {
+    left: 360px;
+  }
+  #B_p2p2 {
+    left: 430px;
+  }
+
+  #A_p3n {
+    top: 10px;
+    left: 20px;
+  }
+  #A_p3p {
+    left: 150px;
+  }
+  #B_p3n {
+    top: 30px;
+    left: 250px;
+  }
+  #B_p3p {
+    left: 360px;
+  }
+}
+
+#simLoginLocationLabel {
+  font-size: 9px;
+}
+.surveyTitle {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0 0 10px 0;
+}
+
+
+

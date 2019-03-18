@@ -1,0 +1,88 @@
+ <div id="masterdiv">
+        <div id="instructionstitle" class="instructionstitle" onclick="showMessage('true',msgInstructions)" title="Instructions for the task" style="visibility: hidden;">
+<span style="position:relative; top: 4px; left:-4px;">
+<img width="18px" height="18px" src="images/icons/info_icon.png" alt="">
+</span> <b>Instructions</b>
+        </div>
+        <div id="infobox">
+            <div class="taskbox"></div>
+            <div class="stagebox"></div>
+            <div class="infotitle">
+                <b>Task status</b>
+            </div>
+            <div class="infostage">Item:</div>
+            <div id="stage" class="infostageval">1 of 15</div>
+            <div class="smallmessage_title">
+                <b></b>
+            </div>
+            <div class="infoyouget">
+                <b>You receive</b>
+            </div>
+            <div id="infoyougetval" class="infoyougetval">
+                <b> </b>
+            </div>
+            <div class="infoothergets">
+                <b>Other receives</b>
+            </div>
+            <div id="infoothergetsval" class="infoothergetsval">
+                <b> </b>
+            </div>
+            <div id="msgbox" class="info_smallmessage"></div>
+        </div>
+        <div id="youget_title" class="youget_title">You receive</div>
+        <div id="othergets_title" class="othergets_title">Other receives</div>
+        <div id="min_youget" class="min_youget"></div>
+        <div id="max_youget" class="min_othergets"></div>
+        <div id="min_othergets" class="max_youget"></div>
+        <div id="max_othergets" class="max_othergets"></div>
+    </div>
+    <div id="visualaid">
+        <div id="youget_bar"></div>
+        <div id="othergets_bar"></div>
+        <div id="scale_min">0</div>
+        <div id="scale_line"></div>
+        <div id="scale_max">100</div>
+    </div>
+    <div id="enc_box"></div>
+    <div id="infomessage" style="visibility: visible; left: 370px; width: 500px; top: 330px;">
+        <div class="top-left-corner">
+            <div class="top-left-inside">•</div>
+        </div>
+        <div class="bottom-left-corner">
+            <div class="bottom-left-inside">•</div>
+        </div>
+        <div class="top-right-corner">
+            <div class="top-right-inside">•</div>
+        </div>
+        <div class="bottom-right-corner">
+            <div class="bottom-right-inside">•</div>
+        </div>
+        <div class="roundbottom"></div>
+        <div class="roundbottomright"></div>
+        <div id="message_contents">
+<span style="position:relative; top: 4px; left:-4px;">
+<img width="18px" height="18px" src="images/icons/info_icon.png">
+</span> <b>Welcome to the online social value orientation measure.</b> <br> <br> Note: this box is
+            freely movable. <br> <br> Underneath this box you find the SVO Slider measure. You as
+            the decision maker can register choices by moving a slider to change payoff allocations
+            between you and some other person. Once you have made your choice, press the Submit
+            button to go on to the next questions. <br> <br> There are no right or wrong answers,
+            this is all about personal preferences. As you can see, your choices will influence both
+            the amount of money you receive as well as the amount of money the other receives. <br>
+            <br>
+
+            <div id="continuebutton" onmouseout="this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';" onmouseover="this.style.background='#E5E5E5';this.style.borderColor='black';" onclick="showMessage('true',msgEmail)" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); border-color: grey; cursor: pointer;">
+                Continue
+            </div>
+            <br>
+        </div>
+    </div>
+    <div id="gobutton" onmouseout="this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';" onmouseover="this.style.background='#E5E5E5';this.style.borderColor='black';" onclick="goClick()" title="Click to store your preference." style="visibility: hidden;">
+        Submit!
+    </div>
+
+    <span id="slider_value" style="position: absolute; top: 430px; display: block;"></span>
+    <span id="slider_amount" style="position: absolute; top: 473px; display: block;"></span>
+
+    <div style="position: absolute; display: inline-block; z-index: 0; left: 405px; top: 455px; width: 510px; background-image: url('images/slider/slider_big.gif');" onclick="sliderClickMove('slider', event.clientX, 0);"></div>
+    <img id="slider" width="30" height="30" src="images/slider/circle_ipad.gif" alt="Move to select value." title="Move to select value." style="position: absolute; left: 400px; top: 449px;">

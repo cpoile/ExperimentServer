@@ -1,0 +1,2328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Social Value Orientation</title>
+<link REL="SHORTCUT ICON" HREF="http://vlab.ethz.ch/seq_invest/images/icons/favicon.ico">
+<link rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+    margin      : 0px;
+    padding     : 10px;
+    font-family : Arial, sans;
+    font-size   : 90%;
+}
+
+.restable {
+    font-family   : Arial, sans;
+    font-size     : 100%;
+    border-right  : 1px solid grey;
+    padding-left  : 5px;
+    padding-right : 5px;
+}
+
+.subtable {
+    vertical-align : top;
+}
+
+#graph {
+    position : absolute;
+    top      : 250px;
+    width    : 760px;
+    height   : 134px;
+    margin   : 8px;
+    padding  : 0px;
+}
+
+#graph ul {
+    position         : absolute;
+    left             : 35px;
+    display          : block;
+    width            : 567px;
+    height           : 120px;
+    background-color : transparent;
+    border-left      : 1px solid grey;
+    margin           : 0px;
+}
+
+#graph li {
+    display    : block;
+    display    : inline-block;
+    list-style : none;
+    position   : absolute;
+    width      : 25px;
+    text-align : center;
+    visibility : hidden;
+    padding    : 0px;
+    margin     : 0px;
+    border     : 0px;
+    font-size  : 0pt;
+}
+
+#graph_finalresults {
+    position : relative;
+    width    : 400px;
+    height   : 100px;
+    margin   : 8px;
+    padding  : 0px;
+}
+
+#graph_finalresults ul {
+    position         : absolute;
+    left             : 30px;
+    display          : block;
+    width            : 380px;
+    height           : 50px;
+    background-color : transparent;
+    border-left      : 1px solid grey;
+    margin           : 0px;
+}
+
+#graph_finalresults li {
+    display    : block;
+    display    : inline-block;
+    list-style : none;
+    position   : absolute;
+    width      : 5px;
+    text-align : center;
+    visibility : hidden;
+    padding    : 0px;
+    margin     : 0px;
+    border     : 0px;
+    font-size  : 0pt;
+}
+
+div.top-left-corner {
+    top   : 0px;
+    left  : 0px;
+    color : #F9F9F9;
+}
+
+div.bottom-left-corner {
+    bottom : 0px;
+    left   : 0px;
+    color  : #F9F9F9;
+}
+
+div.top-right-corner {
+    top   : 0px;
+    right : 0px;
+    color : #F9F9F9;
+}
+
+div.bottom-right-corner {
+    bottom : 0px;
+    right  : 0px;
+    color  : #F9F9F9;
+}
+
+div.top-left-inside {
+    left : -2px;
+    top  : -15px;
+}
+
+div.bottom-left-inside {
+    left : -2px;
+    top  : -19px;
+}
+
+div.top-right-inside {
+    left : -6px;
+    top  : -15px;
+}
+
+div.bottom-right-inside {
+    left : -6px;
+    top  : -19px;
+}
+
+div.box-contents {
+    position : relative;
+    padding  : 8px;
+    color    : #000;
+}
+
+span.red {
+    color : red;
+}
+
+span.green {
+    color : green;
+}
+
+span.black {
+    color : #000;
+}
+
+div.top-left-corner, div.bottom-left-corner, div.top-right-corner, div.bottom-right-corner {
+    position         : absolute;
+    width            : 6px;
+    height           : 6px;
+    background-color : #FFF;
+    overflow         : hidden;
+}
+
+div.top-left-inside, div.bottom-left-inside, div.top-right-inside, div.bottom-right-inside {
+    position    : relative;
+    font-size   : 40px;
+    font-family : arial;
+    color       : F9F9F9;
+    line-height : 40px;
+}
+
+.infotitle {
+    display  : inline-block;
+    position : absolute;
+    left     : 31em;
+    top      : 1.3em;
+    width    : 100px;
+}
+
+.instructionstitle {
+    display    : inline-block;
+    visibility : hidden;
+    position   : absolute;
+    left       : 615px;
+    top        : 75px;
+}
+
+.smallmessage_title {
+    display  : inline-block;
+    position : absolute;
+    left     : 18.1em;
+    top      : 12.1em;
+}
+
+.infoyouget, .infoyougetval {
+    display   : inline-block;
+    position  : absolute;
+    left      : 405px;
+    top       : 197px;
+    font-size : 120%;
+    width     : 180px;
+}
+
+.infoyougetval {
+    display   : inline-block;
+    left      : 575px;
+    width     : 100px;
+    font-size : 120%;
+}
+
+.infoothergets, .infoothergetsval {
+    display   : inline-block;
+    position  : absolute;
+    left      : 405px;
+    top       : 247px;
+    width     : 150px;
+    font-size : 120%;
+}
+
+.infoothergetsval {
+    display   : inline-block;
+    left      : 575px;
+    width     : 100px;
+    font-size : 120%;
+    width     : 180px;
+}
+
+.infostage, .infostageval {
+    display  : inline-block;
+    position : absolute;
+    left     : 31em;
+    top      : 2.8em;
+}
+
+.infostageval {
+    display : inline-block;
+    left    : 37em;
+    width   : 100px;
+}
+
+.info_smallmessage {
+    display  : inline-block;
+    position : absolute;
+    left     : 22.5em;
+    top      : 3em;
+    width    : 20em;
+}
+
+.taskbox {
+    display  : block;
+    position : absolute;
+    left     : 525px;
+    top      : 15px;
+    width    : 180px;
+    height   : 55px;
+    border   : 1px solid #F2F2F2;
+}
+
+.stagebox {
+    display  : inline-block;
+    position : absolute;
+    left     : 355px;
+    top      : 165px;
+    width    : 300px;
+    height   : 145px;
+    border   : 1px solid #F2F2F2;
+}
+
+.youget_title {
+    display  : inline-block;
+    position : absolute;
+    left     : 290px;
+    top      : 429px;
+}
+
+.othergets_title {
+    display  : inline-block;
+    position : absolute;
+    left     : 290px;
+    top      : 473px;
+}
+
+.min_youget, .max_youget, .min_othergets, .max_othergets {
+    display  : inline-block;
+    position : absolute;
+    color    : #808080;
+}
+
+.min_youget {
+    left : 403px;
+    top  : 430px;
+}
+
+.max_youget {
+    left : 403px;
+    top  : 473px;
+}
+
+.min_othergets {
+    left : 903px;
+    top  : 430px;
+}
+
+.max_othergets {
+    left : 903px;
+    top  : 473px;
+}
+
+div#infobox {
+    display   : inline;
+    width     : 400px;
+    height    : 100px;
+    padding   : 20px;
+    margin    : 0;
+    color     : #000;
+    position  : absolute;
+    left      : 50px;
+    top       : 85px;
+    font-size : 120%;
+}
+
+div#infomessage {
+    width          : 500px;
+    height         : auto;
+    padding-top    : 5px;
+    padding-left   : 15px;
+    padding-right  : 15px;
+    padding-bottom : 35px;
+    margin         : 0;
+    background     : #F9F9F9;
+    color          : #000;
+    position       : absolute;
+    z-index        : 2;
+    visibility     : hidden;
+    font-size      : 120%;
+}
+
+div#copyright {
+    position : absolute;
+    bottom   : 5px;
+    left     : 17px;
+}
+
+div#gobutton, div#continuebutton {
+    position   : absolute;
+    display    : table-cell;
+    border     : 1px solid grey;
+    background : white;
+    text-align : center;
+}
+
+div#gobutton {
+    padding-top    : 10px;
+    padding-bottom : 10px;
+    left           : 580px;
+    top            : 505px;
+    width          : 150px;
+}
+
+div#continuebutton {
+    padding-top    : 10px;
+    padding-bottom : 10px;
+    height         : auto;
+    width          : 500px;
+}
+
+div#masterdiv {
+    float : right;
+}
+
+div#visualaid {
+    position         : absolute;
+    top              : 250px;
+    left             : 725px;
+    width            : 185px;
+    height           : 145px;
+    background-color : white;
+    border           : 1px solid #F2F2F2;
+}
+
+div#youget_bar {
+    position         : absolute;
+    top              : 32px;
+    left             : 29px;
+    width            : 0px;
+    height           : 20px;
+    background-color : #006699;
+    border-left      : 1px solid #F2F2F2;
+}
+
+div#othergets_bar {
+    position         : absolute;
+    top              : 82px;
+    left             : 29px;
+    width            : 0px;
+    height           : 20px;
+    background-color : #006699;
+    border-left      : 1px solid #F2F2F2;
+}
+
+div#enc_box {
+    position : absolute;
+    top      : 200px;
+    left     : 220px;
+    border   : 1px solid #F2F2F2;
+    width    : 850px;
+    height   : 380px;
+}
+
+div#scale_min {
+    position : absolute;
+    color    : #808080;
+    left     : 26px;
+    top      : 59px;
+}
+
+div#scale_max {
+    position : absolute;
+    color    : #808080;
+    left     : 118px;
+    top      : 59px;
+}
+
+div#scale_line {
+    position         : absolute;
+    top              : 66px;
+    left             : 36px;
+    width            : 81px;
+    height           : 2px;
+    background-color : #F2F2F2;
+}
+
+</style>
+
+</head>
+
+<body>
+<div><img src="images/eth_logo.gif" width="120px" height="60px" alt="ETH logo" title="ETH logo"></div>
+<br>
+
+<div id="departmentLayer" style="position:absolute;left:17px;top:60px">D-GESS | Chair of Decision Theory</div>
+<div id="titleLayer" style="position:absolute;left:127px;top:30px;font-size:120%;font-family:Arial;background:#FFF;"><b>s</b>ocial
+    <b>v</b>alue <b>o</b>rientation
+</div>
+<div id="logoLayer" style="position:absolute;left:127px;top:20px;z-index:-1;">
+    <img src="images/logo.gif" alt="Game logo" height="40" width="80"></div>
+<br><br><br>
+
+<div id='masterdiv'>
+
+    <div id='instructionstitle' class='instructionstitle' title='Instructions for the task' onclick=showMessage(
+    'true',msgInstructions)><span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Instructions</b>
+</div>
+
+<div id="infobox">
+    <div class='taskbox'>&nbsp;</div>
+    <div class='stagebox'>&nbsp;</div>
+    <div class='infotitle'><b>Task status</b></div>
+    <!--<div class='inforound'>Set:&nbsp;</div><div id="round" class="inforoundval"></div> -->
+    <div class='infostage'>Item:&nbsp;</div>
+    <div id="stage" class="infostageval"></div>
+    <div class='smallmessage_title'><b></b></div>
+    <div class='infoyouget'><b>You receive</b></div>
+    <div class='infoyougetval' id='infoyougetval'><b>&nbsp;</b></div>
+    <div class='infoothergets'><b>Other receives</b></div>
+    <div class='infoothergetsval' id='infoothergetsval'><b>&nbsp;</b></div>
+    <div class='info_smallmessage' id="msgbox"></div>
+
+</div>
+
+<div class='youget_title' id='youget_title'>You receive</div>
+<div class='othergets_title' id='othergets_title'>Other receives</div>
+<div id='min_youget' class='min_youget'></div>
+<div id='max_youget' class='min_othergets'></div>
+<div id='min_othergets' class='max_youget'></div>
+<div id='max_othergets' class='max_othergets'></div>
+
+</div><!--
+<div id="resultbox">
+<b>Round Results</b><br>
+<div id="graph_finalresults">
+<div id="finalresults_highval">+</div>
+<div id="finalresults_medval">0</div>
+<ul style="top:0px;border-bottom:1px solid grey;z-index:0;"></ul>
+<ul style="top:45px"></ul>
+<div id="finalresults_lowval">-</div>
+</div>
+<div id="results_table">Your overall results will show up here.</div>
+</div>
+-->
+
+<div id="visualaid">
+    <div id="youget_bar"></div>
+    <div id="othergets_bar"></div>
+    <div id='scale_min'>0</div>
+    <div id='scale_line'></div>
+    <div id='scale_max'>100</div>
+</div>
+
+<div id="enc_box"></div>
+
+<div id="infomessage">
+    <div class='top-left-corner'>
+        <div class='top-left-inside'>&bull;</div>
+    </div>
+    <div class='bottom-left-corner'>
+        <div class='bottom-left-inside'>&bull;</div>
+    </div>
+    <div class='top-right-corner'>
+        <div class='top-right-inside'>&bull;</div>
+    </div>
+    <div class='bottom-right-corner'>
+        <div class='bottom-right-inside'>&bull;</div>
+    </div>
+    <div class='roundbottom'></div>
+    <div class='roundbottomright'></div>
+    <div id="message_contents"></div>
+</div>
+
+<!--
+<div id="graph">
+<div id="graph_highval">+</div>
+<div id="graph_medval">0</div>
+<ul style="top:0px;border-bottom:1px solid grey;"></ul>
+<ul style="top:120px"></ul>
+<div id="graph_lowval">-</div>
+</div>
+-->
+
+<div id="gobutton" title="Click to store your preference." onClick="goClick()" onMouseOver="this.style.background='#E5E5E5';this.style.borderColor='black';" onMouseOut="this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';">
+    &nbsp;Submit!&nbsp;</div>
+
+<script type="text/javascript" src="webkitdragdrop.js"></script>
+<script type="text/javascript">
+
+/* HISTOGRAM SCRIPT                            */
+/* Loosely based on an example on www.xul.fr   */
+/*                                             */
+/* Syntax: addBar(value), clearHist();         */
+/*                                             */
+
+function addBar(value) {
+    var graphdiv = document.getElementById("graph");
+    var dnl = graphdiv.getElementsByTagName("ul").item(0);
+    var newLi = document.createElement('li');
+    newLi.innerHTML = value;
+    dnl.appendChild(newLi);
+    setTimeout("makeGraph()", delayInvestClick);
+}
+
+function addResultBar(value) {
+    var graphdiv = document.getElementById("graph_finalresults");
+    var dnl = graphdiv.getElementsByTagName("ul").item(0);
+
+    var newLi = document.createElement('li');
+    newLi.innerHTML = value;
+    dnl.appendChild(newLi);
+
+    makeResultsGraph();
+}
+
+function makeResultsGraph() /* draws a graph based on data in the "graph" list items */ {
+    var container = document.getElementById('graph_finalresults');
+    var dnl = container.getElementsByTagName("li");
+    var hval = 1;
+
+    for (var i = 0; i < dnl.length; i++) {
+        var item = dnl.item(i);
+        var value = Math.abs(item.innerHTML);
+        if (value > hval) {
+            hval = value;
+        }
+    }
+    var reScale = (50 / hval);
+    document.getElementById("finalresults_highval").innerHTML = hval;
+    document.getElementById("finalresults_lowval").innerHTML = eval(-hval);
+
+    for (var i = 0; i < dnl.length; i++) {
+        var item = dnl.item(i);
+        var value = item.innerHTML;
+        item.style.left = (i * 7 + 2) + "px";
+
+        /* account for negative values */
+        if (value < 0) {
+            item.style.height = -Math.floor((reScale * value)) + "px";
+            item.style.maxHeight = -Math.floor((reScale * value)) + "px";
+            item.style.top = (50) + "px";
+            item.style.backgroundColor = "#FF0000";
+            /* #FFF400 */
+            var bgc = "#FF0000";
+        } else if (value > 0) {
+            item.style.height = Math.floor((reScale * value)) + "px";
+            item.style.maxHeight = Math.floor((reScale * value)) + "px";
+            item.style.top = (50 - Math.floor((reScale * value))) + "px";
+            item.style.backgroundColor = "#00C610";
+            /* #00137F */
+            var bgc = "#00C610";
+        } else {
+            item.style.height = "10px";
+            item.style.top = "40px";
+            item.style.backgroundColor = "#FFF";
+            /* #00137F */
+            var bgc = "#FFF";
+        }
+        item.style.color = bgc;
+        item.title = value;
+        item.style.visibility = "visible";
+    }
+}
+
+function addDot(stage) {
+    var newDot = document.createElement('div');
+    newDot.setAttribute("id", "dot_" + stage);
+    newDot.setAttribute("title", "Indicates you changed the investment percentage.");
+    newDot.style.position = "absolute";
+    newDot.style.align = "center";
+    newDot.style.zIndex = 1;
+    newDot.style.left = 36 + (stage * 30) + "px";
+    newDot.style.top = "360px";
+    newDot.style.fontSize = '24pt';
+    newDot.innerHTML = '&bull;';
+    document.body.appendChild(newDot);
+}
+
+function makeGraph() /* draws a graph based on data in the "graph" list items */ {
+    var container = document.getElementById('graph');
+    var dnl = container.getElementsByTagName("li");
+    var hval = 1;
+
+    for (var i = 0; i < dnl.length; i++) {
+        var item = dnl.item(i);
+        var value = Math.abs(item.innerHTML);
+        if (value > hval) {
+            hval = value;
+        }
+    }
+    var reScale = (115 / hval);
+    document.getElementById("graph_highval").innerHTML = hval;
+    document.getElementById("graph_lowval").innerHTML = eval(-hval);
+
+    for (var i = 0; i < dnl.length; i++) {
+        var item = dnl.item(i);
+        var value = item.innerHTML;
+        item.style.left = (i * 30 + 5) + "px";
+
+        /* creating a value label to position it nicely */
+        if (!document.getElementById("value_" + i)) {
+            var newValueLabel = document.createElement('div');
+            newValueLabel.setAttribute("id", "value_" + i);
+            newValueLabel.style.position = "absolute";
+            newValueLabel.style.align = "center";
+            newValueLabel.style.zIndex = 1;
+            newValueLabel.style.width = "50px";
+            document.body.appendChild(newValueLabel);
+        }
+
+        document.getElementById("value_" + i).style.left = 55 + eval(item.style.left.replace("px", "")) + "px";
+        document.getElementById("value_" + i).innerHTML = value;
+
+        /* account for negative values */
+        if (value < 0) {
+            item.style.height = -Math.floor((reScale * value)) + "px";
+            item.style.maxHeight = -Math.floor((reScale * value)) + "px";
+            item.style.top = (121) + "px";
+            item.style.backgroundColor = "#FF0000";
+            /* #FFF400 */
+            document.getElementById("value_" + i).style.top = 258 + eval(item.style.top.replace("px", "")) + eval(item.style.height.replace("px", "")) + "px";
+        } else if (value > 0) {
+            item.style.height = Math.floor((reScale * value)) + "px";
+            item.style.maxHeight = Math.floor((reScale * value)) + "px";
+            item.style.top = (120 - Math.floor((reScale * value))) + "px";
+            item.style.backgroundColor = "#00C610";
+            /* #00137F */
+            document.getElementById("value_" + i).style.top = 243 + eval(item.style.top.replace("px", "")) + "px";
+        } else {
+            item.style.height = "10px";
+            item.style.top = "106px";
+            item.style.backgroundColor = "#FFF";
+            /* #00137F */
+            document.getElementById("value_" + i).style.top = 258 + eval(item.style.top.replace("px", "")) + "px";
+        }
+
+        item.style.color = item.style.backgroundColor;
+        item.title = value;
+        item.style.visibility = "visible";
+    }
+}
+
+function clearHist() { /* completely removes the histogram and the data */
+    var container = document.getElementById("graph");
+    var dnl = container.getElementsByTagName("li");
+    while (dnl.length > 0) {
+        for (var i = 0; i < dnl.length; i++) {
+            var item = dnl.item(i);
+            item.parentNode.removeChild(dnl.item(i));
+        }
+    }
+    var i = 0;
+    while (document.getElementById("value_" + i)) {
+        var label = document.getElementById("value_" + i);
+        label.parentNode.removeChild(label);
+        if (document.getElementById("dot_" + (i + 1))) {
+            var label = document.getElementById("dot_" + (i + 1));
+            label.parentNode.removeChild(label);
+        }
+        i++;
+    }
+    makeGraph();
+}
+
+//makeGraph();
+
+/*     END OF HISTOGRAM SCRIPT     */
+
+/*                                                                   */
+/* SLIDER SCRIPT, DO NOT CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING   */
+/*                                                                   */
+/* Syntax: addSlider('name', distance x, distance y);                */
+/*         showValue('name');                                        */
+/*         clickMe(object, 'true') to make an object freely movable  */
+/*         initSlider('name') to initialize a new scale              */
+/*                                                                   */
+
+document.onmousemove = moveMouse;
+document.onmouseup = upMouse;
+
+var dragMe = null;
+var value = null;
+var valueArray = new Array();
+/* array, multiple entries only when multiple sliders */
+var valueArrayLower = new Array();
+/* array, multiple entries only when multiple sliders */
+var valueArrayPixels = new Array();
+var positionArray = new Array();
+/* array, multiple entries only when multiple sliders */
+var meX = new Array();
+var meY = new Array();
+var limit = "false";
+var spacing = 0;
+
+top_minimum = 85;
+top_maximum = 85;
+top_descending = 1;
+
+bottom_minimum = 50;
+bottom_maximum = 100;
+bottom_descending = 1;
+
+/* adjust the slider setup to show the correct values */
+function adjustSlider(tminimum, tmaximum, tdescending, bminimum, bmaximum, bdescending) {
+    top_minimum = eval(tminimum);
+    top_maximum = eval(tmaximum);
+    top_descending = eval(tdescending);
+
+    bottom_minimum = eval(bminimum);
+    bottom_maximum = eval(bmaximum);
+    bottom_descending = eval(bdescending);
+
+    if (top_descending == 1) {
+        document.getElementById('min_youget').innerHTML = top_maximum;
+        document.getElementById('max_youget').innerHTML = top_minimum;
+    } else {
+        document.getElementById('min_youget').innerHTML = top_minimum;
+        document.getElementById('max_youget').innerHTML = top_maximum;
+    }
+
+    if (bottom_descending == 1) {
+        document.getElementById('min_othergets').innerHTML = bottom_maximum;
+        document.getElementById('max_othergets').innerHTML = bottom_minimum;
+    } else {
+        document.getElementById('min_othergets').innerHTML = bottom_minimum;
+        document.getElementById('max_othergets').innerHTML = bottom_maximum;
+    }
+}
+
+objMinYouGet = document.getElementById('min_youget');
+objMaxYouGet = document.getElementById('max_youget');
+objMinOtherGets = document.getElementById('min_othergets');
+objMaxOtherGets = document.getElementById('max_othergets');
+
+/* updates the scale and determines the values */
+function updateScale(item, dX, offsetX, spacing) {
+    if (top_descending == 0) {
+        value = top_minimum + (dX - offsetX) / (500 / (top_maximum - top_minimum));
+    } else {
+        value = top_maximum - (dX - offsetX) / (500 / (top_maximum - top_minimum));
+    }
+    updateValue(item, (parseInt(dX) + parseInt(spacing)), value);
+    if (bottom_descending == 0) {
+        value = bottom_minimum + (dX - offsetX) / (500 / (bottom_maximum - bottom_minimum));
+    } else {
+        value = bottom_maximum - (dX - offsetX) / (500 / (bottom_maximum - bottom_minimum));
+    }
+    updateAmount(item, (parseInt(dX) + parseInt(spacing)), value);
+
+    if (dX < 420) {
+        objMinYouGet.style.color = '#E0E0E0';
+        objMinOtherGets.style.color = '#E0E0E0';
+    } else {
+        objMinYouGet.style.color = '#808080';
+        objMinOtherGets.style.color = '#808080';
+    }
+    if (dX > 880) {
+        objMaxYouGet.style.color = '#E0E0E0';
+        objMaxOtherGets.style.color = '#E0E0E0';
+    } else {
+        objMaxYouGet.style.color = '#808080';
+        objMaxOtherGets.style.color = '#808080';
+    }
+}
+
+function moveMouse(m) { /* where is the mouse? */
+    var pos = mPos(m);
+
+    if (dragMe) {
+        var dX = eval(pos.x) - eval(meX[dragMe.id]);
+        var dY = eval(pos.y) - eval(meY[dragMe.id]);
+
+        if (limit == "true") { /* is this a slider? yes, in fact it is */
+            var valueId = dragMe.id + "_value";
+            var offsetX = positionArray[valueId];
+
+            if (dX > (offsetX + 500)) {
+                dX = (offsetX + 500);
+            }
+            /* right boundaries */
+            if (dX < offsetX) {
+                dX = offsetX;
+            } else {
+                dX = dX;
+            }
+            /* left boundaries */
+
+            dragMe.style.position = 'absolute';
+            dragMe.style.left = dX + "px";
+
+            updateScale(dragMe, dX, offsetX, spacing);
+
+        } else { /* this is not a slider, we can move it freely */
+            dragMe.style.position = 'absolute';
+            dragMe.style.left = dX + "px";
+            dragMe.style.top = dY + "px";
+        }
+        return false;
+    }
+}
+
+objMainVal = null;
+objYouGetVal = null;
+objYouGetBar = null;
+
+function updateValue(slider, pos, value) { /* updates the value and position above the slider */
+    var valueId = slider.id + "_value";
+    valueArray[valueId] = value;
+    valueArrayPixels[valueId] = pos;
+    if (value < 10) {
+        var sp = 4;
+    } else {
+        sp = 2;
+    }
+    objMainVal.innerHTML = Math.round(value);
+    if (pos > 0) {
+        objMainVal.style.left = pos + sp + "px";
+    }
+    // parse to infobox
+    objYouGetVal.innerHTML = Math.round(value);
+
+    objYouGetBar.style.width = Math.round(value) + "px";
+}
+
+objMainAm = null;
+objOtherGetsVal = null;
+objOtherGetsBar = null;
+
+function updateAmount(slider, pos, value) { /* updates the number and if wanted position underneath the slider */
+    var valueId = slider.id + "_amount";
+    valueArrayLower[valueId] = value;
+    if (value < 10) {
+        var sp = 4;
+    } else {
+        sp = 2;
+    }
+    objMainAm.innerHTML = Math.round(value);
+    if (pos > 0) {
+        objMainAm.style.left = pos + sp + "px";
+    }
+    // parse to infobox
+    objOtherGetsVal.innerHTML = Math.round(value);
+
+    objOtherGetsBar.style.width = Math.round(value) + "px";
+}
+
+function mPos(m) {
+    if (!m) { /* handler for iexplore */
+        if (event.clientX || event.clientY) {
+            return {x: event.clientX, y: event.clientY};
+        }
+    } else { /* all other browsers */
+        if (m.pageX || m.pageY) {
+            return {x: m.pageX, y: m.pageY};
+        }
+    }
+}
+
+/* if we click an item, this is what we drag */
+function clickMe(item, noslide) {
+    item.onmousedown = function (m) {
+        if (noslide == 'false') {
+            limit = "true";
+        } else {
+            limit = "false";
+        }
+        dragMe = item;
+
+        /* we should take into account that the mouse is not on the edge of the picture */
+        var x = item.style.left;
+        var y = item.style.top;
+
+        var pos = mPos(m);
+        meX[item.id] = pos.x - eval(x.replace("px", ""));
+        meY[item.id] = pos.y - eval(y.replace("px", ""));
+        return false;
+    }
+}
+
+/* once we let go, no more dragging */
+function upMouse(m) {
+    dragMe = null;
+}
+
+function sliderClickMove(name, mpos, allowed) {
+    if (allowed == 1) {
+        if (mpos < 410) {
+            mpos = 410;
+        }
+        if (mpos > 910) {
+            mpos = 910;
+        }
+        document.getElementById(name).style.left = mpos - 10 + 'px';
+        valueId = name + "_value"; // this is static, so will not work for other scripts!
+        updateScale(document.getElementById(name), eval(mpos - 10), eval(positionArray[valueId]), 0);
+    } else if ((allowed == 0) && (document.getElementById('slider').style.display == 'none')) {
+        /* we have option 3 of displaying: once we click, the slider appears */
+        if (mpos < 410) {
+            mpos = 410;
+        }
+        if (mpos > 910) {
+            mpos = 910;
+        }
+        document.getElementById('slider').style.display = 'block';
+        document.getElementById(name).style.left = mpos - 10 + 'px';
+        valueId = name + "_value"; // this is static, so will not work for other scripts!
+        updateScale(document.getElementById(name), mpos - 10, positionArray[valueId], 0);
+    } else {
+        return false;
+    }
+}
+
+function initSlider(name) {
+    valueId = name + "_value";
+    if (slider_opt == 1) {
+        sliderClickMove(name, eval(positionArray[valueId]) + 10 + 250, 1);
+    }
+    if (slider_opt == 2) {
+        sliderClickMove(name, eval(positionArray[valueId]) + 205 + Math.floor(Math.random() * 101), 1);
+    }
+    if (slider_opt == 3) {
+        document.getElementById('slider').style.display = 'none';
+        document.getElementById('youget_bar').style.width = 0;
+        document.getElementById('othergets_bar').style.width = 0;
+        document.getElementById('slider_value').innerHTML = "&nbsp;";
+        document.getElementById('slider_amount').innerHTML = "&nbsp;";
+        document.getElementById('infoyougetval').innerHTML = "&nbsp;";
+        document.getElementById('infoothergetsval').innerHTML = "&nbsp;";
+    }
+}
+
+var ipad_slidemove = null;
+function addSlider(name, xpos, ypos) {
+    var newValue = document.createElement('span');
+    var valueName = name + "_value";
+    newValue.setAttribute('id', valueName);
+    newValue.style.position = "absolute";
+    newValue.style.top = ypos + "px";
+    newValue.style.display = 'block';
+    document.body.appendChild(newValue);
+
+    var newAmount = document.createElement('span');
+    var amountName = name + "_amount";
+    newAmount.setAttribute('id', amountName);
+    newAmount.style.position = "absolute";
+    newAmount.style.top = 43 + ypos + "px";
+    newAmount.style.display = 'block';
+    document.body.appendChild(newAmount);
+
+    var newBackground = document.createElement('div');
+    newBackground.style.position = "absolute";
+    newBackground.style.display = "inline-block";
+    newBackground.style.zIndex = 0;
+    newBackground.style.left = 5 + xpos + "px";
+    newBackground.style.top = 25 + ypos + "px";
+    newBackground.style.width = 510 + "px";
+    newBackground.innerHTML = "&nbsp;";
+    newBackground.setAttribute('onClick', "moveSliderToPos('" + name + "', event.clientX, 0);");
+    newBackground.style.backgroundImage = "url(images/slider/slider_big.gif)";
+    document.body.appendChild(newBackground);
+
+    var newSlider = document.createElement('img');
+    newSlider.setAttribute('id', name);
+    newSlider.setAttribute('src', 'images/slider/circle_ipad.gif');
+    newSlider.setAttribute('width', 30);
+    newSlider.setAttribute('height', 30);
+    newSlider.setAttribute('alt', "Move to select value.");
+    newSlider.setAttribute('title', "Move to select value.");
+    document.body.appendChild(newSlider);
+    newSlider.style.position = "absolute";
+
+    /* we randomize the slider starting position */
+    /*newSlider.style.left = xpos+(Math.random()*300)+"px";*/
+
+    /* we always start the slider at 0 */
+    newSlider.style.left = xpos + (0) + "px";
+
+    newSlider.style.top = ypos + 19 + "px";
+
+    var valueId = name + "_value";
+    positionArray[valueId] = xpos;
+
+    /* some extra optimization */
+    objMainVal = document.getElementById('slider_value');
+    objYouGetVal = document.getElementById('infoyougetval');
+    objYouGetBar = document.getElementById('youget_bar');
+
+    objMainAm = document.getElementById('slider_amount');
+    objOtherGetsVal = document.getElementById('infoothergetsval');
+    objOtherGetsBar = document.getElementById('othergets_bar');
+
+    clickMe(newSlider, 'false');
+    if ((navigator.userAgent.indexOf('iPhone') > 0) || (navigator.userAgent.indexOf('iPad') > 0)) {
+        ipad_slidemove = new webkit_draggable(newSlider.id, 'true');
+    }
+}
+
+function showValue(slider) {
+    valueId = slider + "_value";
+    return valueArray[valueId];
+}
+
+function showValueLower(slider) {
+    valueId = slider + "_amount";
+    return valueArrayLower[valueId];
+}
+
+function showPixelLocation(slider) {
+    valueId = slider + "_value";
+    return valueArrayPixels[valueId] - positionArray[valueId];
+}
+
+/*                                                                 */
+/*                      END OF SLIDER SCRIPT                       */
+/*                                                                 */
+/* --------------------------------------------------------------- */
+
+/* init key variables */
+randomizeFirstSix = '1'; // randomize first six items (core items)
+randomizeLastNine = '0'; // randomize last nine items (secondary items)
+randomizeLeftRightFirstSix = '1'; // flips left and right randomly, items will be mirrored (can be combined with the above)
+randomizeLeftRightLastNine = '1'; // flips left and right randomly for the secondary items
+
+slider_opt = '1'; // slider initial position (1=middle; 2=randomize around middle; 3=click before it appears)
+
+showFinalResults = '1'; // should the results be presented to the user or not (1=show; 0=not)
+
+storeSearchPath = '1'; // should intermediate values (search path) be stored or not (1=not; 0=not)
+
+/* do not touch below */
+var maxRounds = 2;
+var maxStages = 15;
+var slideName = "slider";
+
+delayInvestClick = 500; // in ms
+
+/* this defines the choices as listed on the sheets, the array looks like:
+ set 1 --> option 1 --> 'you get' lowest value
+ --> 'you get' highest value
+ --> 'you get' descending (1=yes; 0=no)
+ --> 'other gets' lowest value
+ --> 'other gets' highest value
+ --> 'other gets' descending (1=yes; 0=no)
+ --> item number according to original sheet (used to keep track when shuffling set[1] and set[2])
+ option 2 ... etc.
+ */
+set = new Array(2);
+set[1] = new Array();
+set[1][1] = new Array(7);
+set[1][1][1] = '85';
+set[1][1][2] = '85';
+set[1][1][3] = '0';
+set[1][1][4] = '15';
+set[1][1][5] = '85';
+set[1][1][6] = '1';
+set[1][1][7] = '1';
+set[1][2] = new Array(7);
+set[1][2][1] = '85';
+set[1][2][2] = '100';
+set[1][2][3] = '0';
+set[1][2][4] = '15';
+set[1][2][5] = '50';
+set[1][2][6] = '0';
+set[1][2][7] = '2';
+set[1][3] = new Array(7);
+set[1][3][1] = '50';
+set[1][3][2] = '85';
+set[1][3][3] = '0';
+set[1][3][4] = '85';
+set[1][3][5] = '100';
+set[1][3][6] = '1';
+set[1][3][7] = '3';
+set[1][4] = new Array(7);
+set[1][4][1] = '50';
+set[1][4][2] = '85';
+set[1][4][3] = '0';
+set[1][4][4] = '15';
+set[1][4][5] = '100';
+set[1][4][6] = '1';
+set[1][4][7] = '4';
+set[1][5] = new Array(7);
+set[1][5][1] = '50';
+set[1][5][2] = '100';
+set[1][5][3] = '1';
+set[1][5][4] = '50';
+set[1][5][5] = '100';
+set[1][5][6] = '0';
+set[1][5][7] = '5';
+set[1][6] = new Array(7);
+set[1][6][1] = '85';
+set[1][6][2] = '100';
+set[1][6][3] = '1';
+set[1][6][4] = '50';
+set[1][6][5] = '85';
+set[1][6][6] = '0';
+set[1][6][7] = '6';
+
+set[2] = new Array();
+set[2][1] = new Array(7);
+set[2][1][1] = '70';
+set[2][1][2] = '100';
+set[2][1][3] = '1';
+set[2][1][4] = '50';
+set[2][1][5] = '100';
+set[2][1][6] = '0';
+set[2][1][7] = '7';
+set[2][2] = new Array(7);
+set[2][2][1] = '90';
+set[2][2][2] = '100';
+set[2][2][3] = '0';
+set[2][2][4] = '90';
+set[2][2][5] = '100';
+set[2][2][6] = '1';
+set[2][2][7] = '8';
+set[2][3] = new Array(7);
+set[2][3][1] = '50';
+set[2][3][2] = '100';
+set[2][3][3] = '1';
+set[2][3][4] = '70';
+set[2][3][5] = '100';
+set[2][3][6] = '0';
+set[2][3][7] = '9';
+set[2][4] = new Array(7);
+set[2][4][1] = '90';
+set[2][4][2] = '100';
+set[2][4][3] = '1';
+set[2][4][4] = '70';
+set[2][4][5] = '100';
+set[2][4][6] = '0';
+set[2][4][7] = '10';
+set[2][5] = new Array(7);
+set[2][5][1] = '70';
+set[2][5][2] = '100';
+set[2][5][3] = '0';
+set[2][5][4] = '70';
+set[2][5][5] = '100';
+set[2][5][6] = '1';
+set[2][5][7] = '11';
+set[2][6] = new Array(7);
+set[2][6][1] = '50';
+set[2][6][2] = '100';
+set[2][6][3] = '0';
+set[2][6][4] = '90';
+set[2][6][5] = '100';
+set[2][6][6] = '1';
+set[2][6][7] = '12';
+set[2][7] = new Array(7);
+set[2][7][1] = '50';
+set[2][7][2] = '100';
+set[2][7][3] = '0';
+set[2][7][4] = '50';
+set[2][7][5] = '100';
+set[2][7][6] = '1';
+set[2][7][7] = '13';
+set[2][8] = new Array(7);
+set[2][8][1] = '70';
+set[2][8][2] = '100';
+set[2][8][3] = '1';
+set[2][8][4] = '90';
+set[2][8][5] = '100';
+set[2][8][6] = '0';
+set[2][8][7] = '14';
+set[2][9] = new Array(7);
+set[2][9][1] = '90';
+set[2][9][2] = '100';
+set[2][9][3] = '0';
+set[2][9][4] = '50';
+set[2][9][5] = '100';
+set[2][9][6] = '1';
+set[2][9][7] = '15';
+
+/* we can randomize the order of items here (use randomizeFirstSix and randomizeLastNine) */
+if (randomizeFirstSix == 1) {
+    set[1].shift();
+    set[1].sort(function () {
+        return 0.5 - Math.random()
+    })
+    set[1].unshift('');
+}
+if (randomizeLastNine == 1) {
+    set[2].shift();
+    set[2].sort(function () {
+        return 0.5 - Math.random()
+    })
+    set[2].unshift('');
+}
+
+/* we will flip left and right occasionally */
+if (randomizeLeftRightFirstSix == 1) {
+    for (var j = 1; j < set[1].length; j++) {
+        if (Math.random() < 0.5) {
+            var memorize = set[1][j][3];
+            set[1][j][3] = set[1][j][6];
+            set[1][j][6] = memorize;
+        }
+    }
+}
+if (randomizeLeftRightLastNine == 1) {
+    for (var j = 1; j < set[2].length; j++) {
+        if (Math.random() < 0.5) {
+            var memorize = set[2][j][3];
+            set[2][j][3] = set[2][j][6];
+            set[2][j][6] = memorize;
+        }
+    }
+}
+
+if (slider_opt == 3) {
+    sliderInstructions = "<br><br>You will have to <b>click on the grey slider bar before the slider itself appears<b>."; // additional instructions in the welcome screen
+} else {
+    sliderInstructions = "";
+}
+
+/* script variables */
+var round = 1;
+var stage = 1;
+var gameMsg = "";
+var disable = true;
+var sessionstart = Math.round((new Date().getTime()) / 100) / 10;
+var endOfGame = '0';
+
+/* data sets */
+var itemID = new Array(15);
+var itemLowvalYou = new Array(15);
+var itemHighvalYou = new Array(15);
+var itemDescYou = new Array(15);
+var itemLowvalOther = new Array(15);
+var itemHighvalOther = new Array(15);
+var itemDescOther = new Array(15);
+var timeChoice = new Array(15);
+var choiceYou = new Array(15);
+var choiceYouHR = new Array(15);
+var choiceOther = new Array(15);
+var choiceOtherHR = new Array(15);
+var pixelLocation = new Array(15);
+var email_address = null;
+var transitHolds = null;
+var firstSixAngle = null;
+var firstSixCat = null;
+
+/* messages */
+var msgRoundFinished = null;
+var msgGameEnded = null;
+var msgRoundFinished = null;
+var msgStartGame = null;
+var msgBankrupt = null;
+var msgEmail = null;
+var msgError = "";
+var msgDataSaved = null;
+var msgDataError = null;
+var msgRetrySaving = null;
+var msgInstructions = null;
+var msgRes = null;
+
+function verifyEmail(click) {
+    var val = 0;
+    var mailobj = document.getElementById('email');
+    var mailvalidobj = document.getElementById('valid_email');
+    var chkvalidobj = document.getElementById('valid_emailcheck');
+
+    if ((mailobj.value.indexOf(".") > 0) && (mailobj.value.indexOf("@") > 0) && (mailobj.value.indexOf(" ") == -1) && (mailobj.value.indexOf("'") == -1) && (mailobj.value.indexOf("\"") == -1)) {
+        mailvalidobj.innerHTML = "<img src='images/icons/valid_icon.png' alt='Valid.' width=20 height=20>";
+        val = 1;
+    } else if ((mailobj.value == '')) {
+        mailvalidobj.innerHTML = "";
+        val = 0;
+    } else {
+        mailvalidobj.innerHTML = "<img src='images/icons/invalid_icon.png' alt='No @, dot or invalid character use.' width=20 height=20>";
+        val = 0;
+    }
+
+    if ((document.getElementById('emailcheck').value == '')) {
+        document.getElementById('valid_emailcheck').innerHTML = "";
+        val = 0;
+    } else if (mailobj.value !== document.getElementById('emailcheck').value) {
+        chkvalidobj.innerHTML = "<img src='images/icons/invalid_icon.png' alt='Addresses do not match.' width=20 height=20>";
+        val = 0;
+    } else {
+        chkvalidobj.innerHTML = "<img src='images/icons/valid_icon.png' alt='Valid.' width=20 height=20>";
+        val = 1 * val;
+    }
+
+    if (val == 1 && click == "true") {
+        email_address = mailobj.value;
+        disable = false;
+        showMessage('false', '');
+    }
+    ;
+}
+
+function deSelect() { /* deselect the field to prevent enter/select from happening */
+    document.getElementById("email").blur();
+    document.getElementById("emailcheck").blur();
+}
+
+/* here, we interpret the results in the form of an angle */
+function calcAngle() {
+    avg_self = ((choiceYou[1] + choiceYou[2] + choiceYou[3] + choiceYou[4] + choiceYou[5] + choiceYou[6]) / 6) - 50;
+    avg_other = ((choiceOther[1] + choiceOther[2] + choiceOther[3] + choiceOther[4] + choiceOther[5] + choiceOther[6]) / 6) - 50;
+
+    angle_radians = Math.atan2(avg_self, avg_other);
+    angle_degrees = 90 - angle_radians * 180 / Math.PI;
+
+    if (eval(angle_degrees) > 57.15) {
+        category = "altruistic";
+    } else if (eval(angle_degrees) > 22.45) {
+        category = "prosocial";
+    } else if (eval(angle_degrees) > -12.04) {
+        category = "individualistic";
+    } else {
+        category = "competitive";
+    }
+
+    if (eval(angle_degrees) < -16.26) {
+        perc = 1;
+    } else if (eval(angle_degrees) < 5.08) {
+        perc = 5;
+    } else if (eval(angle_degrees) < 7.82) {
+        perc = 15;
+    } else if (eval(angle_degrees) < 12.31) {
+        perc = 20;
+    } else if (eval(angle_degrees) < 16.11) {
+        perc = 25;
+    } else if (eval(angle_degrees) < 19.02) {
+        perc = 30;
+    } else if (eval(angle_degrees) < 23.95) {
+        perc = 35;
+    } else if (eval(angle_degrees) < 26.46) {
+        perc = 40;
+    } else if (eval(angle_degrees) < 28.60) {
+        perc = 45;
+    } else if (eval(angle_degrees) < 30.84) {
+        perc = 50;
+    } else if (eval(angle_degrees) < 32.91) {
+        perc = 55;
+    } else if (eval(angle_degrees) < 33.47) {
+        perc = 60;
+    } else if (eval(angle_degrees) < 34.87) {
+        perc = 65;
+    } else if (eval(angle_degrees) < 37.48) {
+        perc = 70;
+    } else if (eval(angle_degrees) < 40.26) {
+        perc = 75;
+    } else if (eval(angle_degrees) < 42.56) {
+        perc = 80;
+    } else if (eval(angle_degrees) < 45) {
+        perc = 85;
+    } else if (eval(angle_degrees) < 46.00) {
+        perc = 90;
+    } else if (eval(angle_degrees) < 50) {
+        perc = 95;
+    } else if (eval(angle_degrees) > 50.62) {
+        perc = 99;
+    }
+
+    firstSixAngle = angle_degrees;
+    firstSixCat = category;
+
+    return {angle: angle_degrees, cat: category};
+}
+
+
+/*
+
+ Function:       isDag(G)
+ Purpose:        Returns a value 1 if a graph is acyclical and a value
+ 0 if it is not. This is used to determine transitivity
+ in decision making problems.
+ Input:          G, which is an array describing a graph as below
+
+ G = new Array();
+ G[1][1] = '0';
+ G[1][2] = '1';
+ G[2][1] = '1';
+ G[2][2] = '0';
+
+ Notation: G[from][to], so above, an edge (arc) runs
+ from 1 -> 2 and from 2 -> 1. That makes this graph
+ cyclical.
+
+ Notes:          The function searches for backedges and is not entirely
+ efficient with intent. It tracks paths from every node
+ with the purpose of also being able to detect intransitive
+ decisions in unconnected graphs.
+
+ */
+
+isdag = 1; // by default
+
+function isDag(Graph) {
+
+    for (var x = 1; x < Graph.length; x++) {
+        /* now, we loop through all of the paths, while keeping track of the visited ones */
+
+        //document.write('<br>starting at '+x+'<br>');
+        followPath(x, Graph);
+    }
+
+    transitHolds = isdag;
+}
+
+/* a recursive function looping through the path */
+function followPath(fromId, Graph, visArrCP) {
+    if (!visArrCP) {
+        var visArrCP = fromId + '';
+    }
+    var cnt = 0;
+
+    for (var s = 1; s < Graph[fromId].length; s++) {
+        var tArr = new Array();
+        tArr[s] = visArrCP;
+
+        if (Graph[fromId][s] == 1) {
+            cnt++; // end of path counter
+
+            //document.write('moving from '+fromId+' to '+s+'<br>');
+            if (tArr[s].indexOf(s) >= 0) {
+                //document.write('loop found<br>');
+                isdag = 0;
+                break;
+            }
+            tArr[s] += s;
+            followPath(s, Graph, tArr[s]);
+        }
+    }
+
+    if (cnt == 0) {
+        //document.write('end of path<br>');
+    }
+}
+
+/*
+
+
+
+
+ END OF GRAPH FUNCTION
+
+
+
+
+
+ */
+
+/* we test to see if the resulting graph is acyclical, otherwise results make no sense */
+function transitivityHolds() {
+    toGraph = null;
+    toGraph = new Array();
+
+    /* we populate the variable & graph */
+    for (var i = 1; i <= 4; i++) {
+        toGraph[i] = new Array();
+    }
+    toGraph[1][1] = 0;
+    toGraph[2][2] = 0;
+    toGraph[3][3] = 0;
+    toGraph[4][4] = 0;
+
+    /* convert the input to a useful graph */
+    for (var k = 1; k <= 6; k++) {
+        switch (Number(itemID[k])) {
+            case 1:
+                if (choiceOther[k] > 50) {
+                    toGraph[4][2] = 1;
+                    toGraph[2][4] = 0;
+                } //61 and 39 for thirds
+                else if (choiceOther[k] < 50) {
+                    toGraph[4][2] = 0;
+                    toGraph[2][4] = 1;
+                }
+                else {
+                    toGraph[4][2] = 0;
+                    toGraph[2][4] = 0;
+                }
+                break;
+            case 2:
+                if (choiceOther[k] > 32.5) {
+                    toGraph[4][3] = 1;
+                    toGraph[3][4] = 0;
+                } //38 and 27 for thirds
+                else if (choiceOther[k] < 32.5) {
+                    toGraph[4][3] = 0;
+                    toGraph[3][4] = 1;
+                }
+                else {
+                    toGraph[4][3] = 0;
+                    toGraph[3][4] = 0;
+                }
+                break;
+            case 3:
+                if (choiceOther[k] > 92.5) {
+                    toGraph[2][1] = 1;
+                    toGraph[1][2] = 0;
+                } //95 and 90 for thirds
+                else if (choiceOther[k] < 92.5) {
+                    toGraph[2][1] = 0;
+                    toGraph[1][2] = 1;
+                }
+                else {
+                    toGraph[1][2] = 0;
+                    toGraph[2][1] = 0;
+                }
+                break;
+            case 4:
+                if (choiceOther[k] > 57.5) {
+                    toGraph[4][1] = 1;
+                    toGraph[1][4] = 0;
+                }//71 and 44 for thirds
+                else if (choiceOther[k] < 57.5) {
+                    toGraph[4][1] = 0;
+                    toGraph[1][4] = 1;
+                }
+                else {
+                    toGraph[4][1] = 0;
+                    toGraph[1][4] = 0;
+                }
+                break;
+            case 5:
+                if (choiceOther[k] > 75) {
+                    toGraph[3][1] = 1;
+                    toGraph[1][3] = 0;
+                }//83 and 67 for thirds
+                else if (choiceOther[k] < 75) {
+                    toGraph[3][1] = 0;
+                    toGraph[1][3] = 1;
+                }
+                else {
+                    toGraph[1][3] = 0;
+                    toGraph[3][1] = 0;
+                }
+                break;
+            case 6:
+                if (choiceOther[k] > 67.5) {
+                    toGraph[3][2] = 1;
+                    toGraph[2][3] = 0;
+                }//73 and 62 for thirds
+                else if (choiceOther[k] < 67.5) {
+                    toGraph[3][2] = 0;
+                    toGraph[2][3] = 1;
+                }
+                else {
+                    toGraph[2][3] = 0;
+                    toGraph[3][2] = 0;
+                }
+                break;
+        }
+    }
+
+    isDag(toGraph);
+}
+
+/* analysis of the secondary items
+ these have been hardcoded       */
+
+/* define variables */
+altr_value = 0;
+indiv_value = 0;
+ineqav_value = 0;
+jointgain_value = 0;
+
+secondRes = 0;
+
+// (good) approximation due to rounding
+function secondaryItemResults() {
+    if (choiceOtherHR[15] > 0) {
+        for (var k = 7; k <= 15; k++) {
+            switch (Number(itemID[k])) {
+                case 7:
+                    var norm = 2; // normalization value for lower axis
+                    altr_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    indiv_value += Math.abs(50 - choiceOtherHR[k]) * norm;
+                    ineqav_value += Math.abs(81 - choiceOtherHR[k]) * norm;
+                    jointgain_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    break;
+                case 8:
+                    var norm = 10;
+                    altr_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    indiv_value += Math.abs(90 - choiceOtherHR[k]) * norm;
+                    ineqav_value += Math.abs(95 - choiceOtherHR[k]) * norm;
+                    jointgain_value += 0; // there is no joint gain maximization here
+                    break;
+                case 9:
+                    var norm = 2;
+                    altr_value += Math.abs(50 - choiceYouHR[k]) * norm;
+                    indiv_value += Math.abs(100 - choiceYouHR[k]) * norm;
+                    ineqav_value += Math.abs(81 - choiceYouHR[k]) * norm;
+                    jointgain_value += Math.abs(100 - choiceYouHR[k]) * norm;
+                    break;
+                case 10:
+                    var norm = 10 / 3;
+                    altr_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    indiv_value += Math.abs(70 - choiceOtherHR[k]) * norm;
+                    ineqav_value += Math.abs(93 - choiceOtherHR[k]) * norm;
+                    jointgain_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    break;
+                case 11:
+                    var norm = 10 / 3;
+                    altr_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    indiv_value += Math.abs(70 - choiceOtherHR[k]) * norm;
+                    ineqav_value += Math.abs(85 - choiceOtherHR[k]) * norm;
+                    jointgain_value += 0; // no joint gain maximization
+                    break;
+                case 12:
+                    var norm = 2;
+                    altr_value += Math.abs(50 - choiceYouHR[k]) * norm;
+                    indiv_value += Math.abs(100 - choiceYouHR[k]) * norm;
+                    ineqav_value += Math.abs(92 - choiceYouHR[k]) * norm;
+                    jointgain_value += Math.abs(100 - choiceYouHR[k]) * norm;
+                    break;
+                case 13:
+                    var norm = 2;
+                    altr_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    indiv_value += Math.abs(50 - choiceOtherHR[k]) * norm;
+                    ineqav_value += Math.abs(75 - choiceOtherHR[k]) * norm;
+                    jointgain_value += 0;
+                    break;
+                case 14:
+                    var norm = 10 / 3;
+                    altr_value += Math.abs(70 - choiceYouHR[k]) * norm;
+                    indiv_value += Math.abs(100 - choiceYouHR[k]) * norm;
+                    ineqav_value += Math.abs(93 - choiceYouHR[k]) * norm;
+                    jointgain_value += Math.abs(100 - choiceYouHR[k]) * norm;
+                    break;
+                case 15:
+                    var norm = 2;
+                    altr_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    indiv_value += Math.abs(50 - choiceOtherHR[k]) * norm;
+                    ineqav_value += Math.abs(92 - choiceOtherHR[k]) * norm;
+                    jointgain_value += Math.abs(100 - choiceOtherHR[k]) * norm;
+                    break;
+            }
+        }
+
+        altr_value /= 9;
+        indiv_value /= 9;
+        ineqav_value /= 9;
+        jointgain_value /= 6;
+
+        if ((ineqav_value <= Math.min(indiv_value, altr_value)) && (jointgain_value <= Math.min(indiv_value, altr_value))) {
+            if (ineqav_value < jointgain_value) {
+                secondRes = 'inequality averse';
+            } else {
+                secondRes = 'joint gain maximizer';
+            }
+        }
+    } else {
+        return false;
+    }
+
+}
+
+function getSettings() {
+    if (document.getElementById('roundsplay').value == 1) {
+        maxStages = 6;
+    } else if (document.getElementById('roundsplay').value == 2) {
+        maxStages = 15;
+    }
+    dispGame();
+}
+
+function createMsg() { /* dynamically generate messages using predefined templates, any public variable is usable */
+    if (round > 2) {
+        var movableNote = "";
+    } else {
+        var movableNote = "Note: this box is freely movable.<br><br>";
+    }
+
+    msgRoundFinished = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>End of round " + round + ".</b><br><br>" + movableNote + "This round has ended. Take a look at your results and the summary. After you have done so, you should close this box by clicking 'continue' to procede to play the next round.<br><br>Please pay special attention to the red blinking value that will appear after you have clicked \'Continue\': this value describes the likelihood that you will have a positive return from your investment and thus will directly influence your earnings.<br><br>" + msgError + "<div id=\"continuebutton\" onClick=\"showMessage('false','')\" onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Continue</div><br>";
+
+    msgSelectValue = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Select a value</b><br><br>" + movableNote + "Click anywhere on the bar to make the slider appear. You can then drag it and select the values according to your preferences.<br><br><div id=\"continuebutton\" onClick=\"showMessage('false','')\" onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Continue</div><br>";
+
+    msgGameEnded = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Task Completed</b><br><br>You have completed all stages and finished the decision task.<br><br>Please hold while we process your data. As soon as the data is saved, this box will disappear automatically.<br><br>Thank you for your participation.";
+
+    msgDataSaved = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Results</b><br><br>" + msgRes;
+
+    msgRetrySaving = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Trying again to save data</b><br><br>Your data is being saved to the database. Please hold.";
+
+    msgDataError = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Data not saved</b><br><br>There was an error saving your data. Please click the button below to retry.<br><br><div id='continuebutton' onClick=ajaxFunction();showMessage('true',msgRetrySaving) onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Try again</div><br>";
+
+    msgGameEndedBankrupt = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Task Completed due to bankruptcy</b><br><br>You have completed all stages and finished the round, albeit by bankruptcy. As soon as the data is saved, this box will disappear automatically.";
+
+    msgGameEndedBankruptBailout = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Task Completed due to bankruptcy with bailout</b><br><br>You have completed all stages and finished the round, albeit by bankruptcy. Luckily for you, the bank bailed you out. As soon as the data is saved, this box will disappear automatically.";
+
+    msgStartGame = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Welcome to the online social value orientation measure.</b><br><br>" + movableNote + "Underneath this box you find the SVO Slider measure.  You as the decision maker can register choices by moving a slider to change payoff allocations between you and some other person.  Once you have made your choice, press the Submit button to go on to the next questions.<br><br>There are no right or wrong answers, this is all about personal preferences. As you can see, your choices will influence both the amount of money you receive as well as the amount of money the other receives." + sliderInstructions + "<br><br><div id='continuebutton' onClick=showMessage('true',msgEmail) onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Continue</div><br>";
+
+    msgEmail = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Email address</b><br><br>Please enter your email address so we can send you your results.<br><br><form id='emailform'><table><tr><td>E-mail:</td><td><input type='text' name='email' id='email' size='50' onClick=document.getElementById('infomessage').onmousedown='';this.focus();verifyEmail();></td><td><span id='valid_email'></span></td></tr><tr><td>E-mail check:</td><td><input type='text' name='emailcheck' id='emailcheck' size='50' onClick=document.getElementById('infomessage').onmousedown='';this.focus();verifyEmail();></td><td><span id='valid_emailcheck'></span></td></tr><tr><td>Task type:</td><td><select onClick=document.getElementById('infomessage').onmousedown='';verifyEmail();this.focus(); id='roundsplay'><option value='1'>Core (6 items)</option><option value='2' selected='selected'>Full (15 items)</option></select></td><td></td></tr></table></form><br><br><div id='continuebutton' onClick=clickMe(this.parentNode.parentNode,'true');deSelect();verifyEmail('true');getSettings(); onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Continue</div><br>";
+
+    msgInstructions = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Instructions</b><br><br>Below, you see a slider. You can change the slider to adjust the amount of money you and the other person will receive.<br><br>The numbers at the ends of the slider show the range of possible distributions for you and the other person.<br><br>Once you have moved the slider to the distribution you most prefer press the Submit button.<br><br><div id=\"continuebutton\" onClick=\"showMessage('noinit','')\" onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Continue</div><br>";
+
+    msgBankrupt = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Bankruptcy</b><br><br>Unfortunately, you are bankrupt and thus cannot invest any more money for this round. You may look at your performance and whenever you are ready, you may proceed to the next round by clicking the button below.<br><br><div id=\"continuebutton\" onClick=\"showMessage('false','')\" onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Continue</div><br>";
+
+    msgBankruptBailout = "<span style='position:relative; top: 4px; left:-4px;'><img src='images/icons/info_icon.png' width='18px' height='18px'></span><b>Bankruptcy with bailout</b><br><br>Unfortunately, you are bankrupt and thus cannot invest any more money for this round. However, the bank bailed you out, so you get your investments back.<br><br>You may look at your performance and whenever you are ready, you may proceed to the next round by clicking the button below.<br><br><div id=\"continuebutton\" onClick=\"showMessage('false','')\" onMouseOver=\"this.style.background='#E5E5E5';this.style.borderColor='black';\" onMouseOut=\"this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';\">Continue</div><br>";
+}
+
+/* data storage initialization */
+/* empty here, none needed */
+
+function matrix_conv(m) /* to parse matrices (array within array) */ {
+    var t_arr = new Array();
+    for (var key in m) { /* first, we rebuild all arrays */
+        t_arr[key] = array_conv(m[key], "false");
+    }
+    t_matrix = array_conv(t_arr, "true");
+    /* now, we rebuild the main array */
+    return t_matrix;
+}
+
+function array_conv(a, arr) /* modified from activestate.com: creating a php array */ {
+    var a_php = "";
+    var total = 0;
+    for (var key in a) {
+        if (arr == "true") {
+            a_php = a_php + "s:" +
+                    String(key).length + ":\"" + String(key) + "\";" + String(a[key]);
+        } else {
+            a_php = a_php + "s:" +
+                    String(key).length + ":\"" + String(key) + "\";s:" +
+                    String(a[key]).length + ":\"" + String(a[key]) + "\";";
+        }
+        ++total;
+    }
+    a_php = "a:" + total + ":{" + a_php + "}";
+    return a_php;
+}
+
+/*                                                            */
+/*                                                            */
+/*                                                            */
+/*                                                            */
+/*                   data handling and posting                */
+/*                                                            */
+/*                                                            */
+/*                                                            */
+/*                                                            */
+
+
+var time_variable;
+
+function getXMLObject()  //XML OBJECT
+{
+    var xmlHttp = false;
+    try {
+        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP")  // For Old Microsoft Browsers
+    }
+    catch (e) {
+        try {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")  // For Microsoft IE 6.0+
+        }
+        catch (e2) {
+            xmlHttp = false   // No Browser accepts the XMLHTTP Object then false
+        }
+    }
+    if (!xmlHttp && typeof XMLHttpRequest != 'undefined') {
+        xmlHttp = new XMLHttpRequest();        //For Mozilla, Opera Browsers
+    }
+    return xmlHttp;  // Statement returning the ajax object created
+}
+
+var xmlhttp = new getXMLObject();	//xmlhttp holds the ajax object
+
+function ajaxFunction() {
+    var getdate = new Date();  //Used to prevent caching during ajax call
+    if (xmlhttp) {
+        var itemID_PHP = array_conv(itemID);
+        var itemLowvalYou_PHP = array_conv(itemLowvalYou);
+        var itemHighvalYou_PHP = array_conv(itemHighvalYou);
+        var itemDescYou_PHP = array_conv(itemDescYou);
+        var itemLowvalOther_PHP = array_conv(itemLowvalOther);
+        var itemHighvalOther_PHP = array_conv(itemHighvalOther);
+        var itemDescOther_PHP = array_conv(itemDescOther);
+        var timeChoice_PHP = array_conv(timeChoice);
+        var choiceYou_PHP = array_conv(choiceYou);
+        var choiceOther_PHP = array_conv(choiceOther);
+
+        var ticksTime_PHP = matrix_conv(ticksTime);
+        var ticksValYou_PHP = matrix_conv(ticksValYou);
+        var ticksValOther_PHP = matrix_conv(ticksValOther);
+
+        var firstSixAngle_PHP = firstSixAngle;
+        var firstSixCat_PHP = firstSixCat;
+        var percScore_PHP = perc;
+        var email_address_PHP = email_address;
+        var sessionstart_PHP = sessionstart;
+        var first_item_timestamp_PHP = first_item_timestamp;
+        var transitHolds_PHP = transitHolds;
+
+        var secondRes_PHP = secondRes;
+        var altrValue_PHP = altr_value;
+        var indivValue_PHP = indiv_value;
+        var ineqavValue_PHP = ineqav_value;
+        var jointgainValue_PHP = jointgain_value;
+
+        xmlhttp.open("POST", "http://vlab.ethz.ch/svo/data_proc_onl.php", true); //calling php using POST method
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlhttp.send("itemID=" + itemID_PHP + "&itemLowvalYou=" + itemLowvalYou_PHP + "&itemHighvalYou=" + itemHighvalYou_PHP + "&itemDescYou=" + itemDescYou_PHP + "&itemLowvalOther=" + itemLowvalOther_PHP + "&itemHighvalOther=" + itemHighvalOther_PHP + "&itemDescOther=" + itemDescOther_PHP + "&timeChoice=" + timeChoice_PHP + "&choiceYou=" + choiceYou_PHP + "&choiceOther=" + choiceOther_PHP + "&mail_addr=" + email_address_PHP + "&timestamp_sessionstart=" + sessionstart_PHP + "&first_item_timestamp=" + first_item_timestamp_PHP + "&transit_holds=" + transitHolds_PHP + "&angle_degrees=" + firstSixAngle_PHP + "&perc_score=" + percScore_PHP + "&assigned_category=" + firstSixCat_PHP + "&secondary_assigned_category=" + secondRes_PHP + "&altrValue=" + altrValue_PHP + "&indivValue=" + indivValue_PHP + "&ineqavValue=" + ineqavValue_PHP + "&jointgainValue=" + jointgainValue_PHP + "&ticksTime=" + ticksTime_PHP + "&ticksValYou=" + ticksValYou_PHP + "&ticksValOther=" + ticksValOther_PHP); //Posting to PHP file
+        xmlhttp.onreadystatechange = handleServerResponse;
+    }
+}
+
+function emailFunction() {
+    var getdate = new Date();  //Used to prevent caching during ajax call
+    if (xmlhttp) {
+        var itemID_PHP = array_conv(itemID);
+        var itemLowvalYou_PHP = array_conv(itemLowvalYou);
+        var itemHighvalYou_PHP = array_conv(itemHighvalYou);
+        var itemDescYou_PHP = array_conv(itemDescYou);
+        var itemLowvalOther_PHP = array_conv(itemLowvalOther);
+        var itemHighvalOther_PHP = array_conv(itemHighvalOther);
+        var itemDescOther_PHP = array_conv(itemDescOther);
+        var timeChoice_PHP = array_conv(timeChoice);
+        var choiceYou_PHP = array_conv(choiceYou);
+        var choiceOther_PHP = array_conv(choiceOther);
+
+        var ticksTime_PHP = matrix_conv(ticksTime);
+        var ticksValYou_PHP = matrix_conv(ticksValYou);
+        var ticksValOther_PHP = matrix_conv(ticksValOther);
+
+        var firstSixAngle_PHP = firstSixAngle;
+        var firstSixCat_PHP = firstSixCat;
+        var percScore_PHP = perc;
+        var email_address_PHP = email_address;
+        var sessionstart_PHP = sessionstart;
+        var transitHolds_PHP = transitHolds;
+
+        var secondRes_PHP = secondRes;
+        var altrValue_PHP = altr_value;
+        var indivValue_PHP = indiv_value;
+        var ineqavValue_PHP = ineqav_value;
+        var jointgainValue_PHP = jointgain_value;
+
+        xmlhttp.open("POST", "http://vlab.ethz.ch/svo/email_data.php", true); //calling php using POST method
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlhttp.send("itemID=" + itemID_PHP + "&itemLowvalYou=" + itemLowvalYou_PHP + "&itemHighvalYou=" + itemHighvalYou_PHP + "&itemDescYou=" + itemDescYou_PHP + "&itemLowvalOther=" + itemLowvalOther_PHP + "&itemHighvalOther=" + itemHighvalOther_PHP + "&itemDescOther=" + itemDescOther_PHP + "&timeChoice=" + timeChoice_PHP + "&choiceYou=" + choiceYou_PHP + "&choiceOther=" + choiceOther_PHP + "&mail_addr=" + email_address_PHP + "&timestamp_sessionstart=" + sessionstart_PHP + "&transit_holds=" + transitHolds_PHP + "&angle_degrees=" + firstSixAngle_PHP + "&perc_score=" + percScore_PHP + "&assigned_category=" + firstSixCat_PHP + "&secondary_assigned_category=" + secondRes_PHP + "&altrValue=" + altrValue_PHP + "&indivValue=" + indivValue_PHP + "&ineqavValue=" + ineqavValue_PHP + "&jointgainValue=" + jointgainValue_PHP + "&ticksTime=" + ticksTime_PHP + "&ticksValYou=" + ticksValYou_PHP + "&ticksValOther=" + ticksValOther_PHP); //Posting to PHP file
+        xmlhttp.onreadystatechange = emailResponse;
+    }
+}
+
+function downloadFunction() {
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "http://vlab.ethz.ch/svo/download_self.php");
+    form.setAttribute("target", "_blank");
+
+    // create the form itself
+    function addHiddenField(name, value) {
+        var addField = document.createElement("input");
+        addField.setAttribute("type", "hidden");
+        addField.setAttribute("name", name);
+        addField.setAttribute("value", value);
+        form.appendChild(addField);
+    }
+
+    var itemID_PHP = array_conv(itemID);
+    addHiddenField("itemID", itemID_PHP);
+    var itemLowvalYou_PHP = array_conv(itemLowvalYou);
+    addHiddenField("itemLowvalYou", itemLowvalYou_PHP);
+    var itemHighvalYou_PHP = array_conv(itemHighvalYou);
+    addHiddenField("itemHighvalYou", itemHighvalYou_PHP);
+    var itemDescYou_PHP = array_conv(itemDescYou);
+    addHiddenField("itemDescYou", itemDescYou_PHP);
+    var itemLowvalOther_PHP = array_conv(itemLowvalOther);
+    addHiddenField("itemLowvalOther", itemLowvalOther_PHP);
+    var itemHighvalOther_PHP = array_conv(itemHighvalOther);
+    addHiddenField("itemHighvalOther", itemHighvalOther_PHP);
+    var itemDescOther_PHP = array_conv(itemDescOther);
+    addHiddenField("itemDescOther", itemDescOther_PHP);
+    var timeChoice_PHP = array_conv(timeChoice);
+    addHiddenField("timeChoice", timeChoice_PHP);
+    var choiceYou_PHP = array_conv(choiceYou);
+    addHiddenField("choiceYou", choiceYou_PHP);
+    var choiceOther_PHP = array_conv(choiceOther);
+    addHiddenField("choiceOther", choiceOther_PHP);
+
+    var email_address_PHP = email_address;
+    addHiddenField("mail_addr", email_address_PHP);
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+function emailResponse() {
+    if (xmlhttp.readyState == 4) {
+        if (xmlhttp.status == 200) {
+            return true;
+        }
+    }
+}
+
+function handleServerResponse() {
+    if (xmlhttp.readyState == 4) {
+        if (xmlhttp.status == 200) {
+            //alert("Data saved"); // saved the data
+            if (xmlhttp.responseText.split("\n")[0] !== "saved") {
+                msgError = "There was a problem (" + xmlhttp.responseText.split("\n")[0] + ") saving your data. This should fix itself, however, please do not shut down your browser screen and keep playing until the end.<br><br>";
+                if (stage >= maxStages) {
+                    setTimeout("showMessage('true', msgDataError)", 6000);
+                }
+                return false;
+            } else {
+                if (stage >= maxStages) {
+
+                    msgRes = "";
+                    if (showFinalResults == 1) {
+                        if (transitHolds == 1) {
+                            // the right end is 645px from left, the left end is 106px as can be seen (539 from the left axis to the right axis)
+                            msgRes = "Your choices were successfully evaluated.<br><br><div><img src=images/histograms/angle_" + Math.round(firstSixAngle) + ".gif></img></div>";
+                            msgRes += "Your choices are generally consistent with the " + firstSixCat + " motivation. ";
+                            if (firstSixCat == 'prosocial') {
+                                msgRes += "This means that your allocations in general tend to maximize the payoffs of both you and the other person at the same time.";
+                                if (secondRes == "joint gain maximizer") {
+                                    msgRes += " Furthermore, your choices are generally consistent with joint gain maximization. This means that your allocations tend to maximize the sum of your payoffs and those of the other person.";
+                                } else if (secondRes == "inequality averse") {
+                                    msgRes += " Furthermore, your choices are generally consistent with inequality aversion. This means that your allocations tend to minimize the difference between your payoff and that of the other person.";
+                                }
+                            } else if (firstSixCat == 'individualistic') {
+                                msgRes += "This means that your allocations in general tend to maximize your own payoffs.";
+                            } else if (firstSixCat == 'competitive') {
+                                msgRes += "This means that your allocations in general tend to maximze the difference between your payoffs and the payoffs of the other person.";
+                            } else if (firstSixCat == 'altruistic') {
+                                msgRes += "This means that your allocations in general tend to maximize the payoff of the other person.";
+                            }
+
+                            msgRes += "<br><br>Here we provide you with more detailed results about your choices. Your SVO Slider score is " + Math.round(firstSixAngle * 10) / 10 + ".  The SVO Slider score is an angle that has a particular technical meaning and if you are interested in knowing more about this individual difference measure, you can download the <a href='http://vlab.ethz.ch/svo/SVO_Slider/SVO_Slider.html' target='_new'>paper here</a>  which explains its meaning in detail.<br><br>Above you can see a plot showing your SVO score among other people's scores.  The vertical red line corresponds to your particular score. Your score falls in the " + perc + "th percentile of social preferences. This means that on average you have a higher degree of social preference than " + perc + " out of 100 people. Over 350 people are part of this norming dataset and it provides us with some idea of how people vary on this individual difference.  Most people tend to be either individualistic or prosocial to different degrees, but as you can see there are substantial differences in people's social preferences.";
+                            link = "<br><br><span id='emaillink'>Click <span onClick=\"emailFunction();document.getElementById('emaillink').innerHTML='<img src=images/icons/valid_icon.png width=20 height=20> An email with a copy of this report has been sent to " + email_address + ".'\" onMouseOver=\"this.style.cursor='pointer'\"><u>here</u></span> to send a copy of this report to your email address " + email_address + ".</span>";
+                            link += "<br><br>Click <span onClick=\"downloadFunction()\" onMouseOver=\"this.style.cursor='pointer'\"><u>here</u></span> to download your raw data.</span>";
+                        } else {
+                            msgRes = "Your choices were not successfully evaluated.  You provided inconstant answers which makes it impossible to accurately estimate your preferences.  Consider starting over and answering each of the questions more carefully.";
+                            var also = 'also';
+                            link = '';
+                        }
+                        msgRes += link;
+                    }
+                    createMsg();
+                    setTimeout("showMessage('true', msgDataSaved, 300, 50, 750)", 6000);
+                }
+                return false;
+            }
+        } else {
+            msgError = "This computer did not receive a response from the server at this time. If you're running the task offline then this is not a problem.  Keep this window open and your data will be uploaded when you reconnect to the internet.<br><br>";
+            return false;
+        }
+    }
+}
+
+/*                                                            */
+/*                                                            */
+/*                                                            */
+/*                                                            */
+/*                data handling and posting above             */
+/*                                                            */
+/*                                                            */
+/*                                                            */
+/*                                                            */
+
+/* build game */
+addSlider(slideName, 400, 430);
+dispGame();
+createMsg();
+showMessage("true", msgStartGame);
+/* a nice welcome message */
+clickMe(document.getElementById("infomessage"), 'true');
+/* we make the box movable */
+
+if ((navigator.userAgent.indexOf('iPhone') > 0) || (navigator.userAgent.indexOf('iPad') > 0) || (navigator.userAgent.indexOf('Android') > 0)) {
+    var ipad_boxmove = new webkit_draggable('infomessage');
+}
+
+function showMessage(bool, bigGameMsg, sleft, stop, swidth) { /* display a huge message box in the middle of the screen (true = show, noinit = no reset) */
+    if (bool == "true") {
+        disable = true;
+        document.getElementById("infomessage").style.visibility = "visible";
+        if (sleft > 0) {
+            document.getElementById("infomessage").style.left = sleft + "px";
+        } else {
+            document.getElementById("infomessage").style.left = "370px";
+        }
+        if (swidth > 0) {
+            document.getElementById("infomessage").style.width = swidth + "px";
+        } else {
+            document.getElementById("infomessage").style.width = "500px";
+        }
+        if (stop > 0) {
+            document.getElementById("infomessage").style.top = stop + "px";
+        } else {
+            document.getElementById("infomessage").style.top = "330px";
+        }
+        document.getElementById("message_contents").innerHTML = bigGameMsg;
+        document.getElementById("instructionstitle").style.visibility = "hidden";
+        document.getElementById("gobutton").style.visibility = "hidden";
+    } else {
+        document.getElementById("infomessage").style.visibility = "hidden";
+        document.getElementById("instructionstitle").style.visibility = "visible";
+        document.getElementById("gobutton").style.visibility = "visible";
+        if (!(bool == "noinit")) {
+            initGame();
+        } else {
+            disable = false;
+        }
+    }
+}
+
+function dispGame() { /* display the current game status */
+    //document.getElementById("round").innerHTML = round+" of "+maxRounds;
+    document.getElementById("stage").innerHTML = stage + " of " + maxStages;
+    document.getElementById("msgbox").innerHTML = gameMsg;
+}
+
+/*
+ The ticker script: tracks intermediate search paths.
+ */
+ticksTime = new Array();
+ticksValYou = new Array();
+ticksValOther = new Array();
+
+for (var i = 1; i <= 15; i++) {
+    ticksTime[i] = new Array();
+    ticksValYou[i] = new Array();
+    ticksValOther[i] = new Array();
+}
+
+function trackTicks() {
+    storeTimeInterval = setInterval("storeInterimValues()", 50);
+}
+
+function storeInterimValues() {
+    var d = new Date();
+    ticksTime[stage].push(Math.round(d.getTime() / 10) / 100);
+    ticksValYou[stage].push(Math.round(showValue('slider') * 1000) / 1000);
+    ticksValOther[stage].push(Math.round(showValueLower('slider') * 1000) / 1000);
+}
+
+/*
+ End of ticker script.
+ */
+
+function initGame() {
+    first_item_timestamp = Math.round((new Date().getTime()) / 100) / 10;
+    adjustSlider(set[round][stage][1], set[round][stage][2], set[round][stage][3], set[round][stage][4], set[round][stage][5], set[round][stage][6]);
+
+    /* we store some data */
+    itemLowvalYou[stage] = set[round][stage][1];
+    itemHighvalYou[stage] = set[round][stage][2];
+    itemDescYou[stage] = set[round][stage][3];
+    itemLowvalOther[stage] = set[round][stage][4];
+    itemHighvalOther[stage] = set[round][stage][5];
+    itemDescOther[stage] = set[round][stage][6];
+    itemID[stage] = set[round][stage][7];
+
+    initSlider('slider');
+    if (storeSearchPath == 1) {
+        trackTicks();
+    }
+    gameMsg = '';
+    dispGame();
+}
+
+function roundControl() { /* controls stage settings, rounds and message deliveries */
+    createMsg();
+
+    if (stage == maxStages) {
+        calcAngle();
+        transitivityHolds();
+        secondaryItemResults();
+        ajaxFunction(); // we save the data;
+        showMessage('true', msgGameEnded);
+    } else if (stage >= 6) { // due to the structure, we have 2 save points
+        round = 2;
+        stage++;
+        if (stage == 7) {
+            calcAngle();
+            transitivityHolds();
+            ajaxFunction();
+        }
+        fic_stage = stage - 6;
+
+        adjustSlider(set[round][fic_stage][1], set[round][fic_stage][2], set[round][fic_stage][3], set[round][fic_stage][4], set[round][fic_stage][5], set[round][fic_stage][6]);
+
+        /* we store some data */
+        itemLowvalYou[stage] = set[round][fic_stage][1];
+        itemHighvalYou[stage] = set[round][fic_stage][2];
+        itemDescYou[stage] = set[round][fic_stage][3];
+        itemLowvalOther[stage] = set[round][fic_stage][4];
+        itemHighvalOther[stage] = set[round][fic_stage][5];
+        itemDescOther[stage] = set[round][fic_stage][6];
+        itemID[stage] = set[round][fic_stage][7];
+
+        initSlider('slider');
+        if (storeSearchPath == 1) {
+            trackTicks();
+        }
+    } else {
+        stage++;
+        adjustSlider(set[round][stage][1], set[round][stage][2], set[round][stage][3], set[round][stage][4], set[round][stage][5], set[round][stage][6]);
+
+        /* we store some data */
+        itemLowvalYou[stage] = set[round][stage][1];
+        itemHighvalYou[stage] = set[round][stage][2];
+        itemDescYou[stage] = set[round][stage][3];
+        itemLowvalOther[stage] = set[round][stage][4];
+        itemHighvalOther[stage] = set[round][stage][5];
+        itemDescOther[stage] = set[round][stage][6];
+        itemID[stage] = set[round][stage][7];
+
+        initSlider('slider');
+        if (storeSearchPath == 1) {
+            trackTicks();
+        }
+    }
+}
+
+/* a function to simulate a button click, so we do not have to redefine events on button clicks (from codingforums.com) */
+if (typeof HTMLElement != "undefined") {
+    HTMLElement.prototype.click = function () {
+        var evt = this.ownerDocument.createEvent('MouseEvents');
+        evt.initMouseEvent('click', true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+        this.dispatchEvent(evt);
+    }
+}
+
+window.onload = enableKeys;
+function enableKeys() {
+    document.onkeyup = keyPressed;
+}
+function keyPressed(k) { /* make the enter button work as well */
+    if (!k) var k = window.event;
+    if (k.keyCode == 13) {
+        /* if we see the box, we map the enter button to it */
+        if (document.getElementById('infomessage').style.visibility == 'visible') {
+            document.getElementById('continuebutton').click();
+        } else {
+            goClick();
+        }
+    }
+}
+
+/* this is where we execute the game for real */
+function goClick() {
+    if (disable == true) {
+        return false;
+    }
+    /* disable for any use (return key, click...) */
+    if (document.getElementById('slider').style.display == 'none') {
+        showMessage('true', msgSelectValue);
+        disable = false;
+        return false;
+    }
+    disable = true;
+    setTimeout("disable=false", delayInvestClick);
+
+    clearInterval(storeTimeInterval); // clear the search path interval
+    //alert(ticksValYou[stage]);
+
+    /* we store the data */
+    timeChoice[stage] = Math.round((new Date().getTime()) / 10) / 100;
+    choiceYou[stage] = Math.round(showValue('slider'));
+    choiceYouHR[stage] = Math.round(showValue('slider'));
+    choiceOther[stage] = Math.round(showValueLower('slider'));
+    choiceOtherHR[stage] = Math.round(showValueLower('slider')); // the high res value, to determine the exact distribution
+
+    pixelLocation[stage] = showPixelLocation('slider'); // we store the location of the slider, for double checking
+
+    setTimeout("document.getElementById('gobutton').style.background='white'", 5);
+    setTimeout("document.getElementById('gobutton').style.background='grey'", 10);
+    setTimeout("document.getElementById('gobutton').style.background='white'", 150);
+    setTimeout("document.getElementById('stage').style.color='black'", 5);
+    setTimeout("document.getElementById('stage').style.color='red'", 10);
+    setTimeout("document.getElementById('stage').style.color='black'", 150);
+
+    roundControl();
+    dispGame();
+    gameMsg = '';
+}
+
+</script>
+
+<div id="copyright">
+    <img src="images/browsers/compatible_chrome.gif" width="12" height="12" alt="Compatible with Chrome." title="Compatible with Chrome.">
+    <img src="images/browsers/compatible_firefox.gif" width="12" height="12" alt="Compatible with Firefox." title="Compatible with Firefox.">
+    <img src="images/browsers/compatible_ie.gif" width="12" height="12" alt="Compatible with Internet Explorer." title="Compatible with Internet Explorer.">
+    <img src="images/browsers/compatible_opera.gif" width="12" height="12" alt="Compatible with Opera." title="Compatible with Opera.">
+    <img src="images/browsers/compatible_safari.gif" width="12" height="12" alt="Compatible with Safari." title="Compatible with Safari.">
+    <span>&copy; ETHZ D-GESS</span></div>
+</body>
+</html>
+
+
+ruh902@mail.usask.ca
+jul772@mail.usask.ca
+mdz350@mail.usask.ca
+gmj137@mail.usask.ca
+dml520@mail.usask.ca
+cht526@mail.usask.ca
+kaz920@mail.usask.ca
+adn503@mail.usask.ca
+cas410@mail.usask.ca
+elm139@mail.usask.ca
+krc775@mail.usask.ca
+jfh867@mail.usask.ca
+alk073@mail.usask.ca
+kkd007@mail.usask.ca
+msc703@mail.usask.ca
+cda848@mail.usask.ca
+mrm803@mail.usask.ca
+brs187@mail.usask.ca
+mdb754@mail.usask.ca
+ala969@mail.usask.ca
+jrb897@mail.usask.ca
+imv299@mail.usask.ca
+alp388@mail.usask.ca
+zhf764@mail.usask.ca
+lcr728@mail.usask.ca
+weh600@mail.usask.ca
+alm872@mail.usask.ca
+eoo193@mail.usask.ca
+acb763@mail.usask.ca
+cmg026@mail.usask.ca
+fay602@mail.usask.ca
+ats132@mail.usask.ca
+arm718@mail.usask.ca
+mpk622@mail.usask.ca
+asc988@mail.usask.ca
+srw340@mail.usask.ca
+hdc197@mail.usask.ca
+acl616@mail.usask.ca
+sjb363@mail.usask.ca
+mle414@mail.usask.ca
+hub412@mail.usask.ca
+lrb995@mail.usask.ca
+bjf517@mail.usask.ca
+xiz919@mail.usask.ca
+hat972@mail.usask.ca
+chw389@mail.usask.ca
+meagan.barabash@usask.ca
+cdk835@mail.usask.ca
+prr022@mail.usask.ca
+amh974@mail.usask.ca
+sjp319@mail.usask.ca
+jcl622@mail.usask.ca
+snh624@mail.usask.ca
+jjm937@mail.usask.ca
+adb358@mail.usask.ca
+sun944@mail.usask.ca
+jok620@mail.usask.ca
+dab903@mail.usask.ca
+kok678@mail.usask.ca
+elg737@mail.usask.ca
+bmm472@mail.usask.ca
+slm483@mail.usask.ca
+kms568@mail.usask.ca
+bvh867@mail.usask.ca
+les359@mail.usask.ca
+mes132@mail.usask.ca
+mdb204@mail.usask.ca
+jup793@mail.usask.ca
+a.riehl@usask.ca
+naf301@mail.usask.ca
+clh198@mail.usask.ca
+cmt925@mail.usask.ca
+djb595@mail.usask.ca
+mry872@mail.usask.ca
+bmh731@mail.usask.ca
+ems918@mail.usask.ca
+rll088@mail.usask.ca
+stc562@mail.usask.ca
+sam772@mail.usask.ca
+lbw420@mail.usask.ca
+jgw348@mail.usask.ca
+nym478@mail.usask.ca
+jgm182@mail.usask.ca
+tjt884@mail.usask.ca
+bcj450@mail.usask.ca
+lmb807@mail.usask.ca
+kia280@mail.usask.ca
+rul047@mail.usask.ca
+til692@mail.usask.ca
+jlb179@mail.usask.ca
+rtp483@mail.usask.ca
+war736@mail.usask.ca
+nio020@mail.usask.ca
+cpm522@mail.usask.ca
+paul.olenick@usask.ca

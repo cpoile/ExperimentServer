@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Class-Path: de.huxhorn.sulky.buffers-0.9.14.jar de.huxhorn.lilith.data
+ .eventsource-0.9.41.jar scala-library-2.9.2.jar de.huxhorn.lilith.log
+ back.appender.multiplex-classic-0.9.41.jar de.huxhorn.lilith.logback.
+ classic-0.9.41.jar config-0.5.2.jar de.huxhorn.lilith.data.logging.pr
+ otobuf-0.9.41.jar de.huxhorn.sulky.io-0.9.14.jar de.huxhorn.lilith.co
+ nstants-0.9.41.jar de.huxhorn.lilith.logback.encoder.classic-0.9.41.j
+ ar de.huxhorn.lilith.logback.appender.multiplex-core-0.9.41.jar de.hu
+ xhorn.sulky.formatting-0.9.14.jar scalaz-core_2.9.2-6.0.4.jar protobu
+ f-java-2.3.0.jar de.huxhorn.lilith.data.logging-0.9.41.jar de.huxhorn
+ .sulky.codec-0.9.14.jar de.huxhorn.sulky.codec.filebuffer-0.9.14.jar 
+ de.huxhorn.lilith.sender-0.9.41.jar slf4j-api-1.6.6.jar de.huxhorn.li
+ lith.logback.logging-adapter-0.9.41.jar logback-classic-1.0.6.jar de.
+ huxhorn.lilith.logback.encoder.core-0.9.41.jar logback-core-1.0.6.jar
+

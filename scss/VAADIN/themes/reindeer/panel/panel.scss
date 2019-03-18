@@ -1,0 +1,78 @@
+@mixin reindeer-panel($name : v-panel) {
+
+.blue .#{$name}-caption,
+.blue .#{$name}-nocaption,
+.blue .#{$name}-content {
+	border-color: #a8bcc5;
+}
+.#{$name}-caption,
+.#{$name}-nocaption,
+.white .#{$name}-caption,
+.white .#{$name}-nocaption {
+	border-bottom: 1px solid #e5e5e5;
+	line-height: 16px; /* accommodate minimum icon size */
+}
+.v-webkit .#{$name}-caption,
+.v-webkit .#{$name}-nocaption,
+.v-gecko .#{$name}-caption,
+.v-gecko .#{$name}-nocaption,
+.v-ie9 .#{$name}-caption,
+.v-ie9 .#{$name}-nocaption {
+	border-bottom-color: rgba(0,0,0,.08);
+}
+.#{$name}-caption {
+	padding-bottom: 2px;
+}
+.#{$name}-content,
+.white .#{$name}-content {
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	border-bottom: none;
+	border-top: none;
+}
+.v-webkit .#{$name}-content,
+.v-gecko .#{$name}-content,
+.v-ie9 .#{$name}-content {
+	border-top-color: rgba(0,0,0,.07);
+}
+.blue .#{$name}-deco {
+	border-color: #92a3ac;
+	background: #adc2cd;
+}
+.#{$name}-deco,
+.white .#{$name}-deco {
+	height: 1px;
+	border-top: 1px solid #bebebe;
+	background: #e2e2e2;
+	overflow: hidden;
+}
+.v-webkit .#{$name}-deco,
+.v-gecko .#{$name}-deco,
+.v-ie9 .#{$name}-deco {
+	border-top-color: rgba(0,0,0,.1);
+	background: rgba(0,0,0,.08);
+}
+.#{$name}-caption .v-errorindicator {
+	height: 16px;
+	width: 13px;
+	background: url(../common/icons/error.png) no-repeat 50%;
+	display: inline;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Light style */
+.#{$name}-light .#{$name}-caption-light,
+.#{$name}-light .#{$name}-nocaption-light {
+	border: none;
+}
+.#{$name}-light .#{$name}-content-light {
+	border: none;
+	background: transparent;
+}
+.#{$name}-light .#{$name}-deco-light {
+	height: 0;
+	border: none;
+}
+
+}

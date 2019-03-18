@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="scala" name="Scala">
+      <configuration>
+        <option name="compilerLibraryLevel" value="Project" />
+        <option name="compilerLibraryName" value="Maven: org.scala-lang:scala-compiler-bundle:2.10.4" />
+        <option name="deprecationWarnings" value="true" />
+        <option name="uncheckedWarnings" value="true" />
+        <option name="vmOptions" value="" />
+      </configuration>
+    </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/mba877Admin/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/mba877Admin/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/mba877/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/mba877/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web3">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/template/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/template/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="sass-stdlib" level="application" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-reflect:2.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scalaz:scalaz-core_2.10:6.0.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scalatest:scalatest_2.10:2.0.M6-SNAP8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scalacheck:scalacheck_2.10:1.10.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-tools.testing:test-interface:0.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang:scala-actors:2.10.1" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.0.13" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.0.13" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.logback.appender.multiplex-classic:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.data.logging.protobuf:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.4.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.sulky:de.huxhorn.sulky.codec:0.9.15" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.sulky:de.huxhorn.sulky.io:0.9.15" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.data.logging:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.sulky:de.huxhorn.sulky.formatting:0.9.15" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.data.eventsource:0.9.42.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.logback.appender.multiplex-core:0.9.42.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.sender:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.logback.logging-adapter:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.logback.classic:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.logback.encoder.classic:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.logback.encoder.core:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.lilith:de.huxhorn.lilith.constants:0.9.42.1" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.sulky:de.huxhorn.sulky.codec.filebuffer:0.9.15" level="project" />
+    <orderEntry type="library" name="Maven: de.huxhorn.sulky:de.huxhorn.sulky.buffers:0.9.15" level="project" />
+  </component>
+</module>
+

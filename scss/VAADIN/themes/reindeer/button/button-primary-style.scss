@@ -1,0 +1,66 @@
+@mixin reindeer-button-primary-style($name : v-button) {
+
+.#{$name}-primary:focus {
+	background-image: url(img/primary-left-focus.png); /** sprite-ref: buttons */
+	}
+	
+.#{$name}-primary:focus .#{$name}-wrap {
+	background-image: url(img/primary-right-focus.png); /** sprite-ref: buttons; sprite-alignment: right */
+	}
+	
+.#{$name}-primary:active,
+.#{$name}-primary.v-pressed {
+	background-image: url(img/primary-left-pressed.png); /** sprite-ref: buttons */
+	}
+
+.#{$name}-primary:active .#{$name}-wrap,
+.#{$name}-primary.v-pressed .#{$name}-wrap {
+	background-image: url(img/primary-right-pressed.png); /** sprite-ref: buttons; sprite-alignment: right */
+	}
+
+.#{$name}-primary,
+.v-disabled.#{$name}-primary {
+	background-image: url(img/primary-left.png); /** sprite-ref: buttons */
+	}
+	
+.#{$name}-primary .#{$name}-wrap,
+.v-disabled.#{$name}-primary .#{$name}-wrap {
+	background-image: url(img/primary-right.png); /** sprite-ref: buttons; sprite-alignment: right */
+	}
+	
+
+
+
+/* Black style */
+
+
+.black .#{$name}-primary:focus {
+	background-image: url(img/black/primary-left-focus.png); /** sprite-ref: black-buttons */
+	}
+	
+.black .#{$name}-primary:focus .#{$name}-wrap {
+	background-image: url(img/black/primary-right-focus.png); /** sprite-ref: black-buttons; sprite-alignment: right */
+	color: #eaf4fb;
+	}
+	
+.black .#{$name}-primary:active,
+.black .#{$name}-primary.v-pressed {
+	background-image: url(img/black/primary-left-pressed.png); /** sprite-ref: black-buttons */
+	}
+	
+.black .#{$name}-primary:active .#{$name}-wrap,
+.black .#{$name}-primary.v-pressed .#{$name}-wrap {
+	background-image: url(img/black/primary-right-pressed.png); /** sprite-ref: black-buttons; sprite-alignment: right */
+	}
+
+.black .#{$name}-primary,
+.black .v-disabled.#{$name}-primary {
+	background-image: url(img/black/primary-left.png); /** sprite-ref: black-buttons */
+	}
+	
+.black .#{$name}-primary .#{$name}-wrap,
+.black .v-disabled.#{$name}-primary .#{$name}-wrap {
+	background-image: url(img/black/primary-right.png); /** sprite-ref: black-buttons; sprite-alignment: right */
+	}
+
+}

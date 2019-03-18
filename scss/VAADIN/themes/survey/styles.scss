@@ -1,0 +1,175 @@
+@import "../bootstrap/bootstrap";
+@import "../bootstrap/responsive-1200px-min";
+@import "../base/base";
+@import "../reindeer/reindeer";
+@import "../additionsToBootstrap";
+
+@include base-table;
+@include base-layout;
+
+@include reindeer-table;
+@include reindeer-layouts;
+@include base-select;
+@include reindeer-select;
+@include reindeer-notification;
+
+.c-inline {
+  display : inline;
+}
+
+.adminButton {
+  width  : 116px;
+  margin : 3px 10px;
+}
+
+.v-formlayout-captioncell {
+  padding : 3px 10px;
+}
+
+.v-formlayout-margin-top {
+  margin-top : 10px;
+}
+
+.disablingDivWrapper {
+  position : relative;
+}
+
+.disablingDiv {
+  /* Display it on entry */
+  display          : block;
+
+  /* Display it on the layer with index 40001.*/
+  z-index          : 40001;
+
+  /* make it cover the whole screen */
+  position         : absolute;
+  top              : 0;
+  left             : 0;
+  width            : 920px;
+  height           : 100%;
+
+  /* make it grey and mildly transparent */
+  background-color : $grayLight;
+  opacity          : .80;
+  filter           : alpha(opacity = 80);
+}
+
+#register {
+  margin-bottom : 80px;
+}
+
+#signupIntro.container {
+  margin-top : 40px;
+}
+
+@import "svoSlider";
+
+
+
+#svsInfoBox {
+  background-color: #FFFFFF;
+  border: 1px solid;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  top: 10px;
+  width: 750px;
+  .page2 {
+    top: 50px;
+  }
+}
+
+#svs-1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 20px;
+  position: absolute;
+}
+#svs0 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 149px;
+  position: absolute;
+}
+#svs1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 216px;
+  position: absolute;
+}
+#svs2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 283px;
+  position: absolute;
+}
+#svs3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 350px;
+  position: absolute;
+}
+#svs4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 417px;
+  position: absolute;
+}
+#svs5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 484px;
+  position: absolute;
+}
+#svs6 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 0 551px;
+  position: absolute;
+}
+#svs7 {
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+}
+#svs7 {
+  margin: 20px 0 0 710px;
+  position: absolute;
+}
+#svs0Expl {
+  margin: 54px 0 0 122px;
+  position: absolute;
+  width: 100px;
+}
+#svs3Expl {
+  margin: 54px 0 0 333px;
+  position: absolute;
+  width: 78px;
+}
+#svs6Expl {
+  margin: 54px 0 0 529px;
+  position: absolute;
+  width: 100px;
+}
+.v-textfield.svsItem.v-textfield-svsItem {
+  margin-right: 5px;
+  width: 20px;
+}
+.svsItemError {
+  color: red;
+}
+
+#survey2Part1MainSection {
+  min-height: 202px;
+}
+
+.timeText {
+  font-size: 9pt;
+}
+
+// To prevent the yellow border from appearing in chrome
+*:focus {
+  outline: none;
+}

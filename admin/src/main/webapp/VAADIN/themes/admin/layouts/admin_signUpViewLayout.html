@@ -1,0 +1,63 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+                <li><a>Reset Connection</a></li>
+                <li class="active"><a>SignUp Admin</a></li>
+                <li><a><span location="toExpAdmin"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="adminWrapper">
+    <header class="jumbotron subhead">
+        <div class="container">
+            <h1>SignUp Admin View</h1>
+        </div>
+    </header>
+    <div class="admin container">
+        <div class="row">
+            <div class="span13 offset1">
+
+                <section id="experiments">
+                    <h3>Experiments Available</h3>
+
+                    <div class="row">
+                        <div class="span3">
+                            <div location="experiments"></div>
+                            <div location="newExp"></div>
+                        </div>
+                        <div class="span4">
+                            <div location="newExpForm"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="timeSlots"><h3>Experiment Time Slots Available</h3>
+
+                    <div location="timeSlots"></div>
+                    <div location="newSlot"></div>
+                    <div location="newSlotForm"></div>
+                    <div location="participantsPerSlotTable"></div>
+                    <div location="deleteParticipantButton"></div>
+                </section>
+
+                <section id="courses">
+                    <h3>Courses Available</h3>
+
+                    <div location="courses"></div>
+                    <div location="newCourse"></div>
+                    <div location="newCourseForm"></div>
+                </section>
+
+                <section id="participants">
+                    <h3>Participants</h3>
+
+                    <div location="participants"></div>
+                    <div location="newParticipant"></div>
+                    <div location="newParticipantForm"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

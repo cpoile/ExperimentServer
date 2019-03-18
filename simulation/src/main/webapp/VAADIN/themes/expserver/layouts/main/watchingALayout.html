@@ -1,0 +1,254 @@
+<div class="inGame" id="watchingALayout">
+    <div class="header">
+
+        <img id="logo" src="../images/working/logo.png" alt=""/>
+
+        <ul class="globalNav">
+            <li class="current"><a id="tut_Teammate" class="active" href="#teammatesProgress">Teammate's
+                Progress</a>
+            </li>
+            <li><a class="active" id="tut_Standings" href="#curStandings">Current F1 Standings</a>
+            </li>
+        </ul>
+
+    </div>
+    <div id="teammatesProgress">
+        <div class="container">
+
+            <div class="left">
+                <div>
+                    <div id="daysLeft" class="xlargetext white" location="daysLeft">22</div>
+                    <div class="black">Teammate's Working Days Left</div>
+                </div>
+            </div>
+            <div class="divider-vert">
+                <img src="../images/working/divider-vertical.png"/>
+            </div>
+
+            <div id="tut_carInfo" class="center">
+                <div class="partInfo">
+                    <div class="topLeft">
+                        <div id="tut_TopSpeed" class="c-inline largetext yellow" location="part1CurData"></div>
+                        <span class="regulartext yellow">KPH</span><br/>
+                        <span id="tut_TopSpeedLabel" class="white regulartext">Current Top Speed</span>
+                    </div>
+
+                    <div class="topRight">
+                        <div id="tut_TopSpeedGoal" class="c-inline largetext green" location="part1Goal"></div>
+                        <span class="regulartext green">KPH</span><br/>
+                        <span class="white regulartext">Team's Final Goal (for 1st place)</span>
+                    </div>
+
+                    <div class="footer">
+                        Linear top speed is the maximum speed through a 1 km straightaway. Top speed
+                        increases by 2 kph per upgrade. It is affected by the Engine (teammate's
+                        component) and the Air Intake System (your component).
+                    </div>
+                </div>
+                <div class="footerParts">
+                    <div id="A_p1n" class="partName rotate">Engine<br/>(Teammate's Component)</div>
+                    <img id="A_p1p" class="partPic" src="../images/tutorial/engineA.png" alt=""/>
+
+                    <div id="B_p1n" class="partName rotate">Air Intake System<br/>(Your Component)</div>
+                    <img id="B_p1p" class="partPic" src="../images/tutorial/intakeB.png" alt=""/>
+                </div>
+
+                <div class="divider-horiz">
+                    <img src="../images/working/horiz-divider.png"/>
+                </div>
+
+                <div class="partInfo">
+                    <div class="topLeft">
+                        <div id="tut_LinAccel" class="c-inline largetext yellow" location="part2CurData"></div>
+                        <span  class="regulartext yellow">Sec</span><br/>
+                        <span  class="white regulartext">Current Linear Acceleration</span></p>
+                    </div>
+                    <div class="topRight">
+                        <div id="tut_LinAccelGoal" class="c-inline largetext green" location="part2Goal"></div>
+                        <span class="regulartext green">Sec</span><br/>
+                        <span class="white regulartext">Team's Final Goal (for 1st place)</span></p>
+                    </div>
+                    <div class="footer">
+                        Linear acceleration is the time it takes to go from 0 to 100 kph.
+                        Acceleration time decreases by .2 sec per upgrade (lower is better). It is
+                        affected by the Powertrain (teammate's component) and the Wing Aerodynamics
+                        (your component).
+                    </div>
+                </div>
+                <div class="footerParts">
+                    <div id="A_p2n" class="partName rotate">Powertrain<br/>(Teammate's Component)</div>
+                    <img id="A_p2p" class="partPic" src="../images/tutorial/driveA.png" alt=""/>
+
+                    <div id="B_p2n" class="partName rotate">Wing Aerodynamics<br/>(Your Component)</div>
+                    <img id="B_p2p1" class="partPic" src="../images/tutorial/wing1B.png" alt=""/>
+                    <img id="B_p2p2" class="partPic" src="../images/tutorial/wing2B.png" alt=""/>
+                </div>
+
+                <div class="divider-horiz">
+                    <img src="../images/working/horiz-divider.png"/>
+                </div>
+
+                <div class="partInfo">
+                    <div class="topLeft">
+                        <div class="c-inline largetext yellow" location="part3CurData"></div>
+                        <span class="regulartext yellow">KPH</span><br/>
+                        <span id="tut_LatTopSpeed" class="white regulartext">Current Lateral Top Speed</span></p>
+                    </div>
+
+                    <div class="topRight">
+                        <div class="c-inline largetext green" location="part3Goal"></div>
+                        <span class="regulartext green">KPH</span><br/>
+                        <span class="white regulartext">Team's Final Goal (for 1st place)</span></p>
+                    </div>
+
+                    <div class="footer">
+                        Lateral top speed is the maximum (safe) speed through 190 deg. corner.
+                        Lateral top speed increases by 2 kph per upgrade. It is affected by the
+                        Wheel Assembly (teammate's component) and the Suspension System (your
+                        component).
+                    </div>
+                </div>
+                <div class="footerParts">
+                    <div id="A_p3n" class="partName rotate">Wheel Assembly<br/>(Teammate's Component)</div>
+                    <img id="A_p3p" class="partPic" src="../images/tutorial/tireA.png" alt=""/>
+
+                    <div id="B_p3n" class="partName rotate">Suspension System<br/>(Your Component)</div>
+                    <img id="B_p3p" class="partPic" src="../images/tutorial/suspensionB.png" alt=""/>
+                </div>
+
+                <div class="playerWaitingMsgB">We are observing your teammate as they finish their
+                    month of work (they are the First Engineer). You may chat with them, and view
+                    the current standings above. Otherwise, you are waiting for them to finish their
+                    month before you begin your month.
+                </div>
+            </div>
+
+            <div class="divider-vert">
+                <img src="../images/working/divider-vertical.png"/>
+            </div>
+
+            <div class="sidebarLoc"></div>
+
+        </div>
+
+    </div>
+
+    <div id="curStandings">
+
+        <div class="container">
+
+            <div class="vertleft divider-vert">
+                <img src="../images/working/divider-vertical.png"/>
+            </div>
+
+            <div class="center">
+                <div location="raceResultsComponent"></div>
+            </div>
+
+            <div class="divider-vert">
+                <img src="../images/working/divider-vertical.png"/>
+            </div>
+
+            <div class="sidebarLoc"></div>
+
+
+
+        </div>
+    </div>
+
+    <div id="rightsidebar">
+        <div id="nextRaceLabel" class="rsLabelText">Next Race /</div>
+                <span id="rsOutOf" class="rsLabelText">
+                    <span class="c-inline" location="trackNum"></span>
+                    <span class="c-inline">out of</span>
+                    <span class="c-inline" location="rsNumTracks"></span>
+                </span>
+
+        <div id="rsNextRaceTrack" class="regulartext white" location="nextRaceName"></div>
+
+        <div class="chatMsgText" location="messageList"></div>
+
+        <div class="chatMsgText">
+            <div id="chatinputWrapper" location="chatInput"></div>
+            <div location="chatButton"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--
+<div id="watchingAContentWrapper">
+
+    <div id="watchingAcarpartdetails">
+
+        <div class="float daysleft">
+            <div class="xlargetext white" location="daysLeft">22</div>
+            <div class="black">Teammate's Working Days Left</div>
+        </div>
+        <div class="float">
+            <img class="waDivider" src="../images/working/divider-vertical.png"/>
+        </div>
+        <div class="float">
+            <div id="part1" class="carPart" style="display: block;">
+                <div class="watchingPartsLeft">
+                    <div class="c-inline largetext yellow" location="part1CurData"></div>
+                    <span class="regulartext yellow">KPH</span><br/>
+                    <span class="white regulartext">Current Top Speed</span></p>
+                </div>
+
+                <div class="watchingPartsRight">
+                    <div class="c-inline largetext green" location="part1Goal"></div>
+                    <span class="regulartext green">KPH</span><br/> <span class="white regulartext">Team's Final Goal (for 1st place)</span></p>
+                </div>
+
+                <div class="watchingPartsFooter">
+                    <div class="explFooterText">Linear top speed is the maximum speed through a 1 km straightaway. Top
+                        speed increases by 2 kph per upgrade. It is affected by the Engine (teammate's component) and
+                        the Air Intake System (your component).
+                    </div>
+                </div>
+            </div>
+
+            <div id="part2" class="carPart" style="display: block;">
+                <div class="watchingPartsLeft">
+                    <div class="c-inline largetext yellow" location="part2CurData"></div>
+                    <span class="regulartext yellow">Sec</span><br/> <span class="white regulartext">Current Linear Acceleration</span></p>
+                </div>
+
+                <div class="watchingPartsRight">
+                    <div class="c-inline largetext green" location="part2Goal"></div>
+                    <span class="regulartext green">Sec</span><br/> <span class="white regulartext">Team's Final Goal (for 1st place)</span></p>
+                </div>
+
+                <div class="watchingPartsFooter">
+                    <div class="explFooterText">Linear acceleration is the time it takes to go from 0 to 200 kph.
+                        Acceleration time decreases by .2 sec per upgrade (lower is better). It is affected by the
+                        Powertrain (teammate's component) and the Wing Aerodynamics (your component).
+                    </div>
+                </div>
+            </div>
+
+            <div id="part3" class="carPart" style="display: block;">
+                <div class="watchingPartsLeft">
+                    <div class="c-inline largetext yellow" location="part3CurData"></div>
+                    <span class="regulartext yellow">KPH</span><br/> <span class="white regulartext">Current Lateral Top Speed</span></p>
+                </div>
+
+                <div class="watchingPartsRight">
+                    <div class="c-inline largetext green" location="part3Goal"></div>
+                    <span class="regulartext green">KPH</span><br/> <span class="white regulartext">Team's Final Goal (for 1st place)</span></p>
+                </div>
+
+                <div class="watchingPartsFooter">
+                    <div class="explFooterText">Lateral top speed is the maximum (safe) speed through 190 deg. corner.
+                        Lateral top speed increases by 2 kph per upgrade. It is affected by the Wheel Assembly
+                        (teammate's component) and the Suspension System (your component).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="float">
+        <img class="waDivider" src="../images/working/divider-vertical.png"/>
+    </div>
+</div>-->

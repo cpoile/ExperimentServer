@@ -1,0 +1,237 @@
+/**
+* My additions to bootstrap.
+---------------------------*/
+
+.jumbotron {
+  background  : rgb(180, 221, 180); /* Old browsers */
+  background  : rgb(180, 221, 180); /* Old browsers */
+  background  : -moz-linear-gradient(45deg, rgba(180, 221, 180, 1) 0%, rgba(131, 199, 131, 1) 0%, rgba(82, 177, 82, 1) 0%, rgba(0, 138, 0, 1) 13%, rgba(0, 87, 0, 1) 38%, rgba(0, 36, 0, 1) 99%); /* FF3.6+ */
+  background  : -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(180, 221, 180, 1)), color-stop(0%, rgba(131, 199, 131, 1)), color-stop(0%, rgba(82, 177, 82, 1)), color-stop(13%, rgba(0, 138, 0, 1)), color-stop(38%, rgba(0, 87, 0, 1)), color-stop(99%, rgba(0, 36, 0, 1))); /* Chrome,Safari4+ */
+  background  : -webkit-linear-gradient(45deg, rgba(180, 221, 180, 1) 0%, rgba(131, 199, 131, 1) 0%, rgba(82, 177, 82, 1) 0%, rgba(0, 138, 0, 1) 13%, rgba(0, 87, 0, 1) 38%, rgba(0, 36, 0, 1) 99%); /* Chrome10+,Safari5.1+ */
+  background  : -o-linear-gradient(45deg, rgba(180, 221, 180, 1) 0%, rgba(131, 199, 131, 1) 0%, rgba(82, 177, 82, 1) 0%, rgba(0, 138, 0, 1) 13%, rgba(0, 87, 0, 1) 38%, rgba(0, 36, 0, 1) 99%); /* Opera 11.10+ */
+  background  : -ms-linear-gradient(45deg, rgba(180, 221, 180, 1) 0%, rgba(131, 199, 131, 1) 0%, rgba(82, 177, 82, 1) 0%, rgba(0, 138, 0, 1) 13%, rgba(0, 87, 0, 1) 38%, rgba(0, 36, 0, 1) 99%); /* IE10+ */
+  background  : linear-gradient(45deg, rgba(180, 221, 180, 1) 0%, rgba(131, 199, 131, 1) 0%, rgba(82, 177, 82, 1) 0%, rgba(0, 138, 0, 1) 13%, rgba(0, 87, 0, 1) 38%, rgba(0, 36, 0, 1) 99%); /* W3C */
+  filter      : progid:DXImageTransform.Microsoft.gradient(startColorstr = '#b4ddb4', endColorstr = '#002400', GradientType = 1); /* IE6-9 fallback on horizontal gradient */
+  box-shadow  : 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
+  color       : #FFFFFF;
+  position    : relative;
+  text-align  : center;
+  text-shadow : 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+  padding     : 40px 0px;
+}
+
+.jumbotron .container {
+  position : relative;
+  z-index  : 2;
+  width    : 960px;
+}
+
+.jumbotron:after {
+  background : url("images/bs-docs-masthead-pattern.png") repeat scroll center center transparent;
+  bottom     : 0;
+  content    : "";
+  display    : block;
+  left       : 0;
+  opacity    : 0.4;
+  position   : absolute;
+  right      : 0;
+  top        : 0;
+}
+
+.jumbotron h1 {
+  font-size      : 80px;
+  font-weight    : bold;
+  letter-spacing : -1px;
+  line-height    : 1;
+}
+
+.jumbotron p {
+  font-size     : 24px;
+  font-weight   : 300;
+  line-height   : 1.25;
+  margin-bottom : 30px;
+}
+
+.jumbotron a {
+  color      : rgba(255, 255, 255, 0.5);
+  transition : all 0.2s ease-in-out 0s;
+}
+
+.jumbotron a:hover {
+  color       : #FFFFFF;
+  text-shadow : 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+.masthead {
+  color         : #FFFFFF;
+  margin-bottom : 0;
+  padding       : 70px 0 80px;
+
+  h1 {
+    font-size      : 80px;
+    letter-spacing : -2px;
+    line-height    : 1;
+  }
+  h3 {
+    font-size : 21px;
+  }
+
+  p {
+    font-size   : 30px;
+    font-weight : 200;
+    line-height : 1.25;
+  }
+
+
+  .btn {
+    border        : 0 none;
+    border-radius : 6px 6px 6px 6px;
+    box-shadow    : 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 5px rgba(0, 0, 0, 0.25);
+    color         : #FFFFFF;
+    font-size     : 24px;
+    font-weight   : 200;
+    padding       : 19px 24px;
+    transition    : none 0s ease 0s;
+  }
+
+  .btn:hover {
+    box-shadow : 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn:active {
+    box-shadow : 0 2px 4px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+}
+
+.masthead-links {
+  list-style : none outside none;
+  margin     : 0;
+}
+
+.masthead-links li {
+  color   : rgba(255, 255, 255, 0.25);
+  display : inline;
+  padding : 0 10px;
+}
+
+/* Subhead (other pages)
+------------------------- */
+.subhead {
+  text-align    : left;
+  border-bottom : 1px solid #ddd;
+}
+
+.subhead h1 {
+  font-size : 60px;
+}
+
+.subhead p {
+  margin-bottom : 20px;
+}
+
+/* Sidenav
+-------------------------- */
+
+.sidenav {
+  background-color : #FFFFFF;
+  border-radius    : 6px 6px 6px 6px;
+  box-shadow       : 0 1px 4px rgba(0, 0, 0, 0.067);
+  margin           : 55px 0 0;
+  padding          : 0;
+  width            : 258px;
+  top              : 0;
+}
+
+.sidenav > li > a {
+  border  : 1px solid #E5E5E5;
+  display : block;
+  margin  : 0 0 -1px;
+  padding : 8px 14px;
+}
+
+.sidenav > li:first-child > a {
+  border-radius : 6px 6px 0 0;
+}
+
+.sidenav > li:last-child > a {
+  border-radius : 0 0 6px 6px;
+}
+
+.sidenav > .active > a {
+  border      : 0 none;
+  box-shadow  : 1px 0 0 rgba(0, 0, 0, 0.1) inset, -1px 0 0 rgba(0, 0, 0, 0.1) inset;
+  padding     : 9px 15px;
+  position    : relative;
+  text-shadow : 0 1px 0 rgba(0, 0, 0, 0.15);
+  z-index     : 2;
+}
+
+.sidenav .icon-chevron-right {
+  float        : right;
+  margin-right : -6px;
+  margin-top   : 2px;
+  opacity      : 0.25;
+}
+
+.sidenav > li > a:hover {
+  background-color : #F5F5F5;
+}
+
+.sidenav a:hover .icon-chevron-right {
+  opacity : 0.5;
+}
+
+.sidenav .active .icon-chevron-right, .sidenav .active a:hover .icon-chevron-right {
+  background-image : url("images/glyphicons-halflings-white.png");
+  opacity          : 1;
+}
+
+//.sidenav.affix {
+//    top : 40px;
+//}
+//
+//.sidenav.affix-bottom {
+//    bottom   : 270px;
+//    position : absolute;
+//    top      : auto;
+//}
+
+.bs-docs-container {
+  max-width : 970px;
+}
+
+body > .navbar-fixed-top .brand {
+  float         : left;
+  margin-left   : 0;
+  padding-left  : 10px;
+  padding-right : 10px;
+}
+
+.quick-links li {
+  display : inline-block;
+  margin  : 5px;
+}
+
+section {
+  padding-top : 30px;
+}
+
+section > .page-header, section > .lead {
+  color : #5A5A5A;
+}
+
+section > ul li {
+  margin-bottom : 5px;
+}
+
+/*
+* Typography changes.
+* ----------------------------------------*
+*/
+
+.signup .page-header {
+  border-bottom  : 1px solid #EEEEEE;
+  margin         : 20px 0 30px;
+  padding-bottom : 9px;
+}
+

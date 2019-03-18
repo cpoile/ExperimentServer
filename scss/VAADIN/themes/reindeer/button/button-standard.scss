@@ -1,0 +1,94 @@
+@mixin reindeer-button-standard($name : v-button) {
+
+.#{$name}:focus {
+	background-image: url(img/left-focus.png); /** sprite-ref: buttons */
+	outline: none;
+	}
+
+.#{$name}:focus .#{$name}-wrap {
+	background-image: url(img/right-focus.png); /** sprite-ref: buttons; sprite-alignment: right */
+	outline: none;
+	}
+
+.#{$name}:active,
+.#{$name}.v-pressed {
+	background-image: url(img/left-pressed.png); /** sprite-ref: buttons */
+	outline: none;
+	}
+
+.#{$name}:active .#{$name}-wrap,
+.#{$name}.v-pressed .#{$name}-wrap {
+	background-image: url(img/right-pressed.png); /** sprite-ref: buttons; sprite-alignment: right */
+	outline: none;
+	}
+
+.#{$name},
+.v-disabled.#{$name} {
+	height: 26px;
+	padding: 0 0 0 6px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-image: url(img/left.png); /** sprite-ref: buttons */
+	border: none;
+	cursor: default;
+	}
+
+.#{$name}-wrap,
+.v-disabled.#{$name} .#{$name}-wrap {
+	display: block;
+	height: 22px;
+	padding: 4px 15px 0 9px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(img/right.png);  /** sprite-ref: buttons; sprite-alignment: right */
+	}
+
+.#{$name}-caption {
+	color: #222;
+	text-shadow: #fff 0 1px 0;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 16px;
+	}
+
+
+
+
+/**************************
+ * Black style
+ **************************/
+.black .#{$name}:focus {
+	background-image: url(img/black/left-focus.png); /** sprite-ref: black-buttons */
+	}
+	
+.black .#{$name}:focus .#{$name}-wrap {
+	background-image: url(img/black/right-focus.png); /** sprite-ref: black-buttons; sprite-alignment: right */
+	}
+	
+.black .#{$name}:active,
+.black .#{$name}.v-pressed {
+	background-image: url(img/black/left-pressed.png); /** sprite-ref: black-buttons */
+	}
+	
+.black .#{$name}:active .#{$name}-wrap,
+.black .#{$name}.v-pressed .#{$name}-wrap {
+	background-image: url(img/black/right-pressed.png); /** sprite-ref: black-buttons; sprite-alignment: right */
+	}
+
+.black .#{$name},
+.black .v-disabled.#{$name} {
+	background-image: url(img/black/left.png); /** sprite-ref: black-buttons */
+	}
+	
+.black .#{$name}-wrap,
+.black .v-disabled.#{$name} .#{$name}-wrap {
+	background-image: url(img/black/right.png); /** sprite-ref: black-buttons; sprite-alignment: right */
+	}
+	
+.black .#{$name}-caption {
+	color: #c9ccce;
+	text-shadow: #121314 0 -1px 0;
+	}
+
+}

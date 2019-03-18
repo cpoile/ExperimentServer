@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>ExpServer-parent</artifactId>
+        <groupId>ca.usask.chdp</groupId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>models</artifactId>
+    <packaging>jar</packaging>
+    <name>ExpServer Models</name>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>settings</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-server</artifactId>
+        </dependency>
+<!--
+        <dependency>
+            <groupId>org.mongodb</groupId>
+        <artifactId>casbah-commons_2.10</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>casbah-core_2.10</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-native_2.10</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.novus</groupId>
+            <artifactId>salat-util_2.9.2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.novus</groupId>
+            <artifactId>salat-core_2.9.2</artifactId>
+        </dependency>
+-->
+        <!--<dependency>-->
+            <!--<groupId>org.mongodb</groupId>-->
+            <!--<artifactId>casbah-core_2.10</artifactId>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.novus</groupId>
+            <artifactId>salat-core_2.10</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.novus</groupId>
+            <artifactId>salat-util_2.10</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.joda</groupId>
+            <artifactId>joda-convert</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>${akka-actor.artifactId}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+
+</project>

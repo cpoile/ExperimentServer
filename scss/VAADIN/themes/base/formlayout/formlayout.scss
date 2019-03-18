@@ -1,0 +1,56 @@
+@mixin base-formlayout($name : v-formlayout) {
+
+.#{$name}.v-has-width > table {
+	width: 100%;
+}
+.#{$name}.v-has-height > table {
+	height: 100%;
+}
+.#{$name}-cell .v-errorindicator {
+	display: block;
+}
+.#{$name}-error-indicator {
+	/* fix width so layout is not jumpy when error disappears */
+	width: 12px;
+}
+.#{$name}-captioncell {
+	text-align:right;
+	white-space: nowrap;
+}
+.#{$name}-errorcell, .#{$name}-captioncell {
+	width: 1px; /* Don't use any extra space */
+}
+.#{$name}-captioncell .v-caption {
+	overflow: visible;
+}
+.#{$name}-spacing > tbody > .#{$name}-row > .#{$name}-captioncell, 
+.#{$name}-spacing > tbody > .#{$name}-row > .#{$name}-contentcell,
+.#{$name}-spacing > tbody > .#{$name}-row > .#{$name}-errorcell {
+	padding-top: 6px;
+}
+.#{$name}-spacing > tbody > .#{$name}-firstrow > .#{$name}-captioncell, 
+.#{$name}-spacing > tbody > .#{$name}-firstrow > .#{$name}-contentcell,
+.#{$name}-spacing > tbody > .#{$name}-firstrow > .#{$name}-errorcell {
+	padding-top: 0;
+}
+.#{$name}-margin-top > tbody > .#{$name}-firstrow > .#{$name}-captioncell, 
+.#{$name}-margin-top > tbody > .#{$name}-firstrow > .#{$name}-contentcell,
+.#{$name}-margin-top > tbody > .#{$name}-firstrow > .#{$name}-errorcell {
+	padding-top: 12px;
+}
+.#{$name}-margin-bottom > tbody > .#{$name}-lastrow > .#{$name}-captioncell,
+.#{$name}-margin-bottom > tbody > .#{$name}-lastrow > .#{$name}-contentcell,
+.#{$name}-margin-bottom > tbody > .#{$name}-lastrow > .#{$name}-errorcell {
+	padding-bottom: 12px;
+}
+.#{$name}-margin-left > tbody > .#{$name}-row > .#{$name}-captioncell {
+	padding-left: 12px;
+} 
+.#{$name}-margin-right > tbody > .#{$name}-row > .#{$name}-contentcell {
+	padding-right: 12px;
+}
+.#{$name}-captioncell .v-caption .v-required-field-indicator {
+	float: none;
+}
+
+}

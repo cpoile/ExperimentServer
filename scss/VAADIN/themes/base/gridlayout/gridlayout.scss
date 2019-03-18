@@ -1,0 +1,35 @@
+@mixin base-gridlayout($name : v-gridlayout) {
+
+.#{$name} {
+	position: relative;
+}
+.#{$name}-slot {
+	position: absolute;
+}
+.#{$name}-margin-top {
+	padding-top: 12px;
+}
+.#{$name}-margin-bottom {
+	padding-bottom: 12px;
+}
+.#{$name}-margin-left {
+	padding-left: 12px;
+} 
+.#{$name}-margin-right {
+	padding-right: 12px;
+}
+.#{$name}-spacing-on {
+	padding-left: 6px;
+	padding-top: 6px;
+	overflow: hidden;
+}
+.#{$name}-spacing,
+.#{$name}-spacing-off {
+	padding-left: 0;
+	padding-top: 0;
+}
+.#{$name}-spacing-off {
+	overflow: hidden;
+}
+
+}

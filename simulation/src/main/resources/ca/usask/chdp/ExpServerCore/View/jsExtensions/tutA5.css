@@ -1,0 +1,31 @@
+#tutA5_container {
+    height   : 640px;
+    width    : 1130px;
+    position : relative;
+}
+
+#tut_carBody {
+    top  : 600px;
+    left : 100px;
+}
+
+.tutImg {
+    position : absolute;
+    display: none;
+}
+
+.tutText {
+    position : absolute;
+    font-size : 15px;
+    display: none;
+}
+#tutA6_textCont {
+    height:100px;
+}
+.tutNewText {
+   /*color: black;*/
+    display: none;
+}
+.tutOldText {
+    color: gray;
+}

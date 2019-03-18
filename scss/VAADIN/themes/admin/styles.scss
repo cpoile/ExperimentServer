@@ -1,0 +1,86 @@
+@import "../bootstrap/bootstrap";
+@import "../bootstrap/responsive-1200px-min";
+@import "../base/base";
+@import "../reindeer/reindeer";
+@import "../additionsToBootstrap";
+
+@include
+base-table
+
+;
+@include
+base-layout
+
+;
+@include
+reindeer-table
+
+;
+@include
+reindeer-layouts
+
+;
+
+.c-inline {
+  display : inline;
+}
+
+.adminButton {
+  width  : 116px;
+  margin : 3px 10px;
+}
+
+.v-formlayout-captioncell {
+  padding : 3px 10px;
+}
+
+.v-formlayout-margin-top {
+  margin-top : 10px;
+}
+
+.adminWrapper {
+  padding-top : 40px;
+}
+
+.disablingDivWrapper {
+  position : relative;
+}
+
+.disablingDiv {
+/* Do not display it on entry */
+  display          : block;
+
+/* Display it on the layer with index 1001.
+Make sure this is the highest z-index value
+used by layers on that page */
+  z-index          : 40001;
+
+/* make it cover the whole screen */
+  position         : absolute;
+  top              : 0;
+  left             : 0;
+  width            : 100%;
+  height           : 100%;
+
+/* make it white but fully transparent */
+  background-color : $blue;
+  opacity          : .30;
+  filter           : alpha(opacity = 30);
+}
+
+.jumbotron .container {
+  width: 884px;
+}
+
+.buttonSpace {
+  margin: 0 3px 0 3px
+}
+
+.sessEmph {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.v-button-wrap {
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+@mixin reindeer-formlayout($name : v-formlayout) {
+
+.#{$name}-errorcell {
+	width: 13px;
+}
+.#{$name}-cell .v-errorindicator {
+	width: 13px;
+	height: 16px;
+	background: transparent url(../common/icons/error.png) no-repeat 50%;
+}
+.#{$name}-captioncell {
+	text-align: right;
+	white-space: nowrap;
+}
+.#{$name}-spacing > tbody > .#{$name}-row > .#{$name}-captioncell, 
+.#{$name}-spacing > tbody > .#{$name}-row > .#{$name}-contentcell,
+.#{$name}-spacing > tbody > .#{$name}-row > .#{$name}-errorcell {
+	padding-top: 8px;
+}
+.#{$name}-margin-top > tbody > .#{$name}-firstrow > .#{$name}-captioncell, 
+.#{$name}-margin-top > tbody > .#{$name}-firstrow > .#{$name}-contentcell,
+.#{$name}-margin-top > tbody > .#{$name}-firstrow > .#{$name}-errorcell {
+	padding-top: 15px;
+}
+.#{$name}-margin-bottom > tbody > .#{$name}-lastrow > .#{$name}-captioncell,
+.#{$name}-margin-bottom > tbody > .#{$name}-lastrow > .#{$name}-contentcell,
+.#{$name}-margin-bottom > tbody > .#{$name}-lastrow > .#{$name}-errorcell {
+	padding-bottom: 15px;
+}
+.#{$name}-margin-left > tbody > .#{$name}-row > .#{$name}-captioncell {
+	padding-left: 18px;
+} 
+.#{$name}-margin-right > tbody > .#{$name}-row > .#{$name}-contentcell {
+	padding-right: 18px;
+}
+/* form */
+.v-form-errormessage {
+	background: transparent url(../common/icons/error.png) no-repeat 3px 2px;
+	padding-left: 20px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	min-height: 20px;
+}
+.v-form fieldset {
+	border: none;
+	border-top: 1px solid #babfc0;
+}
+.v-form-nocaption fieldset {
+	border: none;
+}
+.v-form-nocaption legend {
+	display: none;
+}
+.v-form legend {
+	margin: 0 0 0 20px;
+	padding: 0 5px;
+	font-weight: bold;
+	color: #222;
+}
+.black .v-form legend {
+	color: #e3e6e8;
+}
+
+}

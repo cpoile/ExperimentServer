@@ -1,0 +1,108 @@
+<div class="inGame">
+    <div class="header">
+
+        <img id="logo" src="../images/working/logo.png" alt=""/>
+
+        <ul class="globalNav">
+            <li class="current"><a class="active" href="#damageReport">Damage Report</a></li>
+            <li></li>
+        </ul>
+
+    </div>
+    <div id="damageWrapper">
+        <div id="damageImgTarget" style="height: 400px; width: 1100px; position: relative;">
+            <img id="underlay" style="top: 0; left: 0; z-index: 0; position: absolute;" src=""/>
+            <img id="overlay" style="top: 0; left: 0; z-index: 1; position: absolute;" src=""/>
+        </div>
+
+        <div id="dPartsInfoRow">
+            <!--<img class="dVertDivider" src="../images/working/divider.png"/>-->
+
+            <div id="dPartInfo1" class="dPartInfo">
+                <div class="dTopRow">
+                    <div class="block">
+                        <div class="float largetext" location="part1FinalData"></div>
+                        <div class="regulartext">KPH</div>
+                    </div>
+                    <img class="arrow" src="../images/damage/right_arrow.png"/>
+
+                    <div class="block">
+                        <div class="float largetext" location="part1NewData"></div>
+                        <div class="regulartext">KPH</div>
+                    </div>
+                </div>
+
+                <div class="dMiddleRow white regulartext clear">Change in Top Speed</div>
+
+                <div class="dBottomRow">
+                    <img class="dIcon" src="../images/working/next-upgrade-icon.png"/>
+
+                    <div class="float">
+                        <div class="black regularText" location="partName1">Engine Damage</div>
+                        <span class="c-inline mediumtext" location="part1DamLabel"></span>
+                    </div>
+                </div>
+            </div>
+
+            <img class="dVertDivider" src="../images/working/divider.png"/>
+
+            <div id="dPartInfo2" class="dPartInfo">
+                <div class="dTopRow">
+                    <div class="block">
+                        <div class="float largetext" location="part2FinalData"></div>
+                        <div class="regulartext">Sec</div>
+                    </div>
+                    <img class="arrow" src="../images/damage/right_arrow.png"/>
+
+                    <div class="block">
+                        <div class="float largetext" location="part2NewData"></div>
+                        <div class="dMeasure regulartext">Sec</div>
+                    </div>
+                </div>
+
+                <div class="dMiddleRow white regulartext clear">Change in Linear Acceleration</div>
+
+                <div class="dBottomRow">
+                    <img class="dIcon" src="../images/working/next-upgrade-icon.png"/>
+
+                    <div class="float">
+                        <div class="black regularText" location="partName2">Powertrain Damage</div>
+                        <span class="c-inline mediumtext" location="part2DamLabel"></span>
+                    </div>
+                </div>
+            </div>
+
+            <img class="dVertDivider" src="../images/working/divider.png"/>
+
+            <div id="dPartInfo3" class="dPartInfo">
+                <div class="dTopRow">
+                    <div class="block">
+                        <div class="float largetext" location="part3FinalData"></div>
+                        <div class="dMeasure regulartext">KPH</div>
+                    </div>
+                    <img class="arrow" src="../images/damage/right_arrow.png"/>
+
+                    <div class="block">
+                        <div class="float largetext" location="part3NewData"></div>
+                        <div class="dMeasure regulartext">KPH</div>
+                    </div>
+                </div>
+
+                <div class="dMiddleRow white regulartext clear">Change in Lateral Acceleration</div>
+
+                <div class="dBottomRow">
+                    <img class="dIcon" src="../images/working/next-upgrade-icon.png"/>
+
+                    <div class="float">
+                        <div class="black regularText" location="partName3">Wheel Assembly Damage</div>
+                        <span class="c-inline mediumtext" location="part3DamLabel"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!--<img class="dVertDivider" src="../images/working/divider.png"/>-->
+        </div>
+        <div class="clear float" id="drContinueButton" location="continue"></div>
+    </div>
+    <div location="photohover"></div>
+</div>

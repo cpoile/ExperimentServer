@@ -1,0 +1,184 @@
+@import "../bootstrap/bootstrap";
+@import "../bootstrap/responsive-1200px-min";
+@import "../additionsToBootstrap";
+@import "compass/css3/font-face";
+@import "../base/base";
+@import "../reindeer/reindeer";
+
+@include base-layout;
+@include reindeer-layouts;
+@include reindeer-notification;
+@include base-window;
+@include reindeer-window;
+@include base-select;
+@include reindeer-select;
+
+@import "../stylesForSim";
+
+@font-face {
+  font-family : 'BebasNeueRegular';
+  src         : url('fonts/BebasNeue-webfont.eot');
+  src         : url('fonts/BebasNeue-webfont.eot') format('embedded-opentype'), url('fonts/BebasNeue-webfont.woff') format('woff'), url('fonts/BebasNeue-webfont.ttf') format('truetype'), url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+  font-weight : normal;
+  font-style  : normal;
+
+}
+
+
+.test {
+  color : #8b4513;
+}
+
+@font-face {
+  font-family : 'AmbleRegular';
+  src         : url('fonts/Amble-Regular-webfont.eot');
+  src         : url('fonts/Amble-Regular-webfont.eot') format('embedded-opentype'), url('fonts/Amble-Regular-webfont.woff') format('woff'), url('fonts/Amble-Regular-webfont.ttf') format('truetype'), url('fonts/Amble-Regular-webfont.svg#AmbleRegular') format('svg');
+  font-weight : normal;
+  font-style  : normal;
+}
+
+@font-face {
+  font-family : 'AmbleItalic';
+  src         : url('fonts/Amble-Italic-webfont.eot');
+  src         : url('fonts/Amble-Italic-webfont.eot') format('embedded-opentype'), url('fonts/Amble-Italic-webfont.woff') format('woff'), url('fonts/Amble-Italic-webfont.ttf') format('truetype'), url('fonts/Amble-Italic-webfont.svg#AmbleItalic') format('svg');
+  font-weight : normal;
+  font-style  : normal;
+
+}
+
+@font-face {
+  font-family : 'EntypoRegular';
+  src         : url('fonts/Entypo-webfont.eot');
+  src         : url('fonts/Entypo-webfont.eot') format('embedded-opentype'), url('fonts/Entypo-webfont.woff') format('woff'), url('fonts/Entypo-webfont.ttf') format('truetype'), url('fonts/Entypo-webfont.svg#EntypoRegular') format('svg');
+  font-weight : normal;
+  font-style  : normal;
+
+}
+
+#heroshot {
+  position : absolute;
+  left     : -135px;
+  top      : 206px;
+  z-index  : -10;
+}
+
+.simWnd {
+  width : 400px;
+}
+
+/**
+ *
+ * B_ASentProjWnd
+*/
+.B_ASentProjWnd, .a_FinishedGoalsWnd, .FinishedGameWnd {
+  width : 710px;
+}
+
+.basicWnd {
+  width : 490px;
+}
+
+.basicWndWithPicture {
+  width : 710px;
+}
+
+.wnd.container {
+  padding : 10px 10px 10px 10px;
+  .center {
+
+    text-align : center;
+  }
+  .spacing-top {
+    margin-top : 10px;
+  }
+  .big-spacing-top {
+    margin-top : 40px;
+  }
+  .spacing-bottom {
+    margin-bottom : 10px;
+  }
+}
+
+.instructions.container {
+  .controlQWrong {
+    color : red;
+  }
+  .center {
+
+    text-align : center;
+  }
+  .spacing-top {
+    margin-top : 10px;
+
+  }
+  .big-spacing-top {
+    margin-top : 30px;
+  }
+}
+
+.waitingForPartnerToFinishSurvey {
+  padding : 100px;
+}
+
+// To prevent the yellow border from appearing in chrome
+*:focus {
+  outline : none;
+}
+
+/**
+ * ------------------------------------------------------------------------------------------
+ * Likert questions
+ * ------------------------------------------------------------------------------------------
+ * Lay the options horizontally
+ */
+.v-select-optiongroup-horizontal {
+  margin      : 10px 0px 10px 0px;
+  /* Avoid wrapping if the layout is too tight */
+  white-space : nowrap;
+
+  .v-select-option {
+    display : inline-block;
+  }
+
+  .v-select-option.v-radiobutton {
+    padding-right  : 10px;
+    margin-left    : 20px;
+    vertical-align : top;
+
+    input {
+      display      : block;
+      margin-left  : auto;
+      margin-right : auto;
+    }
+  }
+
+}
+
+.internalSurveyWnd {
+  width: 760px;
+
+  .surveyWndContainer {
+    padding: 20px;
+
+    .questionsContainer {
+      .heading {
+        font-weight : bold;
+        margin      : 25px 0 0 0;
+        font-size   : 14px;
+      }
+    }
+    .LikertQ {
+      margin : 10px 0 10px 0;
+      .v-captiontext {
+        display : none;
+      }
+      .title {
+
+      }
+    }
+    .LikertQ.darkerBkg {
+      background-color : cornsilk;
+    }
+  }
+
+}

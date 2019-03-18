@@ -1,0 +1,37 @@
+@mixin reindeer-button-link-style($name : v-button) {
+
+.#{$name}.#{$name}-link,
+.#{$name}.#{$name}-link:focus,
+.#{$name}.#{$name}-link:active,
+.#{$name}-link.v-pressed,
+.v-disabled.#{$name}.#{$name}-link,
+.#{$name}.#{$name}-link .#{$name}-wrap,
+.#{$name}.#{$name}-link:focus .#{$name}-wrap,
+.#{$name}.#{$name}-link:active .#{$name}-wrap,
+.#{$name}-link.v-pressed .#{$name}-wrap,
+.v-disabled.#{$name}.#{$name}-link .#{$name}-wrap {
+	background: transparent;
+	height: auto;
+	padding: 0;
+	cursor: pointer;
+	line-height: inherit;
+	}
+
+.#{$name}.#{$name}-link.v-disabled,
+.#{$name}.#{$name}-link.v-disabled .#{$name}-wrap {
+	cursor: default;
+	}
+	
+.#{$name}-link .#{$name}-caption {
+	line-height: inherit;
+	font-weight: normal;
+	color: #1b699f;
+	font-size: 12px;
+	text-shadow: none;
+	}
+	
+.#{$name}-link:focus .#{$name}-caption {
+	outline: 1px dotted #1b699f;
+	}
+
+}

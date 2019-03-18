@@ -1,0 +1,65 @@
+<div id="svoSliderPage" class="container">
+    <div id='masterdiv'>
+
+        <div id='instructionstitle' class='instructionstitle' title='Instructions for the task' onclick="svoSlider.showMessage(svoSlider.msgInstructions)">
+            <span id="instructionsIcon"></span> <b>Instructions</b>
+        </div>
+
+        <div id="infobox">
+            <div class='taskbox'>&nbsp;</div>
+            <div class='stagebox'>&nbsp;</div>
+            <div class='infotitle'><b>Task status</b></div>
+            <!--<div class='inforound'>Set:&nbsp;</div><div id="round" class="inforoundval"></div> -->
+            <div class='infostage'>Item:&nbsp;</div>
+            <div id="stage" class="infostageval"></div>
+            <div class='smallmessage_title'><b></b></div>
+            <div class='infoyouget'><b>You receive $</b></div>
+            <div class='infoyougetval' id='infoyougetval'><b>&nbsp;</b></div>
+            <div class='infoothergets'><b>Other receives $</b></div>
+            <div class='infoothergetsval' id='infoothergetsval'><b>&nbsp;</b></div>
+            <div class='info_smallmessage' id="msgbox"></div>
+
+        </div>
+
+        <div class='youget_title' id='youget_title'>You receive $</div>
+        <div class='othergets_title' id='othergets_title'>Other receives $</div>
+        <div id='min_youget' class='min_youget'></div>
+        <div id='max_youget' class='min_othergets'></div>
+        <div id='min_othergets' class='max_youget'></div>
+        <div id='max_othergets' class='max_othergets'></div>
+
+    </div>
+
+    <div id="visualaid">
+        <div id="youget_bar"></div>
+        <div id="othergets_bar"></div>
+        <div id='scale_min'>0</div>
+        <div id='scale_line'></div>
+        <div id='scale_max'>100</div>
+    </div>
+
+    <div id="enc_box"></div>
+
+    <div id="infomessage">
+        <div class='top-left-corner'>
+            <div class='top-left-inside'>&bull;</div>
+        </div>
+        <div class='bottom-left-corner'>
+            <div class='bottom-left-inside'>&bull;</div>
+        </div>
+        <div class='top-right-corner'>
+            <div class='top-right-inside'>&bull;</div>
+        </div>
+        <div class='bottom-right-corner'>
+            <div class='bottom-right-inside'>&bull;</div>
+        </div>
+        <div class='roundbottom'></div>
+        <div class='roundbottomright'></div>
+        <div id="message_contents"></div>
+    </div>
+
+    <div id="gobutton" title="Click to store your preference." onClick="svoSlider.submitClick()" onMouseOver="this.style.background='#E5E5E5';this.style.borderColor='black';" onMouseOut="this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';">
+        &nbsp;Submit!&nbsp;</div>
+
+    <div location="svoSlider"></div>
+</div>

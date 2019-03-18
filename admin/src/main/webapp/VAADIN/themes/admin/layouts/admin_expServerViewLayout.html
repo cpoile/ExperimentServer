@@ -1,0 +1,56 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+                <li><a><span location="resetConnection"></span></a></li>
+                <li><a><span location="toSignUpAdmin"></span></a></li>
+                <li class="active"><a>Experiment Admin</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="adminWrapper">
+    <header class="jumbotron subhead">
+        <div class="container">
+            <h1>Admin View</h1>
+        </div>
+    </header>
+    <div class="admin container">
+        <div class="span12">
+            <section id="waitingUsers">
+                <h3>Users Going Through Tutorial</h3>
+
+                <div location="waitingPlayerTable"></div>
+                <div location="newWP"></div>
+                <div location="waitingPlayerFormComponent"></div>
+            </section>
+            <section id="readyUsers">
+                <h3>ReadyUsers</h3>
+
+                <div location="readyPlayerTable"></div>
+                <div location="newRP"></div>
+                <div location="readyPlayerFormComponent"></div>
+            </section>
+            <section id="sessionInfo">
+                <h3>Session Info</h3>
+            </section>
+            <div location="sessionStatus"></div>
+            <br>
+
+            </span><span location="newSessionId" class="buttonSpace"></span>
+            <span location="allowLogins" class="buttonSpace"></span>
+            <span location="disallowLogins" class="buttonSpace"></span> <span location="startGame" class="buttonSpace"></span> <span location="stopGame" class="buttonSpace"></span>
+            <span location="resetAll"></span>
+            <section id="runningGames">
+                <h3>RunningGames</h3>
+
+                <div location="gamesTable"></div>
+            </section>
+            <section id="finishedGames">
+                <h3>Finished Games</h3>
+
+                <div location="finishedGamesTable"></div>
+            </section>
+        </div>
+    </div>
+</div></div>

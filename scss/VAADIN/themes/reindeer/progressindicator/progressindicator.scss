@@ -1,0 +1,14 @@
+@mixin reindeer-progressindicator($name : v-progressindicator) {
+
+.#{$name}-wrapper {
+	background: #dfe2e4 url(img/base.gif) repeat-x;
+	border: 1px solid #bfbfbf;
+}
+.v-disabled .#{$name}-wrapper {
+	background-image: url(img/disabled.gif);
+}
+.#{$name}-indicator {
+	background: #f7f9f9 url(img/progress.png);
+}
+
+}

@@ -1,0 +1,94 @@
+@mixin base-datefield($name : v-datefield) {
+
+.#{$name} {
+	white-space: nowrap;
+	display: inline-block; /* Force minimum width */
+	line-height:0; /* Force minimum height */
+}
+.#{$name}-textfield {
+	vertical-align: top;
+}
+.#{$name}-button {
+	cursor: pointer;
+}
+.#{$name}-prompt .#{$name}-textfield {
+	color: #999;
+	font-style: italic;
+}
+.#{$name} .#{$name}-button-readonly {
+	display: none;
+}
+.#{$name}-calendarpanel table {
+	width: 100%;
+}
+.#{$name}-calendarpanel td {
+	padding: 0;
+	margin: 0;
+}
+.#{$name}-calendarpanel:focus {
+	outline:none;	
+}
+.#{$name}-calendarpanel-header td {
+	text-align: center;
+}
+.#{$name}-calendarpanel-month {
+	text-align: center;
+	white-space: nowrap;
+}
+.#{$name}-calendarpanel-weeknumber {
+	color: #999;
+	border-right: 1px solid #ddd;
+	font-size: 0.9em;
+}
+.#{$name}-calendarpanel-day,
+.#{$name}-calendarpanel-day-today {
+	cursor: pointer;
+}
+.#{$name}-calendarpanel-day-today {
+	border: 1px solid #ddd;
+}
+.v-disabled .#{$name}-calendarpanel-day,
+.v-disabled .#{$name}-calendarpanel-day-today {
+	cursor: default;
+}
+.#{$name}-calendarpanel-day-disabled {
+	cursor: default;
+	opacity: .5;
+}
+.#{$name}-calendarpanel-day-selected {
+	cursor: default;
+	background: #333;
+	color: #fff;
+}
+.#{$name}-calendarpanel-day-focused {
+	outline: 1px dotted black;
+}
+.#{$name}-calendarpanel-day-offmonth {
+    color: #666;
+}
+
+.#{$name}-time {
+	white-space: nowrap;
+}
+.#{$name}-time .v-label {
+	display: inline;
+}
+.#{$name}-popup {
+	background: #fff;
+}
+/* Disabled by default
+.#{$name}-error .v-textfield,
+.#{$name}-error .#{$name}-calendarpanel {
+	background: #ffe0e0;
+}
+*/
+
+/* Disabled by default
+.#{$name}-required .v-textfield,
+.#{$name}-required .#{$name}-calendarpanel {
+	background:transparent;
+	background-color: #ffe0e0;
+}
+*/
+
+}

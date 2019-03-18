@@ -1,0 +1,7 @@
+.racePos {
+    position: absolute;
+    width: 300px;
+}
+#team0 {
+    background-color: #90ee90;
+}

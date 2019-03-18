@@ -1,0 +1,27 @@
+@mixin base-caption($name : v-caption) {
+
+.#{$name}wrapper {
+	text-align: left; /* Force default alignment */
+}
+.#{$name} {
+	overflow: hidden;
+	white-space: nowrap;
+}
+.v-errorindicator {
+	display: inline-block;
+}
+.#{$name} .v-icon {
+	display: inline-block;
+	padding-right: 2px;
+	vertical-align: middle;
+}
+.#{$name} .#{$name}text {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.#{$name} .v-required-field-indicator {
+	display: inline-block;
+}
+
+}

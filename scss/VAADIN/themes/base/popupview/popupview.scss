@@ -1,0 +1,17 @@
+@mixin base-popupview($name : v-popupview) {
+
+.#{$name} {
+	cursor: pointer;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+.#{$name}-popup {
+	overflow: auto;
+}
+.#{$name}-loading {
+	width: 30px;
+	height: 30px;
+	background: transparent url(../common/img/ajax-loader-medium.gif) no-repeat 50%;
+}
+
+}

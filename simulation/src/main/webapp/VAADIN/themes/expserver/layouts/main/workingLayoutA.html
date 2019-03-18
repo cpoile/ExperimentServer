@@ -1,0 +1,300 @@
+<div class="inGame" id=workingLayout>
+<div class="header">
+
+    <img id="logo" src="../images/working/logo.png" alt=""/>
+
+    <ul class="globalNav">
+        <li class="current"><a id="tut_TeamProj" class="active" href="#teamProject">F1 Team Project</a></li>
+        <li><a id="tut_PersProj" class="disabled" href="#persProject">Concept Car
+            Project</a><span class="conceptCar blacktip notActive">click here</span></li>
+    </ul>
+
+</div>
+
+<div id="teamProject">
+
+<div class="contentwrapper">
+<div id="partselector">
+
+    <ul class='tabs'>
+        <li class="mytooltip">
+            <a id="tut_PartSelector1" class="active" href='#tab1'><img src="../images/working/engine-icon.png" alt=""/><span class="blacktip">Engine</span></a>
+        </li>
+        <li class="mytooltip">
+            <a id="tut_PartSelector2" href='#tab2'><img src="../images/working/power-train-icon.png" alt=""/><span class="blacktip ">Powertrain</span></a>
+        </li>
+        <li class="mytooltip">
+            <a id="tut_PartSelector3" href='#tab3'><img src="../images/working/wheel-icon.png" alt=""/><span class="blacktip">Wheel Assembly</span></a>
+        </li>
+    </ul>
+
+</div>
+
+<div id="carpartdetails">
+
+<div class="daysleft" id="secondStep">
+    <div id="tut_DaysLeft" class="xlargetext white" location="daysLeft"></div>
+    <div class="black">Working Days Left</div>
+</div>
+
+<div id="tab1" class="details" style="display: block;">
+
+    <h1 class="regulartext black">Current Engine</h1>
+
+    <h2 id="tut_PartName1" class="largetext black">Mercedes V10
+        <span class="c-inline" location="part1Name"></span>
+    </h2>
+
+    <!--
+    Part1 Gauges
+    -->
+    <div class="gauge">
+        <div class="gaugeLeft">
+            <div location="part1GaugeA" class="gaugeContainer"></div>
+        </div>
+        <div class="gaugeRight">
+            <div class="c-inline largetext textAffectedByGoalComplete incompleteTextColor" location="part1CurData"></div>
+            <span class="regulartext textAffectedByGoalComplete incompleteTextColor">KPH</span><br/>
+
+            <div id="tut_PartData1" class="white regulartext">Current Top Speed</div>
+            </p>
+        </div>
+    </div>
+
+    <div class="gauge">
+        <div class="gaugeLeft">
+            <div location="part1GaugeB" class="gaugeContainer"></div>
+        </div>
+        <div class="gaugeRight">
+            <div class="c-inline largetext green" location="part1Goal"></div>
+            <span class="regulartext green">KPH</span><br/>
+            <span id="tut_PartGoal1" class="white regulartext">Personal Goal</span></p>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <p class="onethird">
+        <img src="../images/working/next-upgrade-icon.png" alt=""/>
+        <span class="c-inline largetext" location="part1NextData"></span> <span class="regulartext">kph</span><br/>
+                        <span id="tut_NextUpgrade1" class="regulartext">Next Upgrade
+                            <span class="c-inline" location="part1Next"></span>
+                        </span>
+
+    </p>
+
+    <p class="onethird">
+        <img src="../images/working/chance-to-upgrade-icon.png" alt=""/>
+
+        <span class="c-inline largetext" location="part1Chance"></span>% <br/>
+        <span id="tut_UpgradeChance" class="regulartext">Chance To Upgrage</span>
+
+    </p>
+
+    <p class="onethird">
+        <img src="../images/working/goal-icon.png" alt=""/>
+        <span class="largetext textAffectedByGoalComplete incompleteTextColor" location="goal1Reached"></span>
+        <br/> <span id="tut_GoalReached1" class="regulartext">Personal Goal Reached</span>
+
+    </p>
+
+    <div class="statusbar" location="part1StatusBar"></div>
+
+    <div location="part1Work">work</div>
+
+</div>
+
+<div id="tab2" class="details" style="display: none;">
+
+    <h1 class="regulartext black">Current Powertrain</h1>
+
+    <h2 id="tut_PartName2" class="largetext black">Mecedes PT
+        <span class="c-inline" location="part2Name"></span>
+    </h2>
+
+    <!--
+    Part2 Gauges
+    -->
+    <div class="gauge">
+        <div class="gaugeLeft">
+            <div location="part2GaugeA" class="gaugeContainer"></div>
+        </div>
+        <div class="gaugeRight">
+            <div class="c-inline largetext textAffectedByGoalComplete incompleteTextColor" location="part2CurData"></div>
+            <span class="regulartext textAffectedByGoalComplete incompleteTextColor">Sec</span><br/>
+            <span id="tut_PartData2" class="white regulartext">Linear Acceleration (0-100 kph)</span></p>
+        </div>
+    </div>
+
+    <div class="gauge">
+        <div class="gaugeLeft">
+            <div location="part2GaugeB" class="gaugeContainer"></div>
+        </div>
+        <div class="gaugeRight">
+            <div class="c-inline largetext green" location="part2Goal"></div>
+            <span class="regulartext green">Sec</span><br/>
+            <span id="tut_PartGoal2" class="white regulartext">Personal Goal</span></p>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <p class="onethird">
+        <img src="../images/working/next-upgrade-icon.png" alt=""/>
+        <span class="c-inline largetext" location="part2NextData"></span> <span class="regulartext">sec</span><br/>
+                        <span id="tut_NextUpgrade2" class="regulartext">Next Upgrade
+                            <span class="c-inline" location="part2Next"></span>
+                        </span>
+    </p>
+
+    <p class="onethird">
+        <img src="../images/working/chance-to-upgrade-icon.png" alt=""/>
+
+        <span class="c-inline largetext" location="part2Chance"></span>% <br/>
+        <span class="regulartext">Chance To Upgrage</span>
+
+    </p>
+
+    <p class="onethird">
+        <img src="../images/working/goal-icon.png" alt=""/>
+        <span class="largetext textAffectedByGoalComplete incompleteTextColor" location="goal2Reached"></span>
+        <br/> <span id="tut_GoalReached2" class="regulartext">Personal Goal Reached</span>
+
+    </p>
+
+    <div class="statusbar" location="part2StatusBar"></div>
+
+    <div location="part2Work">work</div>
+
+</div>
+<div id="tab3" class="details" style="display: none;">
+
+    <h1 class="regulartext black">Current Wheel Assembly</h1>
+
+    <h2 id="tut_PartName3" class="largetext black">AMG Bearings & Disks
+        <span class="c-inline" location="part3Name"></span>
+    </h2>
+
+    <!--
+    ***Part3 Gauges***
+    -->
+    <div class="gauge">
+        <div class="gaugeLeft">
+            <div location="part3GaugeA" class="gaugeContainer"></div>
+        </div>
+        <div class="gaugeRight">
+            <div class="c-inline largetext textAffectedByGoalComplete incompleteTextColor" location="part3CurData"></div>
+            <span class="regulartext textAffectedByGoalComplete incompleteTextColor">KPH</span><br/>
+            <span id="tut_PartData3" class="white regulartext">Current Lateral Acceleration</span></p>
+        </div>
+    </div>
+
+    <div class="gauge">
+        <div class="gaugeLeft">
+            <div location="part3GaugeB" class="gaugeContainer"></div>
+        </div>
+        <div class="gaugeRight">
+            <div class="c-inline largetext green" location="part3Goal"></div>
+            <span class="regulartext green">KPH</span><br/>
+            <span id="tut_PartGoal3" class="white regulartext">Personal Goal</span></p>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <p class="onethird">
+        <img src="../images/working/next-upgrade-icon.png" alt=""/>
+        <span class="c-inline largetext" location="part3NextData"></span> <span class="regulartext">kph</span><br/>
+                        <span id="tut_NextUpgrade3" class="regulartext">Next Upgrade
+                            <span class="c-inline" location="part3Next"></span>
+                        </span>
+
+    </p>
+
+    <p class="onethird">
+        <img src="../images/working/chance-to-upgrade-icon.png" alt=""/>
+
+        <span class="c-inline largetext" location="part3Chance"></span>% <br/>
+        <span class="regulartext">Chance To Upgrage</span>
+
+    </p>
+
+    <p class="onethird">
+        <img src="../images/working/goal-icon.png" alt=""/>
+        <span class="largetext textAffectedByGoalComplete incompleteTextColor" location="goal3Reached"></span>
+        <br/> <span id="tut_GoalReached3" class="regulartext">Personal Goal Reached</span>
+
+    </p>
+
+    <div class="statusbar" location="part3StatusBar"></div>
+
+    <div location="part3Work">work</div>
+
+</div>
+</div>
+
+<div class="sidebarLoc"></div>
+
+<div class="clear"></div>
+</div>
+<!--END CONTENT WRAPPER-->
+
+<div id="teamProjCar" class="carphoto">
+    <img class="carbase" src="../images/working/F1side_1100.png" alt=""/>
+</div>
+</div>
+
+<div id="persProject">
+    <div class="contentwrapper">
+
+        <div id="graph">
+
+            <div class="daysleft">
+                <div id="tut_DaysLeft2" class="xlargetext white" location="daysLeft2"></div>
+                <div class="black">Working Days Left</div>
+            </div>
+
+            <div id="ppwork">
+                <div id="tut_ChooseText" class="regulartext">Choose how many days to work on your personal project:
+                </div>
+                <div location="slider"></div>
+                <div location="workOnProj2"></div>
+            </div>
+
+            <h1 id="persProjTitle" class="largetext black">2014 Mercedes Concept Car</h1>
+        </div>
+
+        <div class="sidebarLoc"></div>
+
+        <div class="clear"></div>
+    </div>
+    <!--END CONTENT WRAPPER-->
+
+    <div class="carphoto">
+        <img id="tut_CarPhoto" class="carbase" src="../images/working/concept-car.png" alt=""/>
+    </div>
+</div>
+
+<div id="rightsidebar">
+    <div id="nextRaceLabel" class="rsLabelText">Next Race /</div>
+                <span id="rsOutOf" class="rsLabelText">
+                    <span class="c-inline" location="trackNum"></span>
+                    <span class="c-inline">out of</span>
+                    <span class="c-inline" location="rsNumTracks"></span>
+                </span>
+
+    <div id="rsNextRaceTrack" class="regulartext white" location="nextRaceName"></div>
+
+    <div class="chatMsgText" location="messageList"></div>
+
+    <div class="chatMsgText">
+        <div id="chatinputWrapper" location="chatInput"></div>
+        <div location="chatButton"></div>
+    </div>
+</div>
+
+<div id="proj2GraphContainer" style="position: absolute; left: -2000px; width: 575px; height: 340px;" location="proj2GraphContainer"></div>
+
+</div>
+<div location="waitingForPartnerMsg"></div>
+<div location="sliderTooltip"></div>

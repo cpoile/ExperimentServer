@@ -1,0 +1,128 @@
+@mixin base-tabsheet($name : v-tabsheet) {
+
+.#{$name},
+.#{$name}-content,
+.#{$name}-deco {
+	outline: none; /* Prevent selection outline which might break layouts or cause scrollbars */
+	text-align: left; /* Force default alignment */
+}
+.#{$name}-tabs {
+	empty-cells: hide;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	overflow:hidden;
+}
+.#{$name}-tabitemcell:focus {
+	outline: none;
+}
+.#{$name}-tabitemcell,
+.#{$name}-spacertd {
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+.#{$name}-spacertd {
+	width: 100%;
+}
+.#{$name}-spacertd div {
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	height: 1em;
+	padding: 0.2em 0;
+}
+.#{$name}-hidetabs > .#{$name}-tabcontainer {
+	display: none;
+}
+.#{$name}-scroller {
+	white-space: nowrap;
+	text-align: right;
+	margin-top: -1em;
+}
+.v-disabled .#{$name}-scroller {
+	display: none;
+}
+.#{$name}-scrollerPrev,
+.#{$name}-scrollerNext,
+.#{$name}-scrollerPrev-disabled,
+.#{$name}-scrollerNext-disabled {
+	border: 1px solid #aaa;
+	background: #fff;
+	width: 12px;
+	height: 1em;
+	cursor: pointer;
+}
+.#{$name}-scrollerPrev-disabled,
+.#{$name}-scrollerNext-disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+.#{$name}-tabs .v-caption,
+.#{$name}-tabs .v-caption span {
+	white-space: nowrap;
+}
+.#{$name}-caption-close {
+	display: inline;
+	display: inline-block;
+	zoom: 1;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	vertical-align: middle;
+	user-select: none;
+	-khtml-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+.#{$name} .v-disabled .#{$name}-caption-close {
+	cursor: default;
+	visibility: hidden;
+}
+.#{$name}-tabitem:hover .#{$name}-caption-close {
+	visibility: visible;
+}
+.#{$name}-tabitem {
+	border: 1px solid #aaa;
+	border-right: none;
+	cursor: pointer;
+	padding: 0.2em 0.5em;
+}
+.#{$name}-tabitem .v-caption {
+	cursor: inherit;
+}
+.#{$name}.v-disabled .#{$name}-tabitem,
+.#{$name}-tabitemcell-disabled .#{$name}-tabitem {
+	cursor: default;
+}
+.#{$name}-tabitem-selected {
+	cursor: default;
+	border-bottom-color: #fff;
+}
+.#{$name}-tabitem-selected .v-caption {
+	cursor: default;
+}
+.#{$name}-content {
+	border: 1px solid #aaa;
+	/* Vertical borders are not supported, use v-tabsheet-tabcontainer and v-tabsheet-deco to present these borders */
+	border-top: none;
+	border-bottom: none;
+	position: relative;
+}
+.#{$name}-deco {
+	height: 1px;
+	background: #aaa;
+	overflow: hidden;
+}
+.#{$name}-hidetabs .#{$name}-content {
+	border: none;
+}
+.#{$name}-hidetabs .#{$name}-deco {
+	height: 0;
+}
+
+}

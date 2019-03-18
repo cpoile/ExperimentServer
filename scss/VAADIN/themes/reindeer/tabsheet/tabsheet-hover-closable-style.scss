@@ -1,0 +1,10 @@
+@mixin reindeer-tabsheet-hover-closable-style($name : v-tabsheet) {
+
+.#{$name}-tabs-hover-closable .#{$name}-caption-close {
+	visibility: hidden;
+}
+.#{$name}-tabs-hover-closable .#{$name}-tabitem:hover .#{$name}-caption-close {
+	visibility: visible;
+}
+
+}

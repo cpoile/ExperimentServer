@@ -1,0 +1,172 @@
+@mixin base-select($name : v-select) {
+
+.#{$name} {
+	text-align: left;
+}
+.#{$name}-optiongroup .#{$name}-option {
+	display: block;
+	white-space: nowrap;
+}
+.#{$name}-optiongroup .v-icon {
+	vertical-align: middle;
+	white-space: nowrap;
+	margin: 0 2px;	
+}
+.v-ie .#{$name}-optiongroup .#{$name}-option {
+	zoom: 1;
+}
+.#{$name}-select {
+	display: block;
+}
+.#{$name}-twincol {
+	white-space: nowrap;
+}
+.#{$name}-twincol-options {
+	float: left;
+}
+.#{$name}-twincol-caption-left {
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.#{$name}-twincol-selections {
+	font-weight: bold;
+}
+.#{$name}-twincol-caption-right {
+	float: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.#{$name}-twincol-buttons {
+	float: left;
+	text-align: center;
+}
+.#{$name}-twincol-buttons .#{$name}-twincol-deco {
+	clear: both;
+}
+.#{$name}-twincol .v-textfield {
+	display: block;
+	float: left;
+	clear: left;
+}
+.#{$name}-twincol .v-button {
+	float: left;
+}
+.#{$name}-twincol-buttons .v-button {
+	float: none;
+}
+.v-filterselect {
+	white-space: nowrap;
+	text-align: left;
+	display: inline-block;
+}
+.v-filterselect .v-icon {
+	float: left;
+}
+.v-app .v-filterselect-input,
+.v-window .v-filterselect-input,
+.v-popupview-popup .v-filterselect-input {
+	margin: 0;
+	float: left;
+	-webkit-border-radius: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.v-filterselect-prompt .v-filterselect-input {
+	color: #999;
+	font-style: italic;
+}
+.v-filterselect-button {
+	display: inline-block;
+	cursor: pointer;
+	width: 1em;
+	height: 1em;
+	background: transparent url(../common/img/sprites.png) no-repeat -5px -8px;
+}
+.v-filterselect.v-readonly .v-filterselect-button {
+	display: none;
+}
+.v-filterselect.v-readonly,
+.v-filterselect.v-readonly .v-filterselect-input {
+	background: transparent;
+}
+.v-filterselect-suggestpopup {
+	background: #fff;
+	border: 1px solid #eee;
+}
+.v-filterselect-suggestmenu table {
+	border-collapse: collapse;
+	border: none;
+	vertical-align:top;
+}
+.v-filterselect-suggestmenu tr{
+    line-height:0;
+}
+.v-filterselect-suggestmenu .gwt-MenuItem {
+	white-space: nowrap;
+}
+.v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+	margin-right: 3px;
+	vertical-align: middle;
+}
+.v-filterselect-suggestmenu .gwt-MenuItem span {
+	vertical-align: middle;
+}
+.v-filterselect-suggestmenu .gwt-MenuItem-selected {
+	background: #333;
+	color: #fff;
+}
+.v-filterselect-nextpage,
+.v-filterselect-nextpage-off,
+.v-filterselect-prevpage-off,
+.v-filterselect-prevpage {
+	width: 100%;
+	background: #aaa;
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+}
+.v-filterselect-nextpage-off,
+.v-filterselect-prevpage-off {
+	color: #666;
+	opacity: .5;
+	filter: alpha(opacity=50);
+	cursor: default;
+}
+.v-filterselect-nextpage-off span,
+.v-filterselect-prevpage-off span {
+	cursor: default;
+}
+.v-filterselect-status {
+	white-space: nowrap;
+	text-align: center;
+}
+
+.v-filterselect-no-input .v-filterselect-input {
+	cursor: default;
+}
+
+/* Error styles (disabled by default)
+
+.v-filterselect-error .v-filterselect-input,
+.#{$name}-error .#{$name}-option,
+.#{$name}-error .#{$name}-select,
+.#{$name}-error .#{$name}-twincol-selections,
+.#{$name}-error .#{$name}-twincol-options {
+	background: #ffaaaa;
+}
+*/
+
+/*  Required field styles (disabled by default)
+   
+.v-filterselect-error .v-filterselect-input,
+.#{$name}-required .#{$name}-option,
+.#{$name}-required .#{$name}-select,
+.#{$name}-required .#{$name}-twincol-selections,
+.#{$name}-required .#{$name}-twincol-options {
+	background: #ffaaaa;
+}
+*/
+
+}

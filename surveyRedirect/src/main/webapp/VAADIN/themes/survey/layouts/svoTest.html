@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Social Value Orientation</title>
+<link REL="SHORTCUT ICON" HREF="http://vlab.ethz.ch/seq_invest/images/icons/favicon.ico">
+<link rel="stylesheet" type="text/css">
+<style type="text/css">
+body
+{
+    margin: 0px;
+    padding: 10px;
+    font-family: Arial, sans;
+    font-size: 90%;
+}
+
+.restable {
+    font-family: Arial, sans;
+    font-size: 100%;
+    border-right: 1px solid grey;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.subtable {
+    vertical-align: top;
+}
+
+#graph
+{
+    position:absolute;
+    top:250px;
+    width:760px;
+    height:134px;
+    margin:8px;
+    padding:0px;
+}
+
+#graph ul
+{
+    position:absolute;
+    left:35px;
+    display:block;
+    width:567px;
+    height:120px;
+    background-color:transparent;
+    border-left:1px solid grey;
+    margin:0px;
+}
+
+#graph li
+{
+    display: block;
+    display: inline-block;
+    list-style:none;
+    position:absolute;
+    width:25px;
+    text-align:center;
+    visibility: hidden;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    font-size:0pt;
+}
+
+#graph_finalresults
+{
+    position:relative;
+    width:400px;
+    height:100px;
+    margin:8px;
+    padding:0px;
+}
+
+#graph_finalresults ul
+{
+    position:absolute;
+    left:30px;
+    display:block;
+    width:380px;
+    height:50px;
+    background-color:transparent;
+    border-left:1px solid grey;
+    margin:0px;
+}
+
+#graph_finalresults li
+{
+    display: block;
+    display: inline-block;
+    list-style:none;
+    position:absolute;
+    width:5px;
+    text-align:center;
+    visibility: hidden;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    font-size:0pt;
+}
+
+div.top-left-corner { top:0px; left:0px; color: #F9F9F9;}
+div.bottom-left-corner {bottom:0px; left:0px;color: #F9F9F9;}
+div.top-right-corner {top:0px; right:0px;color: #F9F9F9;}
+div.bottom-right-corner {bottom: 0px; right:0px;color: #F9F9F9;}
+div.top-left-inside {left:-2px;top:-15px;}
+div.bottom-left-inside {left:-2px; top:-19px;}
+div.top-right-inside {left:-6px;top:-15px;}
+div.bottom-right-inside {left:-6px; top:-19px;}
+div.box-contents {position: relative; padding: 8px; color:#000;}
+
+span.red { color: red;}
+span.green { color: green; }
+span.black { color: #000; }
+
+div.top-left-corner, div.bottom-left-corner, div.top-right-corner, div.bottom-right-corner
+{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background-color:#FFF;
+    overflow:hidden;
+}
+
+div.top-left-inside, div.bottom-left-inside, div.top-right-inside, div.bottom-right-inside
+{
+    position:relative;
+    font-size:40px;
+    font-family:arial;
+    color:F9F9F9;
+    line-height: 40px;
+}
+
+.infotitle {
+    display: inline-block;
+    position: absolute;
+    left: 31em;
+    top: 1.3em;
+    width: 100px;
+}
+
+.instructionstitle {
+    display: inline-block;
+    visibility: hidden;
+    position: absolute;
+    left: 615px;
+    top: 75px;
+}
+
+.smallmessage_title {
+    display: inline-block;
+    position: absolute;
+    left: 18.1em;
+    top: 12.1em;
+}
+
+.infoyouget, .infoyougetval {
+    display: inline-block;
+    position: absolute;
+    left: 405px;
+    top: 197px;
+    font-size: 120%;
+    width:180px;
+}
+.infoyougetval {
+    display: inline-block;
+    left: 575px;
+    width: 100px;
+    font-size: 120%;
+}
+
+.infoothergets, .infoothergetsval {
+    display: inline-block;
+    position: absolute;
+    left: 405px;
+    top: 247px;
+    width: 150px;
+    font-size: 120%;
+}
+.infoothergetsval {
+    display: inline-block;
+    left: 575px;
+    width: 100px;
+    font-size: 120%;
+    width:180px;
+}
+
+.infostage, .infostageval {
+    display: inline-block;
+    position: absolute;
+    left: 31em;
+    top: 2.8em;
+}
+.infostageval {
+    display: inline-block;
+    left:37em;
+    width: 100px;
+}
+
+.info_smallmessage {
+    display: inline-block;
+    position: absolute;
+    left: 22.5em;
+    top: 3em;
+    width: 20em;
+}
+
+.taskbox {
+    display: block;
+    position: absolute;
+    left:525px;
+    top:15px;
+    width:180px;
+    height:55px;
+    border: 1px solid #F2F2F2;
+}
+
+.stagebox {
+    display: inline-block;
+    position: absolute;
+    left:355px;
+    top:165px;
+    width:300px;
+    height:145px;
+    border: 1px solid #F2F2F2;
+}
+
+.youget_title {
+    display: inline-block;
+    position: absolute;
+    left:290px;
+    top:429px;
+}
+
+.othergets_title {
+    display: inline-block;
+    position: absolute;
+    left: 290px;
+    top:473px;
+}
+
+.min_youget, .max_youget, .min_othergets, .max_othergets {
+    display: inline-block;
+    position: absolute;
+    color: #808080;
+}
+
+.min_youget {
+    left: 403px;
+    top: 430px;
+}
+.max_youget {
+    left: 403px;
+    top: 473px;
+}
+.min_othergets {
+    left: 903px;
+    top: 430px;
+}
+.max_othergets {
+    left: 903px;
+    top: 473px;
+}
+
+div#infobox
+{
+    display: inline;
+    width:400px;
+    height:100px;
+    padding:20px;
+    margin:0;
+    color:#000;
+    position:absolute;
+    left:50px;
+    top:85px;
+    font-size: 120%;
+}
+
+div#infomessage
+{
+    width:500px;
+    height:auto;
+    padding-top: 5px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:35px;
+    margin:0;
+    background:#F9F9F9;
+    color:#000;
+    position:absolute;
+    z-index: 2;
+    visibility: hidden;
+    font-size:120%;
+}
+
+div#copyright
+{
+    position:absolute;
+    bottom:5px;
+    left:17px;
+}
+
+div#gobutton, div#continuebutton
+{
+    position:absolute;
+    display: table-cell;
+    border:1px solid grey;
+    background: white;
+    text-align: center;
+}
+
+div#gobutton
+{
+    padding-top:10px;
+    padding-bottom:10px;
+    left:580px;
+    top:505px;
+    width:150px;
+}
+div#continuebutton
+{
+    padding-top:10px;
+    padding-bottom:10px;
+    height:auto;
+    width:500px;
+}
+div#masterdiv
+{
+    float:right;
+}
+
+div#visualaid
+{
+    position: absolute;
+    top: 250px;
+    left:725px;
+    width: 185px;
+    height: 145px;
+    background-color: white;
+    border: 1px solid #F2F2F2;
+}
+
+div#youget_bar
+{
+    position: absolute;
+    top: 32px;
+    left: 29px;
+    width: 0px;
+    height: 20px;
+    background-color: #006699;
+    border-left: 1px solid #F2F2F2;
+}
+
+div#othergets_bar
+{
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    width: 0px;
+    height: 20px;
+    background-color: #006699;
+    border-left: 1px solid #F2F2F2;
+}
+
+div#enc_box
+{
+    position: absolute;
+    top: 200px;
+    left: 220px;
+    border: 1px solid #F2F2F2;
+    width: 850px;
+    height:380px;
+}
+
+div#scale_min
+{
+    position: absolute;
+    color: #808080;
+    left: 26px;
+    top: 59px;
+}
+
+div#scale_max
+{
+    position: absolute;
+    color: #808080;
+    left: 118px;
+    top: 59px;
+}
+
+div#scale_line
+{
+    position: absolute;
+    top: 66px;
+    left: 36px;
+    width: 81px;
+    height: 2px;
+    background-color: #F2F2F2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="svoSliderPage" class="container">
+    <div id='masterdiv'>
+
+        <div id='instructionstitle' class='instructionstitle' title='Instructions for the task' onclick="svoSlider.showMessage(svoSlider.msgInstructions)">
+            <span id="instructionsIcon"></span> <b>Instructions</b>
+        </div>
+
+        <div id="infobox">
+            <div class='taskbox'>&nbsp;</div>
+            <div class='stagebox'>&nbsp;</div>
+            <div class='infotitle'><b>Task status</b></div>
+            <!--<div class='inforound'>Set:&nbsp;</div><div id="round" class="inforoundval"></div> -->
+            <div class='infostage'>Item:&nbsp;</div>
+            <div id="stage" class="infostageval"></div>
+            <div class='smallmessage_title'><b></b></div>
+            <div class='infoyouget'><b>You receive $</b></div>
+            <div class='infoyougetval' id='infoyougetval'><b>&nbsp;</b></div>
+            <div class='infoothergets'><b>Other receives $</b></div>
+            <div class='infoothergetsval' id='infoothergetsval'><b>&nbsp;</b></div>
+            <div class='info_smallmessage' id="msgbox"></div>
+
+        </div>
+
+        <div class='youget_title' id='youget_title'>You receive $</div>
+        <div class='othergets_title' id='othergets_title'>Other receives $</div>
+        <div id='min_youget' class='min_youget'></div>
+        <div id='max_youget' class='min_othergets'></div>
+        <div id='min_othergets' class='max_youget'></div>
+        <div id='max_othergets' class='max_othergets'></div>
+
+    </div>
+
+    <div id="visualaid">
+        <div id="youget_bar"></div>
+        <div id="othergets_bar"></div>
+        <div id='scale_min'>0</div>
+        <div id='scale_line'></div>
+        <div id='scale_max'>100</div>
+    </div>
+
+    <div id="enc_box"></div>
+
+    <div id="infomessage">
+        <div class='top-left-corner'>
+            <div class='top-left-inside'>&bull;</div>
+        </div>
+        <div class='bottom-left-corner'>
+            <div class='bottom-left-inside'>&bull;</div>
+        </div>
+        <div class='top-right-corner'>
+            <div class='top-right-inside'>&bull;</div>
+        </div>
+        <div class='bottom-right-corner'>
+            <div class='bottom-right-inside'>&bull;</div>
+        </div>
+        <div class='roundbottom'></div>
+        <div class='roundbottomright'></div>
+        <div id="message_contents"></div>
+    </div>
+
+    <div id="gobutton" title="Click to store your preference." onClick="svoSlider.goClick()" onMouseOver="this.style.background='#E5E5E5';this.style.borderColor='black';" onMouseOut="this.style.background='#FFF';this.style.borderColor='grey';this.style.cursor='pointer';">
+        &nbsp;Submit!&nbsp;</div>
+
+    <div location="svoSlider"></div>
+</div>
+
+<script type="text/javascript" src="svoSlider.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+@import "../bootstrap/bootstrap";
+@import "../bootstrap/responsive-1200px-min";
+@import "../base/base";
+@import "../reindeer/reindeer";
+@import "../additionsToBootstrap";
+
+@include base-table;
+@include base-layout;
+
+@include reindeer-table;
+@include reindeer-layouts;
+@include base-select;
+@include reindeer-select;
+@include reindeer-notification;
+
+
+.c-inline {
+  display : inline;
+}
+
+.adminButton {
+  width  : 116px;
+  margin : 3px 10px;
+}
+
+.v-formlayout-captioncell {
+  padding : 3px 10px;
+}
+
+.v-formlayout-margin-top {
+  margin-top : 10px;
+}
+
+//.disablingDivWrapper {
+//  position : relative;
+//}
+//
+//.disablingDiv {
+///* Display it on entry */
+//  display          : block;
+//
+///* Display it on the layer with index 40001.*/
+//  z-index          : 40001;
+//
+///* make it cover the whole screen */
+//  position         : absolute;
+//  top              : 0;
+//  left             : 0;
+//  width            : 920px;
+//  height           : 100%;
+//
+///* make it grey and mildly transparent */
+//  background-color : $grayLight;
+//  opacity          : .80;
+//  filter           : alpha(opacity = 80);
+//}
+
+#register {
+  margin-bottom : 80px;
+}
+
+#signupIntro.container {
+  margin-top : 40px;
+}
+
+#sessionTime {
+  padding-bottom : 150px;
+}
+
+.jumbotron.masthead {
+  min-width: 1400px;
+}
+#heroshot {
+  position : absolute;
+  left: 20px;
+  top: 660px;
+  z-index: 2;
+}
+
+#altAssignFeedback {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+// To prevent the yellow border from appearing in chrome
+*:focus {
+  outline: none;
+}
+
+.v-button-wrap {
+  cursor: pointer;
+}
+
+.registrationStatus {
+  background-color: cornsilk;
+  padding: 10px;
+  margin-top: 15px;
+}

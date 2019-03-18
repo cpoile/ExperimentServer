@@ -1,0 +1,13 @@
+@mixin reindeer-link($name : v-link) {
+
+.#{$name} a:link span {
+	color: #1b699f;
+}
+.#{$name} a:visited span {
+	color: #5c7485;
+}
+.#{$name} a:hover span {
+	color: #2483c4;
+}
+
+}
