@@ -4,9 +4,9 @@
 
 This is a multiplayer real-time computer-based simulation, similar to a Formula-1 manager sim. 
 
-[Features](#features) | [Screenshots](#screenshots) | [Installation Instructions](#installation-instructions)
+[Technical Specs](#technical-specs) | [Features](#features) | [Screenshots](#screenshots) | [Installation Instructions](#installation-instructions)
 
-Underneath the shiny game-like exterior, it's an experiment server that I've used to test hypotheses about power, dependence, and [Self Determination Theory](http://selfdeterminationtheory.org/). The idea is:
+Underneath the game-like exterior, it's an experiment server that I've used to test hypotheses about power, dependence, and [Self Determination Theory](http://selfdeterminationtheory.org/). The idea is:
  - Have many participants sit down in a lab 
  - Participants are randomly and anonymously assigned an experimental condition 
  - Two of these participants (A and B) take on the role of Engineer A and Engineer B in a Formula 1 race car team 
@@ -14,7 +14,13 @@ Underneath the shiny game-like exterior, it's an experiment server that I've use
  - There are 8 races in all. 
  - Those who get the most points in the races will win a cash prize at the end of the experiment (usually $20-$50).
 
-For my particular experiments, I was studying the effects of task dependence, power, and the sense of obligation and internalized motivation these produced. For example, after 4 races participant B's work increased. If B did not mention this to A, and request that A do more work, B would not be able to complete their assigned work. How did that affect A? Did A feel pressure to help B? Did A begin to internalize B's task as part of their own? Etc.
+For my particular experiments, I was studying the effects of task dependence, power, and the sense of obligation and internalized motivation these produced. For example, after 4 races participant B's work increased. If B did not request that A do more work, B would not be able to complete their assigned work. So B asked A to help. 
+
+- How did that affect A? 
+- Did A feel pressure to help B? 
+- Did A feel a sense of power over B? 
+- Did A begin to internalize B's task as part of their own? 
+- Etc.
 
 #### Published in:
 
@@ -27,11 +33,15 @@ Poile, C. (2017). Why would I help my coworker? Exploring asymmetric task depend
 
 Poile, C. (2018). When Power Hurts: Task-dependent Resource Control Creates Temporary Discomfort that Motivates Helping Behaviour. Canadian Journal of Administrative Sciences / Revue Canadienne Des Sciences de l'Administration. http://doi.org/10.1002/cjas.1499
 
-## Features
+## Technical Specs
 
-- Scala for the core simulation. Java for the Vaadin and GWT components. Javascript for the frontend.
+- Scala for the core simulation (~12600 LOC)
 - Akka for the game-runner simulation, chat, lobby, and administrator UI/console
-- It's handled 200 simultaneous participants at once. Not sure how many more it can handle; it's never been load tested.
+- Java for Vaadin and the GWT components (~1000 LOC)
+- Javascript (using JQuery) for the frontend (unsure of LOC)
+- Capacity: the server has handled 200 participants at a time. Not sure how many more it can handle; it's never been load tested
+
+## Features
 
 ### Pre-simulation
 - Randomized assignment of participants into experimental conditions (changeable in the configuration files)
@@ -54,11 +64,11 @@ Poile, C. (2018). When Power Hurts: Task-dependent Resource Control Creates Temp
 
 ## Screenshots
 
-### Shiny splash screen to increase realism
+### Splash screen / Login
 
 ![splash screen](screenshots/f1-splash.png)
 
-- Setting the right experimental tone is crucial to making participants take the experiment seriously. 
+- Setting a professional experimental tone is crucial to making participants take the experiment seriously. 
 - The physical space is important as well; Styrofoam dividers are/should be placed between computers in the lab.
 - This helped prevent accidentally breaking anonymity, and it reinforced the experimental realism.
 
