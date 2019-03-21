@@ -6,6 +6,8 @@ This is a multiplayer real-time computer-based simulation, similar to a Formula-
 
 [Technical Specs](#technical-specs) | [Features](#features) | [Screenshots](#screenshots) | [Installation Instructions](#installation-instructions)
 
+![splash screen](screenshots/f1-splash.png)
+
 Underneath the game-like exterior, it's an experiment server that I've used to test hypotheses about power, dependence, and [Self Determination Theory](http://selfdeterminationtheory.org/). The idea is:
  - Have many participants sit down in a lab 
  - Participants are randomly and anonymously assigned an experimental condition 
