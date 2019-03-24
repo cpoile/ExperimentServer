@@ -42,11 +42,14 @@ Poile, C. (2018). When Power Hurts: Task-dependent Resource Control Creates Temp
 - Java for Vaadin and the GWT components (~1000 LOC)
 - Javascript (using JQuery) for the frontend (unsure of LOC)
 - Capacity: the server has handled 200 participants at a time. Not sure how many more it can handle; it's never been load tested
+- Robust: can handle participant reconnections without ruining the pair's session (eg, accidentally hitting the browser back button or closing the window)
 
 ## Features
 
 ### Pre-simulation
 - Randomized assignment of participants into experimental conditions (changeable in the configuration files)
+- Participants are balanced across conditions
+- Conditions can include the participants physical location (eg, students in Lab 1 should only be paired with students in Lab 2)
 - Conditions can vary the amount of work each role needs to do, the rewards, the difficulty in achieving their goals, etc.
 - A waiting lobby with background reading and dynamically updated counter showing how many participants are also waiting and when the experiment will begin
 - A step-by-step interactive tutorial giving the background and rules of the Formula 1 engineering simulation "game" the participant is playing
@@ -60,9 +63,13 @@ Poile, C. (2018). When Power Hurts: Task-dependent Resource Control Creates Temp
 - Optional chat between participants (recorded for later analysis)
 - All decisions made by participants are recorded and timestamped for analysis
 
-### Post-simulation
-- Survey questions can be given after any particular round, and after the experiment is finished. 
-- The questions can be given inside the simulation software or the participant can be sent to an outside survey tool (I used the university's SurveyMonkey)
+### Extra data collection (eg, surveys)
+- Questions can be given after any particular round, and after the experiment is finished 
+- The survey can be given inside the simulation software or the participant can be sent to an outside survey tool (I used the university's SurveyMonkey)
+- If the participant skips the survey, or accidentally exits before finishing, participant will be sent to the survey again
+- Only participants who complete the surveys will be marked as "completed" on the internal database
+- External data is connected to internal data through UUIDs, and can be joined for data analysis
+- Data can be anonymous (if the internal database does not keep identifying information, such as student ids)  
 
 ## Screenshots
 
