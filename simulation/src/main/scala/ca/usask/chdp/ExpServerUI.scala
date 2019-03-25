@@ -20,8 +20,8 @@ import UIRefresher.SetRefresher
 import akka.event.Logging
 
 /**
- * The Application's "main" class
- */
+  * The Application's "main" class
+  */
 @SuppressWarnings(Array("serial"))
 @PreserveOnRefresh
 @Title("Experiment Server")
@@ -36,6 +36,7 @@ class ExpServerUI extends UI with ServletContextListener {
   def contextInitialized(sce: ServletContextEvent) {
     println("Context initialized. Context: " + sce.getServletContext)
   }
+
   def contextDestroyed(sce: ServletContextEvent) {
     println("Context destroyed, initiating actor system shutdown. Context: " + sce.getServletContext)
     Lobby.system.shutdown()
@@ -90,7 +91,6 @@ class ExpServerUI extends UI with ServletContextListener {
     }
   }
 
-
   def reconnectInGameExperimentUser(retUserInfo: ReturningUserInfo) {
     // ViewManager -> Lobby -> ExpServerCore gives ViewManager a ViewActor
     // ViewManager -> Lobby we have a WaitingPlayer(with viewActor)
@@ -128,7 +128,6 @@ class ExpServerUI extends UI with ServletContextListener {
     //    viewManager.get(SetViewToHtmlPage(PageName.Intro))
 
 
-
     log.debug("Session timeout --- {} in seconds",
       UI.getCurrent.getSession.getSession.getMaxInactiveInterval)
     log.debug(Res.testingModeAlert)
@@ -157,10 +156,9 @@ class ExpServerUI extends UI with ServletContextListener {
   }
 }
 
-
 /**
- * old admin cmd system:
- */
+  * old admin cmd system:
+  */
 //    else if (fragMap.contains("admin")) {
 //      val cmd = fragMap("admin")
 //      println("received admin command: " + cmd)

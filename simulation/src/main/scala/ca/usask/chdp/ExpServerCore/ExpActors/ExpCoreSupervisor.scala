@@ -9,9 +9,9 @@ import ca.usask.chdp.ExpServerCore.ExpActors.ExpCoreSupervisor.{CreateViewActorF
 import ca.usask.chdp.ExpServerCore.Models.Model
 
 /**
-  * The only reason we need this class is so that an exception at the Lobby level will be handled here
-  * and not kill the whole actor system.
-  * That is this actor's sole purpose.
+  * ExpCoreSupervisor starts the lobby, connects ViewActors to players, and reconnects ViewActors
+  * to disconnected players.
+  * An exception at the Lobby level will be handled here and not kill the whole actor system.
   */
 class ExpCoreSupervisor extends Actor with ActorLogging {
 

@@ -50,8 +50,8 @@ class SimLoginView(viewMgr: ViewManager, location: Option[String]) extends Custo
   }
 
   /**
-   * If server down
-   */
+    * If server down
+    */
   val passwordField2 = new PasswordField()
   val nsidField = new TextField()
   if (Lobby.settings.serverDownAllowNewLogins) {
@@ -79,6 +79,7 @@ class SimLoginView(viewMgr: ViewManager, location: Option[String]) extends Custo
       false
     }
   }
+
   def isNsidValid(nsid: String): Boolean = {
     (nsid.length == 6 &&
       nsid.substring(0, 3).forall(p => p.isLetter) &&
@@ -98,13 +99,12 @@ class SimLoginView(viewMgr: ViewManager, location: Option[String]) extends Custo
             Notification.show("Good. Username registered. Press Login Again.", Notification.Type.WARNING_MESSAGE)
           }
           else if (Lobby.settings.serverDownAllowNewLogins) {
-            if(areServerDownFieldsVerified )
-            {
+            if (areServerDownFieldsVerified) {
               ParticipantDAO.insertNewUser(emailField.getValue,
                 passwordField.getValue, nsidField.getValue, "", "")
               Notification.show("Username registered. Press Login Again.", Notification.Type.WARNING_MESSAGE)
             }
-           }
+          }
           else {
             Notification.show("This Email is not registered.", Notification.Type.WARNING_MESSAGE)
           }
@@ -133,6 +133,7 @@ class SimLoginView(viewMgr: ViewManager, location: Option[String]) extends Custo
   def setWhiteBackground() {
     layout.getUI.getPage.getJavaScript.execute("$('body').addClass('loginView');")
   }
+
   def restoreColoredBackground() {
     layout.getUI.getPage.getJavaScript.execute("$('body').removeClass('loginView');")
   }

@@ -23,8 +23,8 @@ import ca.usask.chdp.ExpServerCore.Tutorial.{FakeViewActor, TutorialGame}
 import scala.annotation.tailrec
 
 /**
- * counter(dt.toString("yyyy-MM-dd") + "-sess")
- */
+  * counter(dt.toString("yyyy-MM-dd") + "-sess")
+  */
 class Lobby extends Actor with ActorLogging {
 
   import context._
@@ -36,8 +36,8 @@ class Lobby extends Actor with ActorLogging {
   }
 
   /**
-   * Lobby state.
-   */
+    * Lobby state.
+    */
   private var playersGettingReady = List.empty[WaitingPlayer]
   private var playersReady = List.empty[WaitingPlayer]
   private var listenersForWaitingPlayers = List.empty[ActorRef]
@@ -54,25 +54,25 @@ class Lobby extends Actor with ActorLogging {
   private var allowLoginCountdownCancellable: Option[Cancellable] = None
 
   /**
-   * Set up a recurring event that will tell all waiting players the lobbyStats. If the waiting players
-   * have an attached viewManager (they won't if they are test probes, for example.) But all real WaitingPlayers
-   * Will have a viewActor, @see ca.usask.chdp.ExpServerCore.View.VaadinViewManager#receive case YouHaveAViewActor
-   */
+    * Set up a recurring event that will tell all waiting players the lobbyStats. If the waiting players
+    * have an attached viewManager (they won't if they are test probes, for example.) But all real WaitingPlayers
+    * Will have a viewActor, @see ca.usask.chdp.ExpServerCore.View.VaadinViewManager#receive case YouHaveAViewActor
+    */
   val cancellable_waitingInLobbyStatsTick = system.scheduler.schedule(1 second,
     3 seconds,
     self,
     NotifyWaitingLobbyStats)
 
   /**
-   * Set up a one time event to auto start the game during testing.
-   */
+    * Set up a one time event to auto start the game during testing.
+    */
 
   import context.dispatcher
 
   def receive = {
     /**
-     * These are interactions with the admin actor (and lobby tester):
-     */
+      * These are interactions with the admin actor (and lobby tester):
+      */
     case NotifyWaitingLobbyStats => {
       playersReady foreach {
         _.viewActor foreach { p =>
@@ -108,7 +108,9 @@ class Lobby extends Actor with ActorLogging {
     }
     case RegisterListenerForGames(listener) => {
       log.debug("ExpServerCore received: RegisterListenerForGames from --- {}", listener)
-      for (g <- games) {g.gameActor ! RegisterAdminListener(listener) }
+      for (g <- games) {
+        g.gameActor ! RegisterAdminListener(listener)
+      }
 
       // refresh the new listener will all games, underway and finished:
       val allGames = (for (g <- games) yield GameRecordDAO.makeGameInfo(g.gr_id)).toList
@@ -135,7 +137,9 @@ class Lobby extends Actor with ActorLogging {
       // setup countdown so that we don't admit students in next session before starting a new session.
       if (allow)
         allowLoginCountdownCancellable =
-          Lobby.system.scheduler.scheduleOnce(60 minutes) { _isLoginAllowed = false }.some
+          Lobby.system.scheduler.scheduleOnce(60 minutes) {
+            _isLoginAllowed = false
+          }.some
     }
     case StartGameMatchPlayers => {
       isGameStarted = true
@@ -202,9 +206,9 @@ class Lobby extends Actor with ActorLogging {
     }
 
     /**
-     * Interaction with Players:
-     * ------------------------------------------------------------------------------------------------------
-     */
+      * Interaction with Players:
+      * ------------------------------------------------------------------------------------------------------
+      */
     case newPlayer: WaitingPlayer => {
       // First, attach their viewActor to the the waitingPlayer.
       // This was given when the ViewManager sent Lobby.giveMeViewActor
@@ -290,8 +294,8 @@ class Lobby extends Actor with ActorLogging {
       // match the first player in the list, if we can.
 
       /**
-       * This is where we choose which matching strategy to use.
-       */
+        * This is where we choose which matching strategy to use.
+        */
       val matchingStrategy: (List[WaitingPlayer]) => PossibleMatchedPair
       = if (ExpSettings.get.diffLocationsMatter && ExpSettings.get.diffLocationsAreMatchedAcrossLocation) {
         matchBetweenLocationsStrategy
@@ -327,12 +331,15 @@ class Lobby extends Actor with ActorLogging {
 
     // Now update listeners about new game and removal of waiting players.
     // TODO: how do we remove dead waiting players?
-    for (l <- listenersForGames) {game ! RegisterAdminListener(l) }
+    for (l <- listenersForGames) {
+      game ! RegisterAdminListener(l)
+    }
     for (l <- listenersForWaitingPlayers) {
       l ! RemoveReadyPlayers(List(pair.plr1.globalId, pair.plr2.globalId))
       log.info("Lobby: Matched two players --- {} --- {}", pair.plr1.globalId, pair.plr2.globalId)
     }
   }
+
   def getMapOfRolesListByLocation: Map[String, List[String]] = {
     val loc1 = settings.defaultLocation
     val loc2 = settings.otherLocation
@@ -344,8 +351,8 @@ class Lobby extends Actor with ActorLogging {
 }
 
 /**
- * companion object for helper functions and case object/class messages to Lobby.
- */
+  * companion object for helper functions and case object/class messages to Lobby.
+  */
 object Lobby {
 
   import collection.JavaConversions._
@@ -356,39 +363,55 @@ object Lobby {
   private var _isLoginAllowed = false
 
   /**
-   * For passing data around, not actor messages
-   */
+    * For passing data around, not actor messages
+    */
   case class PossibleMatchedPair(plr1: Option[WaitingPlayer], plr2: Option[WaitingPlayer]) {
     def hasPlayer(p: WaitingPlayer): Boolean =
       (plr1.exists(_.globalId == p.globalId) || plr2.exists(_.globalId == p.globalId))
+
     def isDefined: Boolean = (plr1.isDefined && plr2.isDefined)
+
     def asList: List[WaitingPlayer] = List(plr1, plr2).flatten
+
     // If both exist, returns Some(MatchedPair) else None
     def toMatchedPair: Option[MatchedPair] = if (isDefined) MatchedPair(plr1.get, plr2.get).some else None
   }
+
   case class MatchedPair(plr1: WaitingPlayer, plr2: WaitingPlayer)
+
   case class PairsAndUnmatched(matchedPairs: List[MatchedPair], unMatched: List[WaitingPlayer])
+
   case class GameIdAndActor(gr_id: String, gameActor: ActorRef)
 
   /**
-   * Actor messages:
-   */
+    * Actor messages:
+    */
   sealed trait LobbyMsgs
+
   case class GameActor(g: ActorRef) extends LobbyMsgs
+
   case class WaitingPlayer(globalId: String, email: String, manipulation: Int = 0, role: String = "",
                            viewActor: Option[ActorRef] = None,
                            location: String = "",
-                            // brittle, I know.
+                           // brittle, I know.
                            currentStageOfWaiting: String = "") extends LobbyMsgs
+
   case object MatchPlayersInLobby extends LobbyMsgs
+
   case class ReturningUserInfo(playerInfo: PlayerInfo, msg: PlayerMsgs) extends LobbyMsgs
+
   case object NotifyWaitingLobbyStats extends LobbyMsgs
+
   case class PlayerFinishedInstructions(waitingPlayer: WaitingPlayer) extends LobbyMsgs
+
   // for tutorial
   case class StartTutorial(waitingPlayer: WaitingPlayer) extends LobbyMsgs
+
   // for testing
   case class MatchTheseTwoPlayers(p1: WaitingPlayer, p2: WaitingPlayer) extends LobbyMsgs
+
   case object GetWaitingPlayersInAllStages extends LobbyMsgs
+
   case class NotifyListenersOfFinishedGame(gameId: String) extends LobbyMsgs
 
 
@@ -408,6 +431,7 @@ object Lobby {
   def system: ActorSystem = {
     mySystem.getOrElse(throw new IllegalStateException("Have not initialized Lobby yet, cannot get actor System."))
   }
+
   def actorSystemInitialize(config: Option[Config] = None, system: Option[ActorSystem] = None): ActorSystem = {
     mySystem | {
       val cfg = initSettings(config)
@@ -417,12 +441,15 @@ object Lobby {
       mySystem.get
     }
   }
+
   def registerLobby(theLobby: ActorRef) {
     lobbyRef = theLobby.some
   }
+
   def lobby: ActorRef = {
     lobbyRef | (throw new IllegalStateException("Have not initialized Lobby yet, cannot add a new player."))
   }
+
   def reInitialize(config: Option[Config] = None, system: Option[ActorSystem] = None): ActorSystem = {
     mySystem match {
       case None =>
@@ -434,13 +461,15 @@ object Lobby {
       }
     }
   }
+
   def giveMeViewActor(globalID: String, email: String, location: String, viewManager: ViewManager) {
     // get the player's view actor from the expCoreSup just so that if it crashed it can be restarted.
     expCoreSup.getOrElse(
       throw new IllegalStateException("Have not initialized Lobby yet, cannot add a new player.")
     ) ! CreateViewActor(globalID, email, location, viewManager)
   }
-  def giveMeViewActorForAReconnectingWaitingPlayer(wp: WaitingPlayer,vm: ViewManager) {
+
+  def giveMeViewActorForAReconnectingWaitingPlayer(wp: WaitingPlayer, vm: ViewManager) {
     // get the player's view actor from the expCoreSup just so that if it crashed it can be restarted.
     expCoreSup.getOrElse(
       throw new IllegalStateException("Have not initialized Lobby yet, cannot add a new player.")
@@ -451,26 +480,32 @@ object Lobby {
     expCoreSup.getOrElse(throw new IllegalStateException("Have not initialized Lobby yet, cannot add a new player.")
     ) ! ReconnectViewActor(globalID, viewManager, userClosure)
   }
+
   def registerActivePlayer(globalID: String, playerLogic: ActorRef, role: String) {
     // TODO: send to adminView
     idToPlayerLogic += (globalID -> playerLogic)
     idToRole += (globalID -> role)
   }
+
   def registerViewActor(globalID: String, viewActor: ActorRef) {
     log.debug("Lobby registerViewActor -- globalID: {} -- viewactor: {}", globalID, viewActor)
     idToViewActor += (globalID -> viewActor)
   }
+
   def registerViewManager(globalID: String, viewManager: ViewManager) {
     idToViewManager += (globalID -> viewManager)
   }
+
   def registerWaitingPlayerInfo(waitingPlayer: WaitingPlayer) {
     log.debug("Lobby registerWaitingPlayerInfo -- {}", waitingPlayer)
     idToWaitingPlayer += (waitingPlayer.globalId -> waitingPlayer)
   }
+
   def unRegisterWaitingPlayerInfo(waitingPlayerId: String) {
     log.debug("Lobby UN -registerWaitingPlayerInfo -- {}", idToWaitingPlayer(waitingPlayerId))
     idToWaitingPlayer.remove(waitingPlayerId)
   }
+
   def removePreviousViewManager(globalID: String): Option[ViewManager] = {
     idToViewManager.remove(globalID)
   }
@@ -481,9 +516,11 @@ object Lobby {
     else
       none
   }
+
   def newPlayer(player: WaitingPlayer) {
     lobby ! player
   }
+
   // Can't join the server after 45 into a session. Triggers us to remember to reset.
   def isLoginAllowed: Boolean = _isLoginAllowed
 
@@ -493,7 +530,9 @@ object Lobby {
       throw new IllegalStateException("Have not initialized Lobby yet, cannot add a new player.")
     ) ! MatchTheseTwoPlayers(p1, p2)
   }
+
   def settings = mySettings.getOrElse(throw new IllegalStateException("Have not initialized yet, cannot get config."))
+
   def initSettings(config: Option[Config] = None): Config = {
     val cfg = config.getOrElse(ConfigFactory.load())
     mySettings = new ExpSettings(cfg).some
@@ -512,30 +551,34 @@ object Lobby {
     leavingUsers += (uuid -> closure)
     uuid
   }
+
   def returningUser(uuid: String): Option[ReturningUserInfo] = {
     leavingUsers.remove(uuid)
   }
 
   // Get another index, different from the first
   val r = new scala.util.Random
+
   def nextDiffIndex(first: Int, length: Int): Int = {
     val x = r.nextInt(length)
     if (x != first) x else nextDiffIndex(first, length)
   }
+
   def otherRole(role: String): String = role match {
     case "RoleA" => "RoleB"
     case "RoleB" => "RoleA"
   }
+
   //  def getATypedObj[T](item: Any)(implicit m: Manifest[T]): Option[T] = {
   //    Some(m.erasure.getField("MODULE$").get(m.erasure).asInstanceOf[T])
   //  }
 
   /**
-   * Support for the Lobby Actor matching players
-   */
+    * Support for the Lobby Actor matching players
+    */
   /**
-   * Returns paired and unmatched players.
-   */
+    * Returns paired and unmatched players.
+    */
   def matchAllPlayers(players: List[WaitingPlayer],
                       matchingStrategy: List[WaitingPlayer] => PossibleMatchedPair): PairsAndUnmatched = {
     // pick a random player. Can we match him or her? If so, match them.
@@ -559,11 +602,13 @@ object Lobby {
     unMatchedPlayers = playersToBeMatched ++ unMatchedPlayers
     PairsAndUnmatched(allMatchedPairs.flatMap(_.toMatchedPair), unMatchedPlayers)
   }
+
   def simpleRandomMatchingStrategy(playersToBeMatched: List[WaitingPlayer]): PossibleMatchedPair = {
     val plr1 :: rest = Random.shuffle(playersToBeMatched)
     val plr2 = rest.find(p2 => p2.manipulation == plr1.manipulation && p2.role != plr1.role)
     PossibleMatchedPair(Some(plr1), plr2)
   }
+
   def matchBetweenLocationsStrategy(playersToBeMatched: List[WaitingPlayer]): PossibleMatchedPair = {
     val plr1 :: rest = Random.shuffle(playersToBeMatched)
     val plr2 = rest.find(p2 => p2.manipulation == plr1.manipulation
@@ -573,8 +618,8 @@ object Lobby {
   }
 
   /**
-   * If you want the player passed in to be assigned to Manip 1, Role A, send in lastAssignedManipRole = (2, "RoleB")
-   */
+    * If you want the player passed in to be assigned to Manip 1, Role A, send in lastAssignedManipRole = (2, "RoleB")
+    */
   def assignManipRoleInSeqForTwoManipulations(newPlr: WaitingPlayer,
                                               lastAssignedManipRole: (Int, String)): WaitingPlayer
   = {
@@ -589,12 +634,14 @@ object Lobby {
     log.debug("they were assigned the next available manip/role. they are now: {}", transNewPlr)
     transNewPlr
   }
+
   def roleForOneManipulation(listOfRoles: List[String]): String = {
     // be systematic. first Manip1, A. then B. Then Manip 2, A, then B, then repeat.
     // change to: don't need to know what was assigned last, just balance what we have.
     //            if balanced, make a new A.
     pickRoleToBalanceList(listOfRoles)
   }
+
   def roleForOneManipMultipleLocations(plrLoc: String, allLocs: Seq[String],
                                        mapOfRolesListByLocation: Map[String, List[String]]): String = {
     // Goal: same number of A's and B's in each location
@@ -615,6 +662,7 @@ object Lobby {
       case x if (x == loc2 && unbalancedL1.length == 0) => pickRoleToBalanceList(mapOfRolesListByLocation(loc2))
     }
   }
+
   def pickRoleToBalanceList(listOfRoles: List[String]): String = {
     // if we have more B's than A, or the same amount, pick an A
     if (listOfRoles.count(_ == "RoleA") <= listOfRoles.count(_ == "RoleB")) "RoleA" else "RoleB"
@@ -628,12 +676,20 @@ object Lobby {
     } else {
       // must both have roles remaining. Are they different?
       if (l1.contains("RoleA") && l2.contains("RoleB")) {
-        val newL1 = l1.splitAt(l1.indexOf("RoleA")) match {case (l, r) => l ++ r.tail }
-        val newL2 = l2.splitAt(l2.indexOf("RoleB")) match {case (l, r) => l ++ r.tail }
+        val newL1 = l1.splitAt(l1.indexOf("RoleA")) match {
+          case (l, r) => l ++ r.tail
+        }
+        val newL2 = l2.splitAt(l2.indexOf("RoleB")) match {
+          case (l, r) => l ++ r.tail
+        }
         removeBalancedRoles(newL1, newL2)
       } else if (l1.contains("RoleB") && l2.contains("RoleA")) {
-        val newL1 = l1.splitAt(l1.indexOf("RoleB")) match {case (l, r) => l ++ r.tail }
-        val newL2 = l2.splitAt(l2.indexOf("RoleA")) match {case (l, r) => l ++ r.tail }
+        val newL1 = l1.splitAt(l1.indexOf("RoleB")) match {
+          case (l, r) => l ++ r.tail
+        }
+        val newL2 = l2.splitAt(l2.indexOf("RoleA")) match {
+          case (l, r) => l ++ r.tail
+        }
         removeBalancedRoles(newL1, newL2)
       } else {
         log.error("RemovingBalancedRoles: they have roles remaining, but they are the same role... (shouldn't happen in a real game). List1: {}, List2: {}", l1, l2)
